@@ -94,7 +94,7 @@ def create_readme_file(config, params):
     github = GitHub(config)
     payload = {'message': 'Test message', 'content': 'IA==', 'branch': params.get('branch')}
     return github.make_request(method='PUT', data=json.dumps(payload),
-                               endpoint='repos/{0}/{1}/contents/README.md'.format(config.get('username'),
+                               endpoint='repos/{0}/{1}/contents/README.md'.format(params.get('username'),
                                                                                   params.get('name')))
 
 

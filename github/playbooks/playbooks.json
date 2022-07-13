@@ -758,7 +758,8 @@
           "name": "Create Branch",
           "tag": "#GitHub",
           "recordTags": [
-            "github"
+            "github",
+            "create"
           ],
           "isActive": false,
           "debug": false,
