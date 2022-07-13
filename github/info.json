@@ -23,15 +23,6 @@
         "description": "The URL of the GitHub to which you will connect and perform the automated operations."
       },
       {
-        "title": "Username",
-        "required": true,
-        "editable": true,
-        "visible": true,
-        "type": "text",
-        "name": "username",
-        "description": "The username used to access the GitHub to which you will connect and perform the automated operations."
-      },
-      {
         "title": "Personal Access Token",
         "required": false,
         "editable": true,
@@ -173,6 +164,16 @@
           "type": "text",
           "tooltip": "The organization name. The name is not case sensitive.",
           "description": "The organization name. The name is not case sensitive."
+        },
+        {
+          "title": "Repository Owner",
+          "name": "owner",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "The account owner of the repository.",
+          "description": "The account owner of the repository. The name is not case sensitive."
         },
         {
           "title": "Repository Name",
@@ -929,6 +930,16 @@
         "subscribers_count": ""
       },
       "parameters": [
+        {
+          "title": "Repository Owner",
+          "name": "owner",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "The account owner of the repository.",
+          "description": "The account owner of the repository. The name is not case sensitive."
+        },
         {
           "title": "Repository Name",
           "name": "name",
@@ -1904,7 +1915,7 @@
     {
       "operation": "create_branch",
       "title": "Create Branch",
-      "description": "Create Branch new branch",
+      "description": "Create new branch",
       "category": "investigation",
       "annotation": "create_branch",
       "enabled": true,
@@ -1946,11 +1957,11 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the new branch name which you want to create.",
+          "tooltip": "Specify the name of the branch to be created",
           "description": "Specify the new branch name which you want to create."
         },
         {
-          "title": "Base Branch Type",
+          "title": "Base Branch Name/SHA",
           "name": "checkout_branch",
           "visible": true,
           "required": true,
@@ -1981,13 +1992,13 @@
                 "required": true,
                 "editable": true,
                 "type": "text",
-                "tooltip": "Specify the SHA of a base branch. Get SHA by executing \"Get Branch Revision\" action",
-                "description": "Specify the SHA of a base branch. Get SHA by executing \"Get Branch Revision\" action"
+                "tooltip": "Specify the SHA of a base branch. Get the SHA by executing \"Get Branch Revision\" action",
+                "description": "Specify the SHA of a base branch. Get the SHA of base branch by executing \"Get Branch Revision\" action"
               }
             ]
           },
-          "tooltip": "Select the SHA/Name of a checkout branch.",
-          "description": "Select the SHA/Name of a checkout branch."
+          "tooltip": "Select the SHA/Name of base branch",
+          "description": "Select the SHA/Name of the base branch."
         }
       ]
     },
