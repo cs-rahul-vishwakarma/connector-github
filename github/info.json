@@ -20,7 +20,7 @@
         "type": "text",
         "name": "server_url",
         "value": "https://api.github.com",
-        "description": "The URL of the GitHub to which you will connect and perform the automated operations."
+        "description": "Specify the URL of the GitHub to which you will connect and perform the automated operations"
       },
       {
         "title": "Personal Access Token",
@@ -29,7 +29,7 @@
         "visible": true,
         "type": "password",
         "name": "password",
-        "description": "The Personal Access Token used to access the GitHub server to which you will connect and perform the automated operations."
+        "description": "Specify the Personal Access Token used to access the GitHub server to which you will connect and perform the automated operations"
       }
     ]
   },
@@ -37,7 +37,7 @@
     {
       "operation": "create_organization_repository",
       "title": "Create Organization Repository",
-      "description": "Creates a new repository in the specified organization. The authenticated user must be a member of the organization.",
+      "description": "Creates a new organization repository based on the repository name, organization name, base branch name, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "create_organization_repository",
       "enabled": true,
@@ -162,8 +162,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The organization name. The name is not case sensitive.",
-          "description": "The organization name. The name is not case sensitive."
+          "tooltip": "Specify the name of the organization of the repository that you want to create on GitHub",
+          "description": "Specify the name of the organization of the repository that you want to create on GitHub"
         },
         {
           "title": "Repository Owner",
@@ -172,8 +172,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the account holder of the repository that you want to create on GitHub",
+          "description": "Specify the name of the account holder of the repository that you want to create on GitHub"
         },
         {
           "title": "Repository Name",
@@ -182,8 +182,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository.",
-          "description": "The name of the repository."
+          "tooltip": "Specify the name of the repository you want to create on GitHub",
+          "description": "Specify the name of the repository you want to create on GitHub"
         },
         {
           "title": "Base Branch Name",
@@ -192,8 +192,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the base branch name",
-          "description": "Specify the base branch name"
+          "tooltip": "Specify the name of the base branch of the organization repository that you want to create on GitHub",
+          "description": "Specify the name of the base branch of the organization repository that you want to create on GitHub"
         },
         {
           "title": "Description",
@@ -202,8 +202,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "A short description of the repository.",
-          "description": "A short description of the repository."
+          "tooltip": "Specify a short description of the repository you want to create on GitHub",
+          "description": "(Optional) Specify a short description of the repository you want to create on GitHub"
         },
         {
           "title": "Homepage",
@@ -212,8 +212,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "A URL with more information about the repository.",
-          "description": "A URL with more information about the repository."
+          "tooltip": "Specify the homepage of the repository you want to create on GitHub. A Homepage is a URL that contains more information about the repository",
+          "description": "(Optional) Specify the homepage of the repository you want to create on GitHub. A Homepage is a URL that contains more information about the repository"
         },
         {
           "title": "Private",
@@ -223,8 +223,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Whether the repository is private.",
-          "description": "Whether the repository is private."
+          "tooltip": "Select this option to create a Private repository on GitHub. Clear this option to create a Public repository on GitHub",
+          "description": "Select this option to create a Private repository on GitHub. Clear this option to create a Public repository on GitHub"
         },
         {
           "title": "Has Issues",
@@ -234,8 +234,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Either true to enable issues for this repository or false to disable them. Default: true",
-          "description": "Either true to enable issues for this repository or false to disable them."
+          "tooltip": "Select this option to enable issues for the repository you want to create on GitHub. Clear this option to disable issues for the repository you want to create on GitHub",
+          "description": "Select this option to enable issues for the repository you want to create on GitHub. Clear this option to disable issues for the repository you want to create on GitHub"
         },
         {
           "title": "Has Projects",
@@ -245,8 +245,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Either true to enable projects for this repository or false to disable them. Note: If you're creating a repository in an organization that has disabled repository projects, the default is false, and if you pass true, the API returns an error",
-          "description": "Either true to enable projects for this repository or false to disable them. Note: If you're creating a repository in an organization that has disabled repository projects, the default is false, and if you pass true, the API returns an error"
+          "tooltip": "Select this option to enable projects for the repository you want to create on GitHub. Clear this option to disable projects for the repository you want to create on GitHub",
+          "description": "Select this option to enable projects for the repository you want to create on GitHub. Clear this option to disable projects for the repository you want to create on GitHub"
         },
         {
           "title": "Has Wiki",
@@ -256,8 +256,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Either true to enable the wiki for this repository or false to disable it. Default: true",
-          "description": "Either true to enable the wiki for this repository or false to disable it. Default: true"
+          "tooltip": "Select this option to enable the wiki for the repository you want to create on GitHub; this is the default. Clear this option to disable the wiki for the repository you want to create on GitHub",
+          "description": "Select this option to enable the wiki for the repository you want to create on GitHub; this is the default. Clear this option to disable the wiki for the repository you want to create on GitHub"
         },
         {
           "title": "Is Template",
@@ -267,12 +267,13 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Either true to make this repo available as a template repository or false to prevent it.",
-          "description": "Either true to make this repo available as a template repository or false to prevent it."
+          "tooltip": "Select this option to make the repository you are creating available as a template repository on GitHub. Clear this option to prevent the repository you are creating from being available as a template repository on GitHub",
+          "description": "Select this option to make the repository you are creating available as a template repository on GitHub. Clear this option to prevent the repository you are creating from being available as a template repository on GitHub"
         },
         {
           "title": "Other Fields",
-          "description": "(Optional) Like Search criteria (used to determine dynamic membership) field or links field json request are to be define.",
+          "tooltip": "Specify fields in the JSON format to be used as Search criteria (used to determine dynamic membership) fields or as link fields",
+          "description": "(Optional) Specify fields in the JSON format to be used as Search criteria (used to determine dynamic membership) fields or as link fields",
           "required": false,
           "editable": true,
           "visible": true,
@@ -284,7 +285,7 @@
     {
       "operation": "list_organization_repositories",
       "title": "List Organization Repositories",
-      "description": "Lists repositories for the specified organization.",
+      "description": "Lists repositories for the specified organization based on the organization name, repository type, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_organization_repositories",
       "enabled": true,
@@ -398,8 +399,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The organization name. The name is not case sensitive.",
-          "description": "The organization name. The name is not case sensitive."
+          "tooltip": "Specify the name of the organization whose list of repositories you want to retrieve from GitHub",
+          "description": "Specify the name of the organization whose list of repositories you want to retrieve from GitHub"
         },
         {
           "title": "Repository Type",
@@ -418,8 +419,8 @@
             "internal"
           ],
           "value": "all",
-          "tooltip": "Specifies the types of repositories you want returned.",
-          "description": "Specifies the types of repositories you want returned."
+          "tooltip": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, private, public, fork, sources, member, or internal",
+          "description": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, private, public, fork, sources, member, or internal"
         },
         {
           "title": "Sort Repository By",
@@ -435,8 +436,8 @@
             "full_name"
           ],
           "value": "created",
-          "tooltip": "The property to sort the results by.",
-          "description": "The property to sort the results by."
+          "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name",
+          "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name"
         },
         {
           "title": "Direction Repository By",
@@ -452,8 +453,8 @@
             "full_name"
           ],
           "value": "created",
-          "tooltip": "The property to sort the results by.",
-          "description": "The property to sort the results by."
+          "tooltip": "Select the property to sort the direction of the results returned by this operation. You can choose between created, updated, pushed, or full_name",
+          "description": "Select the property to sort the direction of the results returned by this operation. You can choose between created, updated, pushed, or full_name"
         },
         {
           "title": "Per Page",
@@ -462,8 +463,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -472,15 +473,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation.  By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation.  By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "fork_organization_repository",
       "title": "Fork Organization Repository",
-      "description": "Fork a Organization Repository for a specified repository owner",
+      "description": "Forks an organization repository for the specified repository owner based on the repository owner, repository name, and organization name you have specified",
       "category": "investigation",
       "annotation": "fork_organization_repository",
       "enabled": true,
@@ -615,8 +616,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository. The name is not case sensitive.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository you want to fork in GitHub",
+          "description": "Specify the account holder of the repository you want to fork in GitHub"
         },
         {
           "title": "Repository Name",
@@ -625,8 +626,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository you want to fork in GitHub",
+          "description": "Specify the name of the repository you want to fork in GitHub"
         },
         {
           "title": "Organization Name",
@@ -635,15 +636,15 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "specify the organization name if forking into an organization.",
-          "description": "specify the organization name if forking into an organization."
+          "tooltip": "Specify the name of the organization whose repository you want to fork in GitHub",
+          "description": "Specify the name of the organization whose repository you want to fork in GitHub"
         }
       ]
     },
     {
       "operation": "list_fork_repositories",
       "title": "List Fork Repositories",
-      "description": "Lists the Fork repositories for the specified organization.",
+      "description": "Lists the repositories that have been forked for the specified organization based on the repository owner, repository name, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_fork_repositories",
       "enabled": true,
@@ -757,8 +758,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository. The name is not case sensitive.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose list of forked repositories you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose list of forked repositories you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -767,8 +768,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose list of forked repositories you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose list of forked repositories you want to retrieve from GitHub"
         },
         {
           "title": "Sort Repository By",
@@ -784,8 +785,8 @@
             "watchers"
           ],
           "value": "newest",
-          "tooltip": "The sort order. Can be either newest, oldest, or stargazers.",
-          "description": "The sort order. Can be either newest, oldest, or stargazers."
+          "tooltip": "Select the property to sort the results returned by this operation. You can choose between newest, oldest, stargazers, or watchers",
+          "description": "Select the property to sort the results returned by this operation. You can choose between newest, oldest, stargazers, or watchers"
         },
         {
           "title": "Per Page",
@@ -794,8 +795,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -804,15 +805,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "create_user_repository",
       "title": "Create User Repository",
-      "description": "Creates a new repository for the authenticated user.",
+      "description": "Creates a new repository for the authenticated user based on the repository name, base branch name, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "create_user_repository",
       "enabled": true,
@@ -937,8 +938,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the account holder of the repository that you want to create on GitHub",
+          "description": "Specify the name of the account holder of the repository that you want to create on GitHub"
         },
         {
           "title": "Repository Name",
@@ -947,8 +948,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository you want to create on GitHub",
+          "description": "Specify the name of the repository you want to create on GitHub"
         },
         {
           "title": "Base Branch Name",
@@ -957,8 +958,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the base branch name",
-          "description": "Specify the base branch name"
+          "tooltip": "Specify the name of the base branch of the user repository that you want to create on GitHub",
+          "description": "Specify the name of the base branch of the user repository that you want to create on GitHub"
         },
         {
           "title": "Description",
@@ -967,8 +968,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "A short description of the repository.",
-          "description": "A short description of the repository."
+          "tooltip": "Specify a short description of the repository you want to create on GitHub",
+          "description": "Specify a short description of the repository you want to create on GitHub"
         },
         {
           "title": "Homepage",
@@ -977,8 +978,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "A URL with more information about the repository.",
-          "description": "A URL with more information about the repository."
+          "tooltip": "Specify the homepage of the repository you want to create on GitHub. A Homepage is a URL that contains more information about the repository",
+          "description": "Specify the homepage of the repository you want to create on GitHub. A Homepage is a URL that contains more information about the repository"
         },
         {
           "title": "Private",
@@ -988,8 +989,8 @@
           "editable": true,
           "type": "checkbox",
           "value": false,
-          "tooltip": "Whether the repository is private.",
-          "description": "Whether the repository is private."
+          "tooltip": "Select this option to create a Private repository on GitHub. Clear this option to create a Public repository on GitHub",
+          "description": "Select this option to create a Private repository on GitHub. Clear this option to create a Public repository on GitHub"
         },
         {
           "title": "Has Issues",
@@ -999,8 +1000,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Whether issues are enabled.",
-          "description": "Whether issues are enabled."
+          "tooltip": "Select this option to enable issues for the repository you want to create on GitHub. Clear this option to disable issues for the repository you want to create on GitHub",
+          "description": "Select this option to enable issues for the repository you want to create on GitHub. Clear this option to disable issues for the repository you want to create on GitHub"
         },
         {
           "title": "Has Projects",
@@ -1010,8 +1011,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Whether projects are enabled.",
-          "description": "Whether projects are enabled."
+          "tooltip": "Select this option to enable projects for the repository you want to create on GitHub. Clear this option to disable projects for the repository you want to create on GitHub",
+          "description": "Select this option to enable projects for the repository you want to create on GitHub. Clear this option to disable projects for the repository you want to create on GitHub"
         },
         {
           "title": "Has Wiki",
@@ -1021,12 +1022,12 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Whether the wiki is enabled.",
-          "description": "Whether the wiki is enabled."
+          "tooltip": "Select this option to enable the wiki for the repository you want to create on GitHub; this is the default. Clear this option to disable the wiki for the repository you want to create on GitHub",
+          "description": "Select this option to enable the wiki for the repository you want to create on GitHub; this is the default. Clear this option to disable the wiki for the repository you want to create on GitHub"
         },
         {
           "title": "Other Fields",
-          "description": "(Optional) Like Search criteria (used to determine dynamic membership) field or links field json request are to be define.",
+          "description": "Specify fields in the JSON format to be used as Search criteria (used to determine dynamic membership) fields or as link fields",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1038,7 +1039,7 @@
     {
       "operation": "create_repository_using_template",
       "title": "Create Repository Using Template",
-      "description": "Creates a new repository using a repository template. The authenticated user must own or be a member of an organization that owns the repository.",
+      "description": "Creates a new repository using a repository template based on the template repository, repository name, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "create_repository_using_template",
       "enabled": true,
@@ -1162,8 +1163,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the template owner name",
-          "description": "Specify the template owner name"
+          "tooltip": "Specify the name of the template owner for the repository you want to create on GitHub",
+          "description": "Specify the name of the template owner for the repository you want to create on GitHub"
         },
         {
           "title": "Template Repository",
@@ -1172,8 +1173,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the template repository name",
-          "description": "Specify the template repository name"
+          "tooltip": "Specify the name of the template repository using which you want to create the repository on GitHub",
+          "description": "Specify the name of the template repository using which you want to create the repository on GitHub"
         },
         {
           "title": "New Repository Name",
@@ -1182,8 +1183,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the new repository.",
-          "description": "The name of the new repository."
+          "tooltip": "Specify the name of the repository you want to create on GitHub",
+          "description": "Specify the name of the repository you want to create on GitHub"
         },
         {
           "title": "New Repository Owner",
@@ -1192,8 +1193,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.",
-          "description": "The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization."
+          "tooltip": "Specify the name of the organization or person who will own the new repository",
+          "description": "Specify the name of the organization or person who will own the new repository"
         },
         {
           "title": "Description",
@@ -1202,8 +1203,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "A short description of the new repository.",
-          "description": "A short description of the new repository."
+          "tooltip": "Specify a short description of the repository you want to create on GitHub",
+          "description": "Specify a short description of the repository you want to create on GitHub"
         },
         {
           "title": "Include All Branches",
@@ -1213,8 +1214,8 @@
           "editable": true,
           "type": "checkbox",
           "value": false,
-          "tooltip": "Set to true to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: false.",
-          "description": "Set to true to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: false."
+          "tooltip": "Select this option to include the directory structure and files from all branches in the template repository and not just the default branch",
+          "description": "Select this option to include the directory structure and files from all branches in the template repository and not just the default branch"
         },
         {
           "title": "Private",
@@ -1224,15 +1225,15 @@
           "editable": true,
           "type": "checkbox",
           "value": false,
-          "tooltip": "Either true to create a new private repository or false to create a new public one. Default: false",
-          "description": "Either true to create a new private repository or false to create a new public one. Default: false"
+          "tooltip": "Select this option to create a Private repository on GitHub. Clear this option (default) to create a Public repository on GitHub",
+          "description": "Select this option to create a Private repository on GitHub. Clear this option (default) to create a Public repository on GitHub"
         }
       ]
     },
     {
       "operation": "list_user_repositories",
       "title": "List User Repositories",
-      "description": "Lists public repositories for the specified user. Note: For GitHub AE, this endpoint will list internal repositories for the specified user.",
+      "description": "Lists public repositories for the specified user based on the username, repository type, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_user_repositories",
       "enabled": true,
@@ -1357,8 +1358,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The handle for the GitHub user account.",
-          "description": "The handle for the GitHub user account."
+          "tooltip": "Specify the handle for the GitHub user account whose repositories you want to retrieve from GitHub",
+          "description": "Specify the handle for the GitHub user account whose repositories you want to retrieve from GitHub"
         },
         {
           "title": "Repository Type",
@@ -1373,8 +1374,8 @@
             "member"
           ],
           "value": "owner",
-          "tooltip": "Limit results to repositories of the specified type.",
-          "description": "Limit results to repositories of the specified type."
+          "tooltip": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, owner, or member",
+          "description": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, owner, or member"
         },
         {
           "title": "Sort Repository By",
@@ -1390,8 +1391,8 @@
             "full_name"
           ],
           "value": "full_name",
-          "tooltip": "The property to sort the results by.",
-          "description": "The property to sort the results by."
+          "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name",
+          "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name"
         },
         {
           "title": "Direction Repository By",
@@ -1405,8 +1406,8 @@
             "desc"
           ],
           "value": "desc",
-          "tooltip": "The order to sort by. Default: asc when using full_name, otherwise desc.",
-          "description": "The order to sort by. Default: asc when using full_name, otherwise desc."
+          "tooltip": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored",
+          "description": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored"
         },
         {
           "title": "Per Page",
@@ -1415,8 +1416,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -1425,15 +1426,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "update_repository",
       "title": "Update Repository",
-      "description": "Update a Personal Repository for a user",
+      "description": "Updates a personal repository of a specified user based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "update_repository",
       "enabled": true,
@@ -1558,8 +1559,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository that you want to update on GitHub",
+          "description": "Specify the account holder of the repository that you want to update on GitHub"
         },
         {
           "title": "Old Repository Name",
@@ -1568,8 +1569,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository that you want to update on GitHub",
+          "description": "Specify the name of the repository that you want to update on GitHub"
         },
         {
           "title": "New Repository Name",
@@ -1578,8 +1579,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The new name of the repository.",
-          "description": "The new name of the repository."
+          "tooltip": "Specify the new name of the repository that you want to update on GitHub",
+          "description": "Specify the new name of the repository that you want to update on GitHub"
         },
         {
           "title": "Description",
@@ -1588,8 +1589,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "A short description of the repository.",
-          "description": "A short description of the repository."
+          "tooltip": "Specify a short description of the repository you want to create on GitHub",
+          "description": "Specify a short description of the repository you want to create on GitHub"
         },
         {
           "title": "Homepage",
@@ -1598,8 +1599,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "A URL with more information about the repository.",
-          "description": "A URL with more information about the repository."
+          "tooltip": "Specify the homepage of the repository you want to create on GitHub. A Homepage is a URL that contains more information about the repository",
+          "description": "Specify the homepage of the repository you want to create on GitHub. A Homepage is a URL that contains more information about the repository"
         },
         {
           "title": "Private",
@@ -1609,8 +1610,8 @@
           "editable": true,
           "type": "checkbox",
           "value": false,
-          "tooltip": "Either true to make the repository private or false to make it public. Default: false",
-          "description": "Either true to make the repository private or false to make it public. Default: false"
+          "tooltip": "Select this option to create a Private repository on GitHub. Clear this option (default) to create a Public repository on GitHub",
+          "description": "Select this option to create a Private repository on GitHub. Clear this option (default) to create a Public repository on GitHub"
         },
         {
           "title": "Has Issues",
@@ -1620,8 +1621,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Either true to enable issues for this repository or false to disable them. Default: true",
-          "description": "Either true to enable issues for this repository or false to disable them. Default: true"
+          "tooltip": "Select this option (default) to enable issues for the repository you want to create on GitHub. Clear this option to disable issues for the repository you want to create on GitHub",
+          "description": "Select this option (default) to enable issues for the repository you want to create on GitHub. Clear this option to disable issues for the repository you want to create on GitHub"
         },
         {
           "title": "Has Projects",
@@ -1631,8 +1632,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Either true to enable projects for this repository or false to disable them.",
-          "description": "Either true to enable projects for this repository or false to disable them."
+          "tooltip": "Select this option to enable projects for the repository you want to create on GitHub. Clear this option to disable projects for the repository you want to create on GitHub",
+          "description": "Select this option to enable projects for the repository you want to create on GitHub. Clear this option to disable projects for the repository you want to create on GitHub"
         },
         {
           "title": "Has Wiki",
@@ -1642,12 +1643,12 @@
           "editable": true,
           "type": "checkbox",
           "value": false,
-          "tooltip": "Whether the wiki is enabled.",
-          "description": "Whether the wiki is enabled."
+          "tooltip": "Select this option to enable the wiki for the repository you want to create on GitHub; this is the default. Clear this option to disable the wiki for the repository you want to create on GitHub",
+          "description": "Select this option to enable the wiki for the repository you want to create on GitHub; this is the default. Clear this option to disable the wiki for the repository you want to create on GitHub"
         },
         {
           "title": "Other Fields",
-          "description": "(Optional) Like Search criteria (used to determine dynamic membership) field or links field json request are to be define.",
+          "description": "(Optional) Specify fields in the JSON format to be used as Search criteria (used to determine dynamic membership) fields or as link fields",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1659,7 +1660,7 @@
     {
       "operation": "add_repository_collaborator",
       "title": "Add Repository Collaborator",
-      "description": "Update a Personal Repository for a user",
+      "description": "Updates a personal repository of a specified user to add a collaborator for the repository based on the repository name, collaborator username, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "update_repository",
       "enabled": true,
@@ -1788,8 +1789,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository on GitHub in which you want to add the specified collaborator",
+          "description": "Specify the account holder of the repository on GitHub in which you want to add the specified collaborator"
         },
         {
           "title": "Repository Name",
@@ -1798,8 +1799,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository on GitHub in which you want to add the specified collaborator",
+          "description": "Specify the name of the repository on GitHub in which you want to add the specified collaborator"
         },
         {
           "title": "Collaborator Username",
@@ -1808,8 +1809,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The handle for the GitHub user account.",
-          "description": "The handle for the GitHub user account."
+          "tooltip": "Specify the handle for the GitHub user account that you want to add as a collaborator for the specified repository on GitHub",
+          "description": "Specify the handle for the GitHub user account that you want to add as a collaborator for the specified repository on GitHub"
         },
         {
           "title": "Permission",
@@ -1826,15 +1827,15 @@
             "triage"
           ],
           "value": "push",
-          "tooltip": "The permission to grant the collaborator. Only valid on organization-owned repositories. In addition to the enumerated values, you can also specify a custom repository role name, if the owning organization has defined any.",
-          "description": "The permission to grant the collaborator. Only valid on organization-owned repositories. In addition to the enumerated values, you can also specify a custom repository role name, if the owning organization has defined any."
+          "tooltip": "Select the permission that you want to grant to the specified collaborator. Permissions are valid only on organization-owned repositories. You can choose between pull, push, admin, maintain, or triage",
+          "description": "Select the permission that you want to grant to the specified collaborator. Permissions are valid only on organization-owned repositories. You can choose between pull, push, admin, maintain, or triage"
         }
       ]
     },
     {
       "operation": "delete_repository",
       "title": "Delete Repository",
-      "description": "Delete the specified repository. Deleting a repository requires admin access.",
+      "description": "Delete the specified repository from GitHub based on the repository name and repository owner you have specified",
       "category": "investigation",
       "annotation": "delete_repository",
       "enabled": true,
@@ -1847,8 +1848,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository that you want to delete from GitHub",
+          "description": "Specify the account holder of the repository that you want to delete from GitHub"
         },
         {
           "title": "Repository Name",
@@ -1857,15 +1858,15 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository that you want to delete from GitHub",
+          "description": "Specify the name of the repository that you want to delete from GitHub"
         }
       ]
     },
     {
       "operation": "get_branch_revision",
       "title": "Get Branch Revision",
-      "description": "Retrieve the specified branch revision details.",
+      "description": "Retrieves branch revision details of the specified branch in GitHub based on the base branch, repository name, and repository owner you have specified",
       "category": "investigation",
       "annotation": "get_branch_revision",
       "enabled": true,
@@ -1887,8 +1888,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose branch revision details you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose branch revision details you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -1897,8 +1898,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose branch revision details you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose branch revision details you want to retrieve from GitHub"
         },
         {
           "title": "Base Branch",
@@ -1907,15 +1908,15 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the branch who's branch revision you want. This should be an existing branch on the current repository. ",
-          "description": "The name of the branch who's branch revision you want. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository."
+          "tooltip": "Specify the name of the branch whose branch revision details you want to retrieve from GitHub",
+          "description": "Specify the name of the branch whose branch revision details you want to retrieve from GitHub"
         }
       ]
     },
     {
       "operation": "create_branch",
       "title": "Create Branch",
-      "description": "Create new branch",
+      "description": "Creates a new branch in GitHub based on the repository name, base branch type, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "create_branch",
       "enabled": true,
@@ -1937,8 +1938,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the account holder of the repository for which you want to create a branch on GitHub",
+          "description": "Specify the name of the account holder of the repository for which you want to create a branch on GitHub"
         },
         {
           "title": "Repository Name",
@@ -1947,8 +1948,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository for which you want to create a branch on GitHub",
+          "description": "Specify the name of the repository for which you want to create a branch on GitHub"
         },
         {
           "title": "New Branch Name",
@@ -1957,8 +1958,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the name of the branch to be created",
-          "description": "Specify the new branch name which you want to create."
+          "tooltip": "Specify the name of the branch you want to create on GitHub",
+          "description": "Specify the name of the branch you want to create on GitHub"
         },
         {
           "title": "Base Branch Name/SHA",
@@ -1980,8 +1981,8 @@
                 "required": true,
                 "editable": true,
                 "type": "text",
-                "tooltip": "Specify the name of a base branch.",
-                "description": "Specify the name of a base branch."
+                "tooltip": "Specify the name of a base branch",
+                "description": "Specify the name of a base branch"
               }
             ],
             "Branch SHA": [
@@ -1992,19 +1993,19 @@
                 "required": true,
                 "editable": true,
                 "type": "text",
-                "tooltip": "Specify the SHA of a base branch. Get the SHA by executing \"Get Branch Revision\" action",
-                "description": "Specify the SHA of a base branch. Get the SHA of base branch by executing \"Get Branch Revision\" action"
+                "tooltip": "Specify the SHA of a base branch. You can get the SHA of a base branch using the \"Get Branch Revision\" operation",
+                "description": "Specify the SHA of a base branch. You can get the SHA of a base branch using the \"Get Branch Revision\" operation"
               }
             ]
           },
-          "tooltip": "Select the SHA/Name of base branch",
-          "description": "Select the SHA/Name of the base branch."
+          "tooltip": "Select the method using which you want to choose the base branch of the branch you want to create on GitHub. You can choose either Branch Name or Branch SHA",
+          "description": "Select the method using which you want to choose the base branch of the branch you want to create on GitHub. You can choose either Branch Name or Branch SHA"
         }
       ]
     },
     {
       "operation": "merge_branch",
-      "title": "Merge Branch specified branch to the base branch",
+      "title": "Merges a specified branch to the base branch in GitHub based on the repository name, base branch name, repository owner, and other input parameters you have specified",
       "description": "Merge Branch",
       "category": "investigation",
       "annotation": "merge_branch",
@@ -2112,8 +2113,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository that you want to merge with the base branch in GitHub",
+          "description": "Specify the account holder of the repository that you want to merge with the base branch in GitHub"
         },
         {
           "title": "Repository Name",
@@ -2122,8 +2123,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository that you want to merge with the base branch in GitHub",
+          "description": "Specify the name of the repository that you want to merge with the base branch in GitHub"
         },
         {
           "title": "Base Branch Name",
@@ -2132,8 +2133,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the base branch that the head will be merged into.",
-          "description": "The name of the base branch that the head will be merged into."
+          "tooltip": "Specify the name of the base branch to which you want to merge the specified head in GitHub",
+          "description": "Specify the name of the base branch to which you want to merge the specified head in GitHub"
         },
         {
           "title": "Head",
@@ -2142,8 +2143,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The head to merge. This can be a branch name or a commit SHA1.",
-          "description": "The head to merge. This can be a branch name or a commit SHA1."
+          "tooltip": "Specify the head that you want to merge to the base branch in GitHub. This can be a branch name or a commit SHA1",
+          "description": "Specify the head that you want to merge to the base branch in GitHub. This can be a branch name or a commit SHA1"
         },
         {
           "title": "Commit Message",
@@ -2152,15 +2153,15 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Commit message to use for the merge commit. If omitted, a default message will be used.",
-          "description": "Commit message to use for the merge commit. If omitted, a default message will be used."
+          "tooltip": "Specify the commit message to be used for the merge commit action. If you do not specify any commit message, a default commit message is used",
+          "description": "Specify the commit message to be used for the merge commit action. If you do not specify any commit message, a default commit message is used"
         }
       ]
     },
     {
       "operation": "list_branches",
       "title": "List Branches",
-      "description": "List Branches of specified repository ",
+      "description": "Lists branches of the specified repository based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_branches",
       "enabled": true,
@@ -2191,8 +2192,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose list of branches you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose list of branches you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -2201,8 +2202,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose list of branches you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose list of branches you want to retrieve from GitHub"
         },
         {
           "title": "Protected",
@@ -2212,8 +2213,8 @@
           "editable": true,
           "type": "checkbox",
           "value": false,
-          "tooltip": "Setting to true returns only protected branches. When set to false, only unprotected branches are returned. Omitting this parameter returns all branches.",
-          "description": "Setting to true returns only protected branches. When set to false, only unprotected branches are returned. Omitting this parameter returns all branches."
+          "tooltip": "Select this option to return only protected branches from GitHub. Clear this option to return only unprotected branches from GitHub. Omitting this parameter, i.e., set it to null to return all branches from GitHub",
+          "description": "Select this option to return only protected branches from GitHub. Clear this option to return only unprotected branches from GitHub. Omitting this parameter, i.e., set it to null to return all branches from GitHub"
         },
         {
           "title": "Per Page",
@@ -2222,8 +2223,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -2232,15 +2233,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "fetch_upstream",
       "title": "Fetch Upstream",
-      "description": "Sync a branch of a forked repository to keep it up-to-date with the upstream repository.",
+      "description": "Synchronizes a branch of a forked repository to keep it up-to-date with the upstream repository based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "fetch_upstream",
       "enabled": true,
@@ -2257,8 +2258,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository. The name is not case sensitive.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository to which you want to synchronize the specified branch",
+          "description": "Specify the account holder of the repository to which you want to synchronize the specified branch"
         },
         {
           "title": "Repository Name",
@@ -2267,8 +2268,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository to which you want to synchronize the specified branch",
+          "description": "Specify the name of the repository to which you want to synchronize the specified branch"
         },
         {
           "title": "Branch Name",
@@ -2277,15 +2278,15 @@
           "required": true,
           "editable": true,
           "type": "Text",
-          "tooltip": "The name of the branch which should be updated to match upstream.",
-          "description": "The name of the branch which should be updated to match upstream."
+          "tooltip": "Specify the name of the branch that should be updated to match the specified upstream repository",
+          "description": "Specify the name of the branch that should be updated to match the specified upstream repository"
         }
       ]
     },
     {
       "operation": "clone_repository",
       "title": "Clone Repository",
-      "description": "Clone the specified Repository. You can clone the repository in zip format",
+      "description": "Clones the specified repository in GitHub based on the repository name you have specified. You can choose to clone the repository in the 'zip' format",
       "category": "investigation",
       "annotation": "clone_repository",
       "enabled": true,
@@ -2300,8 +2301,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository that you want to clone on GitHub",
+          "description": "Specify the name of the repository that you want to clone on GitHub"
         },
         {
           "title": "Clone As ZIP",
@@ -2311,15 +2312,15 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Whether clone the repository as zip file.",
-          "description": "Whether clone the repository as zip file."
+          "tooltip": "Select this option to clone the specified repository as a zip file",
+          "description": "Select this option to clone the specified repository as a zip file"
         }
       ]
     },
     {
       "operation": "update_clone_repository",
       "title": "Apply Changes to Local Repository",
-      "description": "Apply the changes to local repository which we have cloned",
+      "description": "Applies changes made in a FortiSOAR file to the specified local repository that is cloned in GitHub based on the file IRI and cloned repository path you have specified",
       "category": "investigation",
       "annotation": "update_clone_repository",
       "enabled": true,
@@ -2333,8 +2334,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the FortiSOAR file IRI whos changes you want to replace in the local repository",
-          "description": "Specify the FortiSOAR file IRI whos changes you want to replace in the local repository"
+          "tooltip": "Specify the FortiSOAR file IRI whose changes you want to replace in the specified local repository",
+          "description": "Specify the FortiSOAR file IRI whose changes you want to replace in the specified local repository"
         },
         {
           "title": "Cloned Repository Path",
@@ -2343,15 +2344,15 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the path of FortiSOAR where the specified repository is cloned",
-          "description": "Specify the path of FortiSOAR where the specified repository is cloned"
+          "tooltip": "Specify the path of the cloned repository to which you want to apply the changes of the specified FortiSOAR file",
+          "description": "Specify the path of the cloned repository to which you want to apply the changes of the specified FortiSOAR file"
         }
       ]
     },
     {
       "operation": "push_repository",
-      "title": "Push Repository",
-      "description": "Commit the local repository changes to the specified repository",
+      "title": "Push Changes",
+      "description": "Commits the local repository changes to the specified repository in GitHub based on the repository name, cloned repository path, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "push_repository",
       "enabled": true,
@@ -2368,8 +2369,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository. The name is not case sensitive.",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose changes you want to push on GitHub",
+          "description": "Specify the name of the repository whose changes you want to push on GitHub"
         },
         {
           "title": "Cloned Repository Path",
@@ -2378,8 +2379,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the path of FortiSOAR where the specified repository is cloned",
-          "description": "Specify the path of FortiSOAR where the specified repository is cloned"
+          "tooltip": "Specify the path of the cloned repository whose changes you want to push on GitHub",
+          "description": "Specify the path of the cloned repository whose changes you want to push on GitHub"
         },
         {
           "title": "Commit Message",
@@ -2388,8 +2389,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the Commit message.",
-          "description": "Specify the Commit message."
+          "tooltip": "Specify the commit message to be used for pushing changes to GitHub. If you do not specify any commit message, a default commit message is used",
+          "description": "Specify the commit message to be used for pushing changes to GitHub. If you do not specify any commit message, a default commit message is used"
         },
         {
           "title": "Branch Name",
@@ -2398,15 +2399,15 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the branch name where you want to push the code.",
-          "description": "Specify the branch name where you want to push the code."
+          "tooltip": "Specify the name of the branch name to which you want to push the code of the local repository",
+          "description": "Specify the name of the branch name to which you want to push the code of the local repository"
         }
       ]
     },
     {
       "operation": "create_pull_request",
       "title": "Create Pull Request",
-      "description": "Create the pull request for the specified repository.",
+      "description": "Creates a pull request for the specified repository on GitHub based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "create_pull_request",
       "enabled": true,
@@ -2768,8 +2769,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository on which you want to create a pull request on GitHub",
+          "description": "Specify the account holder of the repository on which you want to create a pull request on GitHub"
         },
         {
           "title": "Repository Name",
@@ -2778,8 +2779,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository on which you want to create a pull request on GitHub",
+          "description": "Specify the name of the repository on which you want to create a pull request on GitHub"
         },
         {
           "title": "Head Repository",
@@ -2788,8 +2789,9 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the branch where your changes are implemented. e.g: username:branch.",
-          "description": "The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace head with a user like this: username:branch."
+          "placeholder": "username:branch",
+          "tooltip": "Specify the name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace head with a user like this: username:branch",
+          "description": "Specify the name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace head with a user like this: username:branch"
         },
         {
           "title": "Base Branch",
@@ -2798,8 +2800,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. ",
-          "description": "The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository."
+          "tooltip": "Specify the name of the branch to which you want to pull the changes. \nThe branch to which you want to pull the changes should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository",
+          "description": "Specify the name of the branch to which you want to pull the changes. \nThe branch to which you want to pull the changes should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository"
         },
         {
           "title": "Pull Request Title",
@@ -2808,8 +2810,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "The title of the new pull request.",
-          "description": "The title of the new pull request."
+          "tooltip": "Specify the title of the new pull request that you want to create on GitHub",
+          "description": "Specify the title of the new pull request that you want to create on GitHub"
         },
         {
           "title": "Pull Request Comments",
@@ -2818,8 +2820,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "The contents of the pull request.",
-          "description": "The contents of the pull request."
+          "tooltip": "Specify the contents of the new pull request that you want to create on GitHub",
+          "description": "Specify the contents of the new pull request that you want to create on GitHub"
         },
         {
           "title": "Allow Edits By Maintainers",
@@ -2829,8 +2831,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Indicates whether maintainers can modify the pull request.",
-          "description": "Indicates whether maintainers can modify the pull request."
+          "tooltip": "Select this option to allow maintainers to modify the pull request",
+          "description": "Select this option to allow maintainers to modify the pull request"
         },
         {
           "title": "Draft",
@@ -2840,15 +2842,15 @@
           "editable": true,
           "type": "checkbox",
           "value": false,
-          "tooltip": "Indicates whether the pull request is a draft.",
-          "description": "Indicates whether the pull request is a draft."
+          "tooltip": "Select this option to create the pull request as a 'Draft'",
+          "description": "Select this option to create the pull request as a 'Draft'"
         }
       ]
     },
     {
       "operation": "list_pull_request",
       "title": "List Pull Request",
-      "description": "List the pull request for the specified repository.",
+      "description": "Lists pull requests for the specified repository on GitHub based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_pull_request",
       "enabled": true,
@@ -3221,8 +3223,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose list of pull requests you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose list of pull requests you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -3231,8 +3233,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose list of pull requests you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose list of pull requests you want to retrieve from GitHub"
         },
         {
           "title": "State",
@@ -3247,8 +3249,8 @@
             "all"
           ],
           "value": "open",
-          "tooltip": "Either open, closed, or all to filter by state.",
-          "description": "Either open, closed, or all to filter by state."
+          "tooltip": "Select the state of the pull requests whose details you want to retrieve from GitHub. The state parameter filters the results returned by this operation to only pull requests that match the selected state. You can choose between open, closed, or all",
+          "description": "Select the state of the pull requests whose details you want to retrieve from GitHub. The state parameter filters the results returned by this operation to only pull requests that match the selected state. You can choose between open, closed, or all"
         },
         {
           "title": "Head Repository",
@@ -3257,8 +3259,9 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Filter pulls by head user or head organization and branch name in the format of user:ref-name or organization:ref-name. For example: github:new-script-format or octocat:test-branch.",
-          "description": "Filter pulls by head user or head organization and branch name in the format of user:ref-name or organization:ref-name. For example: github:new-script-format or octocat:test-branch."
+          "placeholder": "user:ref-name or organization:ref-name",
+          "tooltip": "Specify the head user or head organization and branch name in the format of user:ref-name or organization:ref-name to filter the results returned by this operation to only pull requests that match the specified head repository",
+          "description": "Specify the head user or head organization and branch name in the format of user:ref-name or organization:ref-name to filter the results returned by this operation to only pull requests that match the specified head repository"
         },
         {
           "title": "Base Branch",
@@ -3267,8 +3270,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Filter pulls by base branch name. Example: gh-pages.",
-          "description": "Filter pulls by base branch name. Example: gh-pages."
+          "tooltip": "Specify the name of the base branch name to filter the results returned by this operation to only pull requests that match the specified base branch name",
+          "description": "Specify the name of the base branch name to filter the results returned by this operation to only pull requests that match the specified base branch name"
         },
         {
           "title": "Sort",
@@ -3284,8 +3287,8 @@
             "long-running"
           ],
           "value": "created",
-          "tooltip": "Can be either created, updated, popularity (comment count) or long-running (age, filtering by pulls updated in the last month).",
-          "description": "Can be either created, updated, popularity (comment count) or long-running (age, filtering by pulls updated in the last month)."
+          "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, popularity (comment count), or long-running (age, filtering by pulls updated in the last month)",
+          "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, popularity (comment count), or long-running (age, filtering by pulls updated in the last month)"
         },
         {
           "title": "Direction",
@@ -3299,8 +3302,8 @@
             "desc"
           ],
           "value": "desc",
-          "tooltip": "Can be either asc or desc. Default: desc when sort is created or sort is not specified, otherwise asc.",
-          "description": "Can be either asc or desc. Default: desc when sort is created or sort is not specified, otherwise asc."
+          "tooltip": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored",
+          "description": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored"
         },
         {
           "title": "Per Page",
@@ -3309,8 +3312,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -3319,15 +3322,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "list_review_comments",
       "title": "List Review Comments on a Pull Request",
-      "description": "List the Review comments on specified pull request.",
+      "description": "Lists the review comments associated with the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_review_comments",
       "enabled": true,
@@ -3397,8 +3400,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose list of comments on the specified pull request you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose list of comments on the specified pull request you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -3407,8 +3410,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose list of comments on the specified pull request you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose list of comments on the specified pull request you want to retrieve from GitHub"
         },
         {
           "title": "Pull Number",
@@ -3417,8 +3420,8 @@
           "required": true,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number that identifies the pull request.",
-          "description": "The number that identifies the pull request."
+          "tooltip": "Specify the number that identifies the pull request whose associated comments you want to retrieve from GitHub",
+          "description": "Specify the number that identifies the pull request whose associated comments you want to retrieve from GitHub"
         },
         {
           "title": "Sort",
@@ -3432,8 +3435,8 @@
             "updated"
           ],
           "value": "created",
-          "description": "The property to sort the results by, created means when the repository was starred. updated means when the repository was last pushed to. Default: created",
-          "tooltip": "The property to sort the results by."
+          "description": "Select the property to sort the results returned by this operation. You can choose between created (default) or updated. Created refers to when the repository was marked with a star and Updated means when changes were last pushed to the repository",
+          "tooltip": "Select the property to sort the results returned by this operation. You can choose between created (default) or updated. Created refers to when the repository was marked with a star and Updated means when changes were last pushed to the repository"
         },
         {
           "title": "Direction",
@@ -3446,15 +3449,15 @@
             "asc",
             "desc"
           ],
-          "tooltip": "The order to sort by. Ignored without sort parameter.",
-          "description": "The order to sort by. Ignored without sort parameter."
+          "tooltip": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored",
+          "description": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored"
         }
       ]
     },
     {
       "operation": "add_reviewers",
       "title": "Add Reviewers for a Pull Request",
-      "description": "Pull request authors and repository owners and collaborators can request a pull request review from anyone with write access to the repository. Each requested reviewer will receive a notification asking them to review the pull request.",
+      "description": "Adds reviews for the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified. \nPull request authors, repository owners, and collaborators can request a pull request review from anyone with write access to the repository. Each requested reviewer will receive a notification asking them to review the pull request",
       "category": "investigation",
       "annotation": "add_reviewers",
       "enabled": true,
@@ -3976,8 +3979,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository in which you want to add reviewers for the specified pull request in GitHub",
+          "description": "Specify the account holder of the repository in which you want to add reviewers for the specified pull request in GitHub"
         },
         {
           "title": "Repository Name",
@@ -3986,8 +3989,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository in which you want to add reviewers for the specified pull request in GitHub",
+          "description": "Specify the name of the repository in which you want to add reviewers for the specified pull request in GitHub"
         },
         {
           "title": "Pull Number",
@@ -3996,8 +3999,8 @@
           "required": true,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number that identifies the pull request.",
-          "description": "The number that identifies the pull request.\n\n"
+          "tooltip": "Specify the number that identifies the pull request to which you want to add reviewers",
+          "description": "Specify the number that identifies the pull request to which you want to add reviewers"
         },
         {
           "title": "Reviewers",
@@ -4007,26 +4010,26 @@
           "editable": true,
           "type": "text",
           "placeholder": "octocat,hubot",
-          "tooltip": "Comma separated user names that will be requested.",
-          "description": "Comma separated user names that will be requested."
+          "tooltip": "Specify the comma-separated list of user names that you want to add as reviewers of the specified repository",
+          "description": "Specify the comma-separated list of user names that you want to add as reviewers of the specified repository"
         },
         {
-          "title": "team Reviewers",
+          "title": "Team Reviewers",
           "name": "team_reviewers",
           "visible": true,
           "required": false,
           "editable": true,
           "type": "text",
           "placeholder": "justice-league,fortinet-fortisaor",
-          "tooltip": "Comma separated team names that will be requested.",
-          "description": "Comma separated team names that will be requested."
+          "tooltip": "Specify the comma-separated list of team names that you want to add as reviewers of the specified repository",
+          "description": "Specify the comma-separated list of team names that you want to add as reviewers of the specified repository"
         }
       ]
     },
     {
       "operation": "merge_pull_request",
       "title": "Merge Pull Request",
-      "description": "Merge the specified pull request",
+      "description": "Merges the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "merge_pull_request",
       "enabled": true,
@@ -4043,8 +4046,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository in which you merge the specified pull request in GitHub",
+          "description": "Specify the account holder of the repository in which you merge the specified pull request in GitHub"
         },
         {
           "title": "Repository Name",
@@ -4053,8 +4056,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository in which you merge the specified pull request in GitHub",
+          "description": "Specify the name of the repository in which you merge the specified pull request in GitHub"
         },
         {
           "title": "Pull Number",
@@ -4063,8 +4066,8 @@
           "required": true,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number that identifies the pull request.",
-          "description": "The number that identifies the pull request.\n\n"
+          "tooltip": "Specify the number that identifies the pull request that you want to merge with the specified repository in GitHub",
+          "description": "Specify the number that identifies the pull request that you want to merge with the specified repository in GitHub"
         },
         {
           "title": "Commit Title",
@@ -4073,8 +4076,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Title for the automatic commit message.",
-          "description": "Title for the automatic commit message."
+          "tooltip": "Specify the title of the automatic commit message to be used for the merge commit action. If you do not specify any commit message, a default commit message is used",
+          "description": "Specify the title of the automatic commit message to be used for the merge commit action. If you do not specify any commit message, a default commit message is used"
         },
         {
           "title": "Commit Message",
@@ -4083,8 +4086,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Extra detail to append to automatic commit message.",
-          "description": "Extra detail to append to automatic commit message."
+          "tooltip": "Specify the contents of the automatic commit message to be used for the merge commit action",
+          "description": "Specify the contents of the automatic commit message to be used for the merge commit action"
         },
         {
           "title": "SHA",
@@ -4093,11 +4096,11 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "SHA that pull request head must match to allow merge.",
-          "description": "SHA that pull request head must match to allow merge."
+          "tooltip": "Value of the SHA that the pull request head must match to allow merging with the specified repository",
+          "description": "Value of the SHA that the pull request head must match to allow merging with the specified repository"
         },
         {
-          "title": "Merge Mmethod",
+          "title": "Merge Method",
           "name": "merge_method",
           "visible": true,
           "required": false,
@@ -4109,15 +4112,15 @@
             "rebase"
           ],
           "value": "merge",
-          "tooltip": "SHA that pull request head must match to allow merge.",
-          "description": "SHA that pull request head must match to allow merge."
+          "tooltip": "Select the method for merging the specified pull request with the specified repository. You can choose from merge, squash, or rebase",
+          "description": "Select the method for merging the specified pull request with the specified repository. You can choose from merge, squash, or rebase"
         }
       ]
     },
     {
       "operation": "list_releases",
       "title": "List Releases",
-      "description": "This returns a list of releases, which does not include regular Git tags that have not been associated with a release. Information about published releases are available to everyone. Only users with push access will receive listings for draft releases.",
+      "description": "Returns a list of releases, which does not include regular Git tags that have not been associated with a release. Information about published releases is available to everyone. Only users with push access will receive listings for draft releases. The list of releases is retrieved from GitHub based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_releases",
       "enabled": true,
@@ -4205,8 +4208,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose draft releases list you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose draft releases list you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4215,8 +4218,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose draft releases list you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose draft releases list you want to retrieve from GitHub"
         },
         {
           "title": "Per Page",
@@ -4225,8 +4228,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -4235,15 +4238,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "create_release",
       "title": "Create Release",
-      "description": "Users with push access to the repository can create a release.",
+      "description": "Creates a release for the specified repository on GitHub based on the repository name, repository owner, target branch, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "create_release",
       "enabled": true,
@@ -4289,7 +4292,7 @@
           {
             "url": "",
             "browser_download_url": "",
-            "id": 1,
+            "id": "",
             "node_id": "",
             "name": "",
             "label": "",
@@ -4330,8 +4333,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository for which you want to create a release on GitHub",
+          "description": "Specify the account holder of the repository for which you want to create a release on GitHub"
         },
         {
           "title": "Repository Name",
@@ -4340,8 +4343,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository for which you want to create a release on GitHub",
+          "description": "Specify the name of the repository for which you want to create a release on GitHub"
         },
         {
           "title": "Tag Name",
@@ -4350,8 +4353,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the tag.",
-          "description": "The name of the tag."
+          "tooltip": "Specify the name of the tag to be associated with the release you want to create on GitHub",
+          "description": "Specify the name of the tag to be associated with the release you want to create on GitHub"
         },
         {
           "title": "Target Branch",
@@ -4360,8 +4363,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Specifies the commitish value that determines where the Git tag is created from. Default: the repository's default branch (usually master).",
-          "description": "Specifies the commitish value that determines where the Git tag is created from. Default: the repository's default branch (usually master)."
+          "tooltip": "Specifies the Commit hash value that determines from where the Git tag is created. By default, this is set to the default branch of the repository (usually master)",
+          "description": "Specifies the Commit hash value that determines from where the Git tag is created. By default, this is set to the default branch of the repository (usually master)"
         },
         {
           "title": "Release Title",
@@ -4370,8 +4373,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the release.",
-          "description": "The name of the release."
+          "tooltip": "Specify the name of the release you want to create on the specified repository on GitHub",
+          "description": "Specify the name of the release you want to create on the specified repository on GitHub"
         },
         {
           "title": "Release Description",
@@ -4380,8 +4383,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Text describing the contents of the tag.",
-          "description": "Text describing the contents of the tag."
+          "tooltip": "Specify the contents of the tag associated with the release you want to create on the specified repository on GitHub",
+          "description": "Specify the contents of the tag associated with the release you want to create on the specified repository on GitHub"
         },
         {
           "title": "Generate Release Notes",
@@ -4391,15 +4394,15 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Whether to automatically generate the \"Release Title\" and \"Release Description\" for this release. If \"Release Title\" is specified, the specified \"Release Title\" will be used; otherwise, a name will be automatically generated. If \"Release Description\" is specified, the \"Release Description\" will be pre-pended to the automatically generated notes.",
-          "description": "Whether to automatically generate the \"Release Title\" and \"Release Description\" for this release. If \"Release Title\" is specified, the specified \"Release Title\" will be used; otherwise, a name will be automatically generated. If \"Release Description\" is specified, the \"Release Description\" will be pre-pended to the automatically generated notes."
+          "tooltip": "Select this option to automatically generate the \"Release Title\" and \"Release Description\" for this release",
+          "description": "Select this option to automatically generate the \"Release Title\" and \"Release Description\" for this release. \nIf the \"Release Title\" is specified, then the specified \"Release Title\" will be used; otherwise, a name will be automatically generated. If the \"Release Description\" is specified, the \"Release Description\" will be pre-pended to the automatically generated notes"
         }
       ]
     },
     {
       "operation": "list_stargazers",
       "title": "List Stargazers",
-      "description": "Lists the people that have starred the repository.",
+      "description": "Lists the people that have marked the specified repository in GitHub with a star based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_stargazers",
       "enabled": true,
@@ -4433,8 +4436,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose associated list of stargazers you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose associated list of stargazers you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4443,8 +4446,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose associated list of stargazers you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose associated list of stargazers you want to retrieve from GitHub"
         },
         {
           "title": "Per Page",
@@ -4453,8 +4456,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -4463,15 +4466,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "star_repository",
       "title": "Star Repository",
-      "description": "Star a repository for the authenticated user",
+      "description": "Stars the specified repository for the authenticated user in GitHub based on the repository name and repository owner you have specified",
       "category": "investigation",
       "annotation": "star_repository",
       "enabled": true,
@@ -4484,8 +4487,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository that you want to star on GitHub",
+          "description": "Specify the account holder of the repository that you want to star on GitHub"
         },
         {
           "title": "Repository Name",
@@ -4494,15 +4497,15 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository that you want to star on GitHub",
+          "description": "Specify the name of the repository that you want to star on GitHub"
         }
       ]
     },
     {
       "operation": "list_watchers",
       "title": "List Watchers",
-      "description": "Lists the people watching the specified repository.",
+      "description": "Lists the people that are watching the specified repository in GitHub based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_watchers",
       "enabled": true,
@@ -4536,8 +4539,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository whose associated list of watchers you want to retrieve from GitHub",
+          "description": "Specify the account holder of the repository whose associated list of watchers you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4546,8 +4549,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository whose associated list of watchers you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose associated list of watchers you want to retrieve from GitHub"
         },
         {
           "title": "Per Page",
@@ -4556,8 +4559,8 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "The number of results per page (max 100). Default: 30",
-          "description": "The number of results per page (max 100). Default: 30"
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
         },
         {
           "title": "Page",
@@ -4566,15 +4569,15 @@
           "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Page number of the results to fetch. Default: 1",
-          "description": "Page number of the results to fetch. Default: 1"
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },
     {
       "operation": "set_repo_subscription",
       "title": "Set Repository Subscription",
-      "description": "If you would like to watch a repository, set subscribed to true. If you would like to ignore notifications made within a repository, set ignored to true. If you would like to stop watching a repository, delete the repository's subscription completely.",
+      "description": "Sets the subscription to the specified repository in GitHub based on the repository name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "set_repo_subscription",
       "enabled": true,
@@ -4594,8 +4597,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The account owner of the repository.",
-          "description": "The account owner of the repository. The name is not case sensitive."
+          "tooltip": "Specify the account holder of the repository to which you want to set subscriptions",
+          "description": "Specify the account holder of the repository to which you want to set subscriptions"
         },
         {
           "title": "Repository Name",
@@ -4604,8 +4607,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "The name of the repository",
-          "description": "The name of the repository. The name is not case sensitive."
+          "tooltip": "Specify the name of the repository to which you want to set subscriptions",
+          "description": "Specify the name of the repository to which you want to set subscriptions"
         },
         {
           "title": "Subscribed",
@@ -4615,8 +4618,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Determines if notifications should be received from this repository.",
-          "description": "Determines if notifications should be received from this repository."
+          "tooltip": "Select this option to receive notifications from the specified repository",
+          "description": "Select this option to receive notifications from the specified repository"
         },
         {
           "title": "Ignored",
@@ -4626,8 +4629,8 @@
           "editable": true,
           "type": "checkbox",
           "value": true,
-          "tooltip": "Determines if all notifications should be blocked from this repository.",
-          "description": "Determines if all notifications should be blocked from this repository."
+          "tooltip": "Select this option to block notifications from the specified repository",
+          "description": "Select this option to block notifications from the specified repository"
         }
       ]
     }
