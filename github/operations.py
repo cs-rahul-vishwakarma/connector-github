@@ -1,3 +1,5 @@
+import zipfile
+
 import requests
 import base64
 import json
@@ -216,9 +218,13 @@ def clone_repository(config, params):
                     im = Image.open(BytesIO(base64.b64decode(data)))
                     im.save('/tmp/{0}/{1}'.format(params.get('name'), file_content.path), 'PNG')
         if params.get('clone_zip') is True:
-            shutil.make_archive('/tmp/{0}'.format(params.get('name')), 'zip', '/tmp/{0}'.format(params.get('name')))
-            shutil.rmtree('/tmp/{0}/'.format(params.get('name')))
-            return {"path": "/tmp/{0}.zip".format(params.get('name'))}
+            root_path = '/tmp/{0}'.format(params.get('name'))
+            dst_path = '/tmp/cicd/{0}'.format(params.get('name'))
+            dest_folder = '/tmp/cicd'
+            shutil.move(root_path, dst_path)
+            shutil.make_archive(dst_path, "zip", dest_folder)
+            shutil.rmtree('/tmp/cicd/{0}/'.format(params.get('name')))
+            return {"path": "/tmp/cicd/{0}.zip".format(params.get('name'))}
         else:
             return {"path": "/tmp/{0}".format(params.get('name'))}
     except Exception as err:
