@@ -2256,8 +2256,8 @@
     },
     {
       "operation": "merge_branch",
-      "title": "Merges a specified branch to the base branch in GitHub based on the repository name, base branch name, repository owner, and other input parameters you have specified",
-      "description": "Merge Branch",
+      "title": "Merge Branch",
+      "description": "Merges a specified branch to the base branch in GitHub based on the repository name, base branch name, repository owner, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "merge_branch",
       "enabled": true,
