@@ -96,7 +96,7 @@ def create_readme_file(config, params):
     github = GitHub(config)
     payload = {'message': 'Test message', 'content': 'IA==', 'branch': params.get('branch')}
     return github.make_request(method='PUT', data=json.dumps(payload),
-                               endpoint='repos/{0}/{1}/contents/README.md'.format(params.get('username'),
+                               endpoint='repos/{0}/{1}/contents/README.md'.format(params.get('owner'),
                                                                                   params.get('name')))
 
 
@@ -118,6 +118,12 @@ def create_repository_using_template(config, params):
     return github.make_request(
         endpoint='repos/{0}/{1}/generate'.format(params.get('template_owner'), params.get('template_repo')),
         method='POST', data=json.dumps(payload))
+
+
+def list_authenticated_user_repositories(config, params):
+    github = GitHub(config)
+    query_params = {k: v for k, v in params.items() if v is not None and v != '' and v != {} and v != []}
+    return github.make_request(params=query_params, endpoint='users/repos')
 
 
 def list_user_repositories(config, params):
@@ -205,7 +211,7 @@ def clone_repository(config, params):
             if file_content.type == "dir":
                 contents.extend(repo.get_contents(file_content.path))
             elif 'DS_Store' not in file_content.path:
-                completeName = os.path.join('/tmp/{0}/'.format(params.get('name')), file_content.path)
+                completeName = os.path.join('/tmp/{0}/{1}'.format(params.get('name'), file_content.path))
                 wkspFldr = os.path.dirname(completeName)
                 if not os.path.exists(wkspFldr):
                     os.makedirs(wkspFldr)
@@ -423,6 +429,7 @@ operations = {
     'list_organization_repositories': list_organization_repositories,
     'create_user_repository': create_user_repository,
     'create_repository_using_template': create_repository_using_template,
+    'list_authenticated_user_repositories': list_authenticated_user_repositories,
     'list_user_repositories': list_user_repositories,
     'update_repository': update_repository,
     'add_repository_collaborator': add_repository_collaborator,
