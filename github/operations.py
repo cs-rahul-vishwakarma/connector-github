@@ -94,7 +94,7 @@ def list_fork_repositories(config, params):
 
 def create_readme_file(config, params):
     github = GitHub(config)
-    payload = {'message': 'Test message', 'content': 'IA==', 'branch': params.get('branch')}
+    payload = {'message': 'README.md file created', 'content': 'IA==', 'branch': params.get('branch')}
     return github.make_request(method='PUT', data=json.dumps(payload),
                                endpoint='repos/{0}/{1}/contents/README.md'.format(params.get('owner'),
                                                                                   params.get('name')))
@@ -217,18 +217,18 @@ def clone_repository(config, params):
                     os.makedirs(wkspFldr)
                 data = file_content.content
                 if '.png' not in file_content.path:
-                    data = base64.b64decode(data).decode('utf-8')
-                    file1 = open(completeName, "w")
-                    file1.write(str(data))
+                    data = base64.b64decode(data)
+                    with open(completeName, "wb") as file1:
+                        file1.write(data)
                 else:
-                    im = Image.open(BytesIO(base64.b64decode(data)))
-                    im.save('/tmp/{0}/{1}'.format(params.get('name'), file_content.path), 'PNG')
+                    with Image.open(BytesIO(base64.b64decode(data))) as im:
+                        im.save('/tmp/{0}/{1}'.format(params.get('name'), file_content.path), 'PNG')
         if params.get('clone_zip') is True:
             root_path = '/tmp/{0}'.format(params.get('name'))
             dst_path = '/tmp/cicd/{0}'.format(params.get('name'))
             dest_folder = '/tmp/cicd'
             shutil.move(root_path, dst_path)
-            shutil.make_archive(dst_path, "zip", dest_folder)
+            shutil.make_archive(dst_path, "zip", root_dir=dest_folder, base_dir=params.get('name'))
             shutil.rmtree('/tmp/cicd/{0}/'.format(params.get('name')))
             return {"path": "/tmp/cicd/{0}.zip".format(params.get('name'))}
         else:

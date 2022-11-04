@@ -2570,8 +2570,8 @@
     },
     {
       "operation": "update_clone_repository",
-      "title": "Apply Changes to Local Repository",
-      "description": "Applies changes made in a FortiSOAR file to the specified local repository that is cloned in GitHub based on the file IRI and cloned repository path you have specified",
+      "title": "Apply Changes to Remote Repository",
+      "description": "Applies changes made in a FortiSOAR file to the specified remote repository that is cloned from GitHub based on the file IRI and cloned repository path you have specified",
       "category": "investigation",
       "annotation": "update_clone_repository",
       "enabled": true,
@@ -2634,6 +2634,16 @@
           "description": "Specify the path of the cloned repository whose changes you want to push on GitHub"
         },
         {
+          "title": "Branch Name",
+          "name": "branch",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the branch to which you want to push the code of the local repository",
+          "description": "Specify the name of the branch to which you want to push the code of the local repository"
+        },
+        {
           "title": "Commit Message",
           "name": "commit_message",
           "visible": true,
@@ -2642,16 +2652,6 @@
           "type": "text",
           "tooltip": "Specify the commit message to be used for pushing changes to GitHub. If you do not specify any commit message, a default commit message is used",
           "description": "Specify the commit message to be used for pushing changes to GitHub. If you do not specify any commit message, a default commit message is used"
-        },
-        {
-          "title": "Branch Name",
-          "name": "branch",
-          "visible": true,
-          "required": true,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Specify the name of the branch name to which you want to push the code of the local repository",
-          "description": "Specify the name of the branch name to which you want to push the code of the local repository"
         }
       ]
     },
