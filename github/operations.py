@@ -1,10 +1,11 @@
-import zipfile
-
+from zipfile import ZipFile
 import requests
 import base64
 import json
 import os
 import glob
+from django.conf import settings
+from collections import namedtuple
 from github import Github
 from github import InputGitTreeElement
 from PIL import Image
@@ -12,11 +13,18 @@ from io import BytesIO
 import shutil
 from datetime import date
 from base64 import b64encode
-
+from datetime import datetime
 from connectors.core.connector import get_logger, ConnectorError
-from connectors.cyops_utilities.builtins import unzip_protected_file
+from connectors.cyops_utilities.files import download_file_from_cyops, check_file_traversal, save_file_in_env
 
 logger = get_logger('github')
+
+FileMetadata = namedtuple('FileMetadata', ['filename',
+                                           'content_length',
+                                           'content_type',
+                                           'md5',
+                                           'sha1',
+                                           'sha256'])
 
 
 class GitHub(object):
@@ -237,6 +245,32 @@ def clone_repository(config, params):
         raise ConnectorError(err)
 
 
+def unzip_protected_file(file_iri=None, *args, **kwargs):
+    try:
+        metadata = download_file_from_cyops(file_iri, None, *args, **kwargs)
+        file_name = metadata.get('cyops_file_path', None)
+        source_filepath = os.path.join(settings.TMP_FILE_ROOT, file_name)
+        target_filepath = os.path.join(settings.TMP_FILE_ROOT, datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
+        if os.path.exists(target_filepath):
+            shutil.rmtree(target_filepath)
+        with ZipFile(source_filepath) as zf:
+            zipinfo = zf.infolist()
+            for info in zipinfo:
+                zf.extract(member=info, path=target_filepath)
+        check_file_traversal(target_filepath)
+        env = kwargs.get('env', {})
+        listOfFiles = list()
+        for (dirpath, dirnames, filenames) in os.walk(target_filepath):
+            listOfFiles += [os.path.join(dirpath, file) for file in filenames]
+        save_file_in_env(env, target_filepath)
+        save_file_in_env(env, file_name)
+        return {"filenames": listOfFiles}
+    except ConnectorError as e:
+        raise ConnectorError(e)
+    except Exception as e:
+        raise ConnectorError(e)
+
+
 def update_clone_repository(config, params):
     try:
         todays_date = date.today()
@@ -246,7 +280,6 @@ def update_clone_repository(config, params):
         response = unzip_protected_file(type='File IRI', file_iri=params.get('file_iri'))
         path = response['filenames'][0].split('/')
         root_src_dir = '/tmp/{0}/{1}/'.format(path[2], path[3])
-        logger.error('File Source: {0}'.format(root_src_dir))
         root_dst_dir = params.get('clone_path') + '/'
         for src_dir, dirs, files in os.walk(root_src_dir):
             dst_dir = src_dir.replace(root_src_dir, root_dst_dir, 1)
