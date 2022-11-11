@@ -2570,7 +2570,7 @@
     },
     {
       "operation": "update_clone_repository",
-      "title": "Apply Changes to Remote Repository",
+      "title": "Update Remote Repository",
       "description": "Applies changes made in a FortiSOAR file to the specified remote repository that is cloned from GitHub based on the file IRI and cloned repository path you have specified",
       "category": "investigation",
       "annotation": "update_clone_repository",
