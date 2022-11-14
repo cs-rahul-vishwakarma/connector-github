@@ -24,7 +24,7 @@
       },
       {
         "title": "Personal Access Token",
-        "required": false,
+        "required": true,
         "editable": true,
         "visible": true,
         "type": "password",
