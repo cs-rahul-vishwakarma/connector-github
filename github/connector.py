@@ -6,7 +6,7 @@ logger = get_logger('github')
 
 
 class GitHub(Connector):
-    def execute(self, config, operation, params, **kwargs):
+    def execute(self, config, operation, params, *args, **kwargs):
         try:
             logger.info('In execute() Operation: {}'.format(operation))
             operation = operations.get(operation)
