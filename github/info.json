@@ -615,7 +615,7 @@
           "description": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, private, public, fork, sources, member, or internal"
         },
         {
-          "title": "Sort Repository By",
+          "title": "Sort",
           "name": "sort",
           "visible": true,
           "required": true,
@@ -632,21 +632,19 @@
           "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name"
         },
         {
-          "title": "Direction Repository By",
+          "title": "Direction",
           "name": "direction",
           "visible": true,
           "required": true,
           "editable": true,
           "type": "select",
           "options": [
-            "created",
-            "updated",
-            "pushed",
-            "full_name"
+            "asc",
+            "desc"
           ],
-          "value": "created",
-          "tooltip": "Select the property to sort the direction of the results returned by this operation. You can choose between created, updated, pushed, or full_name",
-          "description": "Select the property to sort the direction of the results returned by this operation. You can choose between created, updated, pushed, or full_name"
+          "value": "desc",
+          "tooltip": "Select the property to sort the direction of the results returned by this operation. You can choose between asc, or desc. Default: asc when using full_name, otherwise desc",
+          "description": "Select the property to sort the direction of the results returned by this operation. You can choose between asc, or desc. Default: asc when using full_name, otherwise desc"
         },
         {
           "title": "Per Page",
@@ -818,7 +816,7 @@
           "description": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, owner, or member"
         },
         {
-          "title": "Sort Repository By",
+          "title": "Sort",
           "name": "sort",
           "visible": true,
           "required": true,
@@ -835,7 +833,7 @@
           "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name"
         },
         {
-          "title": "Direction Repository By",
+          "title": "Direction",
           "name": "direction",
           "visible": true,
           "required": true,
@@ -1047,7 +1045,7 @@
           "description": "Limit results to repositories of the specified type."
         },
         {
-          "title": "Sort Repository By",
+          "title": "Sort",
           "name": "sort",
           "visible": true,
           "required": true,
@@ -1064,7 +1062,7 @@
           "description": "The property to sort the results by."
         },
         {
-          "title": "Direction Repository By",
+          "title": "Direction",
           "name": "direction",
           "visible": true,
           "required": true,
@@ -1244,14 +1242,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository that you want to update on GitHub",
-          "description": "Specify the account holder of the repository that you want to update on GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository that you want to update on GitHub",
+                "description": "Specify the name of the organization of the repository that you want to update on GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository that you want to update on GitHub",
+                "description": "Specify the account holder of the repository that you want to update on GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to update the repository on GitHub",
+          "description": "Select the method using which you want to update the repository on GitHub"
         },
         {
           "title": "Old Repository Name",
@@ -1902,7 +1930,7 @@
       "title": "Add Repository Collaborator",
       "description": "Updates a personal repository of a specified user to add a collaborator for the repository based on the repository name, collaborator username, repository owner, and other input parameters you have specified",
       "category": "investigation",
-      "annotation": "update_repository",
+      "annotation": "add_repository_collaborator",
       "enabled": true,
       "output_schema": {
         "id": "",
@@ -2091,14 +2119,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository whose branch revision details you want to retrieve from GitHub",
-          "description": "Specify the account holder of the repository whose branch revision details you want to retrieve from GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization repository whose branch revision details you want to retrieve from GitHub",
+                "description": "Specify the name of the organization repository whose branch revision details you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose branch revision details you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose branch revision details you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which branch revision details you want to retrieve from GitHub",
+          "description": "Select the method using which branch revision details you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -2141,14 +2199,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the name of the account holder of the repository for which you want to create a branch on GitHub",
-          "description": "Specify the name of the account holder of the repository for which you want to create a branch on GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization repository for which you want to create a branch on GitHub",
+                "description": "Specify the name of the organization repository for which you want to create a branch on GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the account holder of the repository for which you want to create a branch on GitHub",
+                "description": "Specify the name of the account holder of the repository for which you want to create a branch on GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to create the branch on GitHub",
+          "description": "Select the method using which you want to create the branch on GitHub"
         },
         {
           "title": "Repository Name",
@@ -2395,14 +2483,44 @@
       ],
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository whose list of branches you want to retrieve from GitHub",
-          "description": "Specify the account holder of the repository whose list of branches you want to retrieve from GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization repository whose list of branches you want to retrieve from GitHub",
+                "description": "Specify the name of the organization repository whose list of branches you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose list of branches you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose list of branches you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to list the repository branches on GitHub",
+          "description": "Select the method using which you want to list the repository branches on GitHub"
         },
         {
           "title": "Repository Name",
@@ -2444,6 +2562,78 @@
           "type": "integer",
           "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
           "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
+        }
+      ]
+    },
+    {
+      "operation": "delete_branch",
+      "title": "Delete Branch",
+      "description": "Delete a new branch in GitHub based on the repository name, branch name, repository owner, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "delete_branch",
+      "enabled": true,
+      "output_schema": {
+      },
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization repository for which you want to delete a branch on GitHub",
+                "description": "Specify the name of the organization repository for which you want to delete a branch on GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the account holder of the repository for which you want to delete a branch on GitHub",
+                "description": "Specify the name of the account holder of the repository for which you want to delete a branch on GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to delete the branch on GitHub",
+          "description": "Select the method using which you want to delete the branch on GitHub"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository for which you want to delete a branch on GitHub",
+          "description": "Specify the name of the repository for which you want to delete a branch on GitHub"
+        },
+        {
+          "title": "Branch Name",
+          "name": "branch_name",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the branch you want to delete on GitHub",
+          "description": "Specify the name of the branch you want to delete on GitHub"
         }
       ]
     },
@@ -2503,6 +2693,34 @@
         "path": ""
       },
       "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository that you want to clone from GitHub",
+                "description": "Specify the name of the organization of the repository that you want to clone from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to clone the repository from GitHub",
+          "description": "Select the method using which you want to clone the repository from GitHub"
+        },
         {
           "title": "Repository Name",
           "name": "name",
@@ -2571,6 +2789,34 @@
         "push": ""
       },
       "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository that you want to push into GitHub",
+                "description": "Specify the name of the organization of the repository that you want to push into GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to push the repository into GitHub",
+          "description": "Select the method using which you want to push the repository into GitHub"
+        },
         {
           "title": "Repository Name",
           "name": "name",
@@ -2972,14 +3218,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository on which you want to create a pull request on GitHub",
-          "description": "Specify the account holder of the repository on which you want to create a pull request on GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository on which you want to create a pull request on GitHub",
+                "description": "Specify the name of the organization of the repository on which you want to create a pull request on GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository on which you want to create a pull request on GitHub",
+                "description": "Specify the account holder of the repository on which you want to create a pull request on GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to create a pull request on GitHub",
+          "description": "Select the method using which you want to create a pull request on GitHub"
         },
         {
           "title": "Repository Name",
@@ -3426,14 +3702,44 @@
       ],
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository whose list of pull requests you want to retrieve from GitHub",
-          "description": "Specify the account holder of the repository whose list of pull requests you want to retrieve from GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose list of pull requests you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose list of pull requests you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose list of pull requests you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose list of pull requests you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to list of pull requests you want to retrieve from GitHub",
+          "description": "Select the method using which you want to list of pull requests you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4055,14 +4361,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository in which you want to add reviewers for the specified pull request in GitHub",
-          "description": "Specify the account holder of the repository in which you want to add reviewers for the specified pull request in GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository in  which you want to add reviewers for the specified pull request in GitHub",
+                "description": "Specify the name of the organization of the repository in  which you want to add reviewers for the specified pull request in GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository in which you want to add reviewers for the specified pull request in GitHub",
+                "description": "Specify the account holder of the repository in which you want to add reviewers for the specified pull request in GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to add reviewers for the specified pull request in GitHub",
+          "description": "Select the method using which you want to add reviewers for the specified pull request in GitHub"
         },
         {
           "title": "Repository Name",
@@ -4175,14 +4511,44 @@
       ],
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository whose list of comments on the specified pull request you want to retrieve from GitHub",
-          "description": "Specify the account holder of the repository whose list of comments on the specified pull request you want to retrieve from GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose list of comments on the specified pull request you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose list of comments on the specified pull request you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose list of comments on the specified pull request you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose list of comments on the specified pull request you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to list of comments on the specified pull request you want to retrieve from GitHub",
+          "description": "Select the method using which you want to list of comments on the specified pull request you want to retrieve from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4249,14 +4615,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository in which you merge the specified pull request in GitHub",
-          "description": "Specify the account holder of the repository in which you merge the specified pull request in GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository in which you merge the specified pull request in GitHub",
+                "description": "Specify the name of the organization of the repository in which you merge the specified pull request in GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository in which you merge the specified pull request in GitHub",
+                "description": "Specify the account holder of the repository in which you merge the specified pull request in GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to merge the specified pull request in GitHub",
+          "description": "Select the method using which you want to merge the specified pull request in GitHub"
         },
         {
           "title": "Repository Name",
@@ -4323,6 +4719,791 @@
           "value": "merge",
           "tooltip": "Select the method for merging the specified pull request with the specified repository. You can choose from merge, squash, or rebase",
           "description": "Select the method for merging the specified pull request with the specified repository. You can choose from merge, squash, or rebase"
+        }
+      ]
+    },
+    {
+      "operation": "create_issue",
+      "title": "Create Issue",
+      "description": "Creates an issue for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "create_issue",
+      "enabled": true,
+      "output_schema": {
+        "url": "",
+        "repository_url": "",
+        "labels_url": "",
+        "comments_url": "",
+        "events_url": "",
+        "html_url": "",
+        "id": "",
+        "node_id": "",
+        "number": "",
+        "title": "",
+        "user": {
+          "login": "",
+          "id": "",
+          "node_id": "",
+          "avatar_url": "",
+          "gravatar_id": "",
+          "url": "",
+          "html_url": "",
+          "followers_url": "",
+          "following_url": "",
+          "gists_url": "",
+          "starred_url": "",
+          "subscriptions_url": "",
+          "organizations_url": "",
+          "repos_url": "",
+          "events_url": "",
+          "received_events_url": "",
+          "type": "",
+          "site_admin": ""
+        },
+        "labels": [
+          {
+            "id": "",
+            "node_id": "",
+            "url": "",
+            "name": "",
+            "color": "",
+            "default": "",
+            "description": ""
+          }
+        ],
+        "state": "",
+        "locked": "",
+        "assignee": {
+          "login": "",
+          "id": "",
+          "node_id": "",
+          "avatar_url": "",
+          "gravatar_id": "",
+          "url": "",
+          "html_url": "",
+          "followers_url": "",
+          "following_url": "",
+          "gists_url": "",
+          "starred_url": "",
+          "subscriptions_url": "",
+          "organizations_url": "",
+          "repos_url": "",
+          "events_url": "",
+          "received_events_url": "",
+          "type": "",
+          "site_admin": ""
+        },
+        "assignees": [
+          {
+            "login": "",
+            "id": "",
+            "node_id": "",
+            "avatar_url": "",
+            "gravatar_id": "",
+            "url": "",
+            "html_url": "",
+            "followers_url": "",
+            "following_url": "",
+            "gists_url": "",
+            "starred_url": "",
+            "subscriptions_url": "",
+            "organizations_url": "",
+            "repos_url": "",
+            "events_url": "",
+            "received_events_url": "",
+            "type": "",
+            "site_admin": ""
+          }
+        ],
+        "milestone": "",
+        "comments": "",
+        "created_at": "",
+        "updated_at": "",
+        "closed_at": "",
+        "author_association": "",
+        "active_lock_reason": "",
+        "body": "",
+        "closed_by": "",
+        "reactions": {
+          "url": "",
+          "total_count": "",
+          "+1": "",
+          "-1": "",
+          "laugh": "",
+          "hooray": "",
+          "confused": "",
+          "heart": "",
+          "rocket": "",
+          "eyes": ""
+        },
+        "timeline_url": "",
+        "performed_via_github_app": "",
+        "state_reason": ""
+      },
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose issue you want to create in GitHub",
+                "description": "Specify the name of the organization of the repository whose issue you want to create in GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose issue you want to create in GitHub",
+                "description": "Specify the account holder of the repository whose issue you want to create in GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to create issue in GitHub",
+          "description": "Select the method using which you want to create issue in GitHub"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose issue you want to create in GitHub",
+          "description": "Specify the name of the repository whose issue you want to create in GitHub"
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the title of the issue which you want to create in GitHub",
+          "description": "Specify the title of the issue which you want to create in GitHub"
+        },
+        {
+          "title": "Contents",
+          "name": "body",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "textarea",
+          "tooltip": "Specify the contents of the issue which you want to create in GitHub",
+          "description": "Specify the contents of the issue which you want to create in GitHub"
+        },
+        {
+          "title": "Assignees",
+          "name": "assignees",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "[\"user1\",\"user2\"]",
+          "tooltip": "Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise",
+          "description": "Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise"
+        },
+        {
+          "title": "Milestone",
+          "name": "milestone",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "The number of the milestone to associate this issue with. NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise",
+          "description": "The number of the milestone to associate this issue with. NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise"
+        },
+        {
+          "title": "Labels",
+          "name": "labels",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "[\"lable1\",\"label2\"]",
+          "tooltip": "Labels to associate with this issue. NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise",
+          "description": "Labels to associate with this issue. NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise"
+        }
+      ]
+    },
+    {
+      "operation": "list_repository_issue",
+      "title": "List Repository Issue",
+      "description": "List an issues for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "list_repository_issue",
+      "enabled": true,
+      "output_schema": [
+        {
+          "url": "",
+          "repository_url": "",
+          "labels_url": "",
+          "comments_url": "",
+          "events_url": "",
+          "html_url": "",
+          "id": "",
+          "node_id": "",
+          "number": "",
+          "title": "",
+          "user": {
+            "login": "",
+            "id": "",
+            "node_id": "",
+            "avatar_url": "",
+            "gravatar_id": "",
+            "url": "",
+            "html_url": "",
+            "followers_url": "",
+            "following_url": "",
+            "gists_url": "",
+            "starred_url": "",
+            "subscriptions_url": "",
+            "organizations_url": "",
+            "repos_url": "",
+            "events_url": "",
+            "received_events_url": "",
+            "type": "",
+            "site_admin": ""
+          },
+          "labels": [
+            {
+              "id": "",
+              "node_id": "",
+              "url": "",
+              "name": "",
+              "color": "",
+              "default": "",
+              "description": ""
+            }
+          ],
+          "state": "",
+          "locked": "",
+          "assignee": {
+            "login": "",
+            "id": "",
+            "node_id": "",
+            "avatar_url": "",
+            "gravatar_id": "",
+            "url": "",
+            "html_url": "",
+            "followers_url": "",
+            "following_url": "",
+            "gists_url": "",
+            "starred_url": "",
+            "subscriptions_url": "",
+            "organizations_url": "",
+            "repos_url": "",
+            "events_url": "",
+            "received_events_url": "",
+            "type": "",
+            "site_admin": ""
+          },
+          "assignees": [
+            {
+              "login": "",
+              "id": "",
+              "node_id": "",
+              "avatar_url": "",
+              "gravatar_id": "",
+              "url": "",
+              "html_url": "",
+              "followers_url": "",
+              "following_url": "",
+              "gists_url": "",
+              "starred_url": "",
+              "subscriptions_url": "",
+              "organizations_url": "",
+              "repos_url": "",
+              "events_url": "",
+              "received_events_url": "",
+              "type": "",
+              "site_admin": ""
+            }
+          ],
+          "milestone": "",
+          "comments": "",
+          "created_at": "",
+          "updated_at": "",
+          "closed_at": "",
+          "author_association": "",
+          "active_lock_reason": "",
+          "body": "",
+          "reactions": {
+            "url": "",
+            "total_count": "",
+            "+1": "",
+            "-1": "",
+            "laugh": "",
+            "hooray": "",
+            "confused": "",
+            "heart": "",
+            "rocket": "",
+            "eyes": ""
+          },
+          "timeline_url": "",
+          "performed_via_github_app": "",
+          "state_reason": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose issue you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose issue you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose issues you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose issues you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to retrieve the issues from GitHub",
+          "description": "Select the method using which you want to retrieve the issues from GitHub"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose issue you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose issue you want to retrieve in GitHub"
+        },
+        {
+          "title": "Milestone",
+          "name": "milestone",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "If an integer is passed, it should refer to a milestone by its number field. If the string * is passed, issues with any milestone are accepted. If the string none is passed, issues without milestones are returned",
+          "description": "If an integer is passed, it should refer to a milestone by its number field. If the string * is passed, issues with any milestone are accepted. If the string none is passed, issues without milestones are returned"
+        },
+        {
+          "title": "State",
+          "name": "state",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "open",
+            "closed",
+            "all"
+          ],
+          "value": "open",
+          "tooltip": "Select the type of state of issue you want to retrieve from GitHub. You can choose between open, all, or closed",
+          "description": "Select the type of state of issue you want to retrieve from GitHub. You can choose between open, all, or closed"
+        },
+        {
+          "title": "Assignee",
+          "name": "assignee",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Can be the name of a user. Pass in none for issues with no assigned user, and * for issues assigned to any user",
+          "description": "Can be the name of a user. Pass in none for issues with no assigned user, and * for issues assigned to any user"
+        },
+        {
+          "title": "Creator",
+          "name": "creator",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "The user that created the issue",
+          "description": "The user that created the issue"
+        },
+        {
+          "title": "Mentioned",
+          "name": "mentioned",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "A user that's mentioned in the issue",
+          "description": "A user that's mentioned in the issue"
+        },
+        {
+          "title": "Labels",
+          "name": "labels",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "[\"label1\", \"label\"]",
+          "tooltip": "A list of comma separated label names. Example: bug,ui,@high",
+          "description": "A list of comma separated label names. Example: bug,ui,@high"
+        },
+        {
+          "title": "Sort",
+          "name": "sort",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "created",
+            "updated",
+            "comments"
+          ],
+          "value": "created",
+          "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, or comments",
+          "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, or comments"
+        },
+        {
+          "title": "Direction",
+          "name": "direction",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "asc",
+            "desc"
+          ],
+          "value": "desc",
+          "tooltip": "Select the property to sort the direction of the results returned by this operation. You can choose between asc or desc",
+          "description": "Select the property to sort the direction of the results returned by this operation. You can choose between asc or desc"
+        },
+        {
+          "title": "Since",
+          "name": "since",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "datetime",
+          "tooltip": "Only show notifications updated after the given time",
+          "description": "Only show notifications updated after the given time"
+        },
+        {
+          "title": "Per Page",
+          "name": "per_page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
+        }
+      ]
+    },
+    {
+      "operation": "update_issue",
+      "title": "Update Issue",
+      "description": "Update an issues for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "update_issue",
+      "enabled": true,
+      "output_schema": {
+        "url": "",
+        "repository_url": "",
+        "labels_url": "",
+        "comments_url": "",
+        "events_url": "",
+        "html_url": "",
+        "id": "",
+        "node_id": "",
+        "number": "",
+        "title": "",
+        "user": {
+          "login": "",
+          "id": "",
+          "node_id": "",
+          "avatar_url": "",
+          "gravatar_id": "",
+          "url": "",
+          "html_url": "",
+          "followers_url": "",
+          "following_url": "",
+          "gists_url": "",
+          "starred_url": "",
+          "subscriptions_url": "",
+          "organizations_url": "",
+          "repos_url": "",
+          "events_url": "",
+          "received_events_url": "",
+          "type": "",
+          "site_admin": ""
+        },
+        "labels": [
+          {
+            "id": "",
+            "node_id": "",
+            "url": "",
+            "name": "",
+            "color": "",
+            "default": "",
+            "description": ""
+          }
+        ],
+        "state": "",
+        "locked": "",
+        "assignee": {
+          "login": "",
+          "id": "",
+          "node_id": "",
+          "avatar_url": "",
+          "gravatar_id": "",
+          "url": "",
+          "html_url": "",
+          "followers_url": "",
+          "following_url": "",
+          "gists_url": "",
+          "starred_url": "",
+          "subscriptions_url": "",
+          "organizations_url": "",
+          "repos_url": "",
+          "events_url": "",
+          "received_events_url": "",
+          "type": "",
+          "site_admin": ""
+        },
+        "assignees": [
+          {
+            "login": "",
+            "id": "",
+            "node_id": "",
+            "avatar_url": "",
+            "gravatar_id": "",
+            "url": "",
+            "html_url": "",
+            "followers_url": "",
+            "following_url": "",
+            "gists_url": "",
+            "starred_url": "",
+            "subscriptions_url": "",
+            "organizations_url": "",
+            "repos_url": "",
+            "events_url": "",
+            "received_events_url": "",
+            "type": "",
+            "site_admin": ""
+          }
+        ],
+        "milestone": "",
+        "comments": "",
+        "created_at": "",
+        "updated_at": "",
+        "closed_at": "",
+        "author_association": "",
+        "active_lock_reason": "",
+        "body": "",
+        "closed_by": "",
+        "reactions": {
+          "url": "",
+          "total_count": "",
+          "+1": "",
+          "-1": "",
+          "laugh": "",
+          "hooray": "",
+          "confused": "",
+          "heart": "",
+          "rocket": "",
+          "eyes": ""
+        },
+        "timeline_url": "",
+        "performed_via_github_app": "",
+        "state_reason": ""
+      },
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose issue you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose issue you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose issues you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose issues you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to retrieve the issues from GitHub",
+          "description": "Select the method using which you want to retrieve the issues from GitHub"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose issue you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose issue you want to retrieve in GitHub"
+        },
+        {
+          "title": "Issue Number",
+          "name": "issue_number",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the issue number of the repository whose issue you want to update in GitHub",
+          "description": "Specify the issue number of the repository whose issue you want to update in GitHub"
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the title of the issue which you want to update in GitHub",
+          "description": "Specify the title of the issue which you want to update in GitHub"
+        },
+        {
+          "title": "Contents",
+          "name": "body",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "textarea",
+          "tooltip": "Specify the contents of the issue which you want to update in GitHub",
+          "description": "Specify the contents of the issue which you want to update in GitHub"
+        },
+        {
+          "title": "State",
+          "name": "state",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "open",
+            "closed"
+          ],
+          "tooltip": "Select the type of state of issue you want to update in GitHub. You can choose open, or closed",
+          "description": "Select the type of state of issue you want to update in GitHub. You can choose open, or closed"
+        },
+        {
+          "title": "State Reason",
+          "name": "state_reason",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "completed",
+            "not_planned",
+            "reopened"
+          ],
+          "tooltip": "Select the type of state reason for the current state of issue you want to update in GitHub. You can choose completed, not_planned, or reopened",
+          "description": "Select the type of state reason for the current state of issue you want to update in GitHub. You can choose completed, not_planned, or reopened"
+        },
+        {
+          "title": "Milestone",
+          "name": "milestone",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "The number of the milestone to associate this issue with or null to remove current.",
+          "description": "The number of the milestone to associate this issue with or null to remove current."
+        },
+        {
+          "title": "Labels",
+          "name": "labels",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "[\"label1\", \"label\"]",
+          "tooltip": "Labels to associate with this issue. Pass one or more Labels to replace the set of Labels on this Issue. Send an empty array ([]) to clear all Labels from the Issue.",
+          "description": "Labels to associate with this issue. Pass one or more Labels to replace the set of Labels on this Issue. Send an empty array ([]) to clear all Labels from the Issue."
+        },
+        {
+          "title": "Assignees",
+          "name": "assignees",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "placeholder": "[\"assignee1\", \"assignee2\"]",
+          "tooltip": "Logins for Users to assign to this issue. Pass one or more user logins to replace the set of assignees on this Issue. Send an empty array ([]) to clear all assignees from the Issue",
+          "description": "Logins for Users to assign to this issue. Pass one or more user logins to replace the set of assignees on this Issue. Send an empty array ([]) to clear all assignees from the Issue"
         }
       ]
     },
@@ -4410,14 +5591,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository for which you want to create a release on GitHub",
-          "description": "Specify the account holder of the repository for which you want to create a release on GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository for which you want to create a release on GitHub",
+                "description": "Specify the name of the organization of the repository for which you want to create a release on GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository for which you want to create a release on GitHub",
+                "description": "Specify the account holder of the repository for which you want to create a release on GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to create a release on GitHub",
+          "description": "Select the method using which you want to create a release on GitHub"
         },
         {
           "title": "Repository Name",
@@ -4567,14 +5778,44 @@
       ],
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository whose draft releases list you want to retrieve from GitHub",
-          "description": "Specify the account holder of the repository whose draft releases list you want to retrieve from GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose draft releases list you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose draft releases list you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose draft releases list you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose draft releases list you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to retrieve list of releases from GitHub",
+          "description": "Select the method using which you want to retrieve list of releases from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4639,14 +5880,44 @@
       ],
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository whose associated list of stargazers you want to retrieve from GitHub",
-          "description": "Specify the account holder of the repository whose associated list of stargazers you want to retrieve from GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose associated list of stargazers you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose associated list of stargazers you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose associated list of stargazers you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose associated list of stargazers you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to retrieve list of stargazers from GitHub",
+          "description": "Select the method using which you want to retrieve list of stargazers from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4690,14 +5961,44 @@
       "output_schema": {},
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository that you want to star on GitHub",
-          "description": "Specify the account holder of the repository that you want to star on GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository that you want to star on GitHub",
+                "description": "Specify the name of the organization of the repository that you want to star on GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository that you want to star on GitHub",
+                "description": "Specify the account holder of the repository that you want to star on GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to retrieve list of stargazers from GitHub",
+          "description": "Select the method using which you want to retrieve list of stargazers from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4742,14 +6043,44 @@
       ],
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository whose associated list of watchers you want to retrieve from GitHub",
-          "description": "Specify the account holder of the repository whose associated list of watchers you want to retrieve from GitHub"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose associated list of watchers you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose associated list of watchers you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose associated list of watchers you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose associated list of watchers you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to retrieve list of watchers from GitHub",
+          "description": "Select the method using which you want to retrieve list of watchers from GitHub"
         },
         {
           "title": "Repository Name",
@@ -4800,14 +6131,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository to which you want to set subscriptions",
-          "description": "Specify the account holder of the repository to which you want to set subscriptions"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository to which you want to set subscriptions",
+                "description": "Specify the name of the organization of the repository to which you want to set subscriptions"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository to which you want to set subscriptions",
+                "description": "Specify the account holder of the repository to which you want to set subscriptions"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to set subscriptions",
+          "description": "Select the method using which you want to set subscriptions"
         },
         {
           "title": "Repository Name",

@@ -117,9 +117,12 @@ def update_repository(config, params):
         params.update(params.get('other_fields'))
         del params['other_fields']
     payload = {k: v for k, v in params.items() if
-               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(endpoint='repos/{0}/{1}'.format(params.get('owner'), params.get('repo')),
-                               method='PATCH', data=json.dumps(payload))
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(endpoint=endpoint, method='PATCH', data=json.dumps(payload))
 
 
 def delete_repository(config, params):
@@ -127,7 +130,7 @@ def delete_repository(config, params):
     if params.get('repo_type') == 'User':
         endpoint = 'repos/{0}/{1}'.format(params.get('owner'), params.get('repo'))
     else:
-        endpoint = endpoint = 'repos/{0}/{1}'.format(params.get('org'), params.get('repo'))
+        endpoint = 'repos/{0}/{1}'.format(params.get('org'), params.get('repo'))
     return github.make_request(endpoint=endpoint, method='DELETE')
 
 
@@ -174,8 +177,12 @@ def add_repository_collaborator(config, params):
 
 def get_branch_revision(config, params):
     github = GitHub(config)
-    return github.make_request(
-        endpoint='repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('owner'), params.get('repo'), params.get('base')))
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('org'), params.get('repo'), params.get('base'))
+    else:
+        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('owner'), params.get('repo'),
+                                                             params.get('base'))
+    return github.make_request(endpoint=endpoint)
 
 
 def create_branch(config, params):
@@ -183,8 +190,11 @@ def create_branch(config, params):
     payload = {'ref': 'refs/heads/{0}'.format(params.get('new_branch_name')),
                'sha': params.get('sha') if params.get('checkout_branch') == 'Branch SHA' else
                get_branch_revision(config, params)['object']['sha']}
-    return github.make_request(method='POST', data=json.dumps(payload),
-                               endpoint='repos/{0}/{1}/git/refs'.format(params.get('owner'), params.get('repo')))
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/git/refs'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/git/refs'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(method='POST', data=json.dumps(payload), endpoint=endpoint)
 
 
 def merge_branch(config, params):
@@ -198,11 +208,23 @@ def merge_branch(config, params):
 def list_branches(config, params):
     github = GitHub(config)
     query_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
     if query_params['protected'] is False:
         del query_params['protected']
-    return github.make_request(endpoint='repos/{0}/{1}/branches'.format(params.get('owner'), params.get('repo')),
-                               params=query_params)
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/branches'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/branches'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(endpoint=endpoint, params=query_params)
+
+
+def delete_branch(config, params):
+    github = GitHub(config)
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('org'), params.get('repo'), params.get('branch_name'))
+    else:
+        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('owner'), params.get('repo'), params.get('branch_name'))
+    return github.make_request(method='DELETE', endpoint=endpoint)
 
 
 def fetch_upstream(config, params):
@@ -216,13 +238,16 @@ def clone_repository(config, params):
     try:
         token = config.get('password')
         g = Github(token)
-        repo = g.get_user().get_repo(params.get('name'))
+        if params.get('repo_type') == 'Organization':
+            repo = g.get_organization(params.get('org')).get_repo(params.get('name'))
+        else:
+            repo = g.get_user().get_repo(params.get('name'))
         contents = repo.get_contents("")
         while contents:
             file_content = contents.pop(0)
             if file_content.type == "dir":
                 contents.extend(repo.get_contents(file_content.path))
-            elif 'DS_Store' not in file_content.path:
+            else:
                 completeName = os.path.join('/tmp/{0}/{1}'.format(params.get('name'), file_content.path))
                 wkspFldr = os.path.dirname(completeName)
                 if not os.path.exists(wkspFldr):
@@ -306,7 +331,10 @@ def update_clone_repository(config, params):
 def push_repository(config, params):
     token = config.get('password')
     g = Github(token)
-    repo = g.get_user().get_repo(params.get('name'))
+    if params.get('repo_type') == 'Organization':
+        repo = g.get_organization(params.get('org')).get_repo(params.get('name'))
+    else:
+        repo = g.get_user().get_repo(params.get('name'))
     root = params.get('clone_path')
     file_list = []
     for root, dirs, files in os.walk(root):
@@ -336,9 +364,7 @@ def push_repository(config, params):
     parent = repo.get_git_commit(master_sha)
     commit = repo.create_git_commit(commit_message, tree, [parent])
     master_ref.edit(commit.sha)
-
     for entry in file_list:
-        print(entry)
         with open(entry, 'rb') as input_file:
             data = input_file.read()
         if entry.endswith('.png'):
@@ -352,23 +378,29 @@ def push_repository(config, params):
 def create_pull_request(config, params):
     github = GitHub(config)
     payload = {k: v for k, v in params.items() if
-               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(method='POST', data=json.dumps(payload),
-                               endpoint='repos/{0}/{1}/pulls'.format(params.get('owner'), params.get('repo')))
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/pulls'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/pulls'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(method='POST', data=json.dumps(payload), endpoint=endpoint)
 
 
 def list_pull_request(config, params):
     github = GitHub(config)
     qyery_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(params=qyery_params,
-                               endpoint='repos/{0}/{1}/pulls'.format(params.get('owner'), params.get('repo')))
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/pulls'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/pulls'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(params=qyery_params, endpoint=endpoint)
 
 
 def add_reviewers(config, params):
     github = GitHub(config)
     payload = {k: v for k, v in params.items() if
-               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo', 'pull_number']}
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo', 'pull_number']}
     body_params = {}
     for k, v in payload.items():
         if v:
@@ -376,75 +408,142 @@ def add_reviewers(config, params):
                 body_params.update({k: list(map(lambda x: x.strip(' '), v.split(",")))})
             elif isinstance(v, list):
                 body_params.update({k: list(map(str, v))})
-    return github.make_request(method='POST', data=json.dumps(body_params),
-                               endpoint='repos/{0}/{1}/pulls/{2}/requested_reviewers'.format(params.get('owner'),
-                                                                                             params.get('repo'),
-                                                                                             params.get('pull_number')))
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/pulls/{2}/requested_reviewers'.format(params.get('org'), params.get('repo'),
+                                                                        params.get('pull_number'))
+    else:
+        endpoint = 'repos/{0}/{1}/pulls/{2}/requested_reviewers'.format(params.get('owner'), params.get('repo'),
+                                                                        params.get('pull_number'))
+    return github.make_request(method='POST', data=json.dumps(body_params), endpoint=endpoint)
 
 
 def list_review_comments(config, params):
     github = GitHub(config)
     query_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo', 'pull_number']}
-    return github.make_request(params=query_params,
-                               endpoint='repos/{0}/{1}/pulls/{2}/comments'.format(params.get('owner'),
-                                                                                  params.get('repo'),
-                                                                                  params.get('pull_number')))
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo',
+                                                                                    'pull_number']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/pulls/{2}/comments'.format(params.get('org'), params.get('repo'),
+                                                             params.get('pull_number'))
+    else:
+        endpoint = 'repos/{0}/{1}/pulls/{2}/comments'.format(params.get('owner'), params.get('repo'),
+                                                             params.get('pull_number'))
+    return github.make_request(params=query_params, endpoint=endpoint)
 
 
 def merge_pull_request(config, params):
     github = GitHub(config)
     payload = {k: v for k, v in params.items() if
-               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo', 'pull_number']}
-    return github.make_request(method='PUT', data=json.dumps(payload),
-                               endpoint='repos/{0}/{1}/pulls/{2}/merge'.format(params.get('owner'), params.get('repo'),
-                                                                               params.get('pull_number')))
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo', 'pull_number']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/pulls/{2}/merge'.format(params.get('org'), params.get('repo'),
+                                                          params.get('pull_number'))
+    else:
+        endpoint = 'repos/{0}/{1}/pulls/{2}/merge'.format(params.get('owner'), params.get('repo'),
+                                                          params.get('pull_number'))
+    return github.make_request(method='PUT', data=json.dumps(payload), endpoint=endpoint)
+
+
+def create_issue(config, params):
+    github = GitHub(config)
+    payload = {k: v for k, v in params.items() if
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/issues'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/issues'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(method='POST', data=json.dumps(payload), endpoint=endpoint)
+
+
+def list_repository_issue(config, params):
+    github = GitHub(config)
+    query_params = {k: v for k, v in params.items() if
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/issues'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/issues'.format(params.get('owner'), params.get('repo'))
+    response = github.make_request(params=query_params, endpoint=endpoint)
+    for e in range(len(response) - 1, -1, -1):
+        if response[e].get('pull_request') is not None:
+            response.pop(e)
+    return response
+
+
+def update_issue(config, params):
+    github = GitHub(config)
+    payload = {k: v for k, v in params.items() if
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo', 'issue_number']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/issues/{2}'.format(params.get('org'), params.get('repo'), params.get('issue_number'))
+    else:
+        endpoint = 'repos/{0}/{1}/issues/{2}'.format(params.get('owner'), params.get('repo'),
+                                                     params.get('issue_number'))
+    return github.make_request(method='PATCH', data=json.dumps(payload), endpoint=endpoint)
 
 
 def create_release(config, params):
     github = GitHub(config)
     payload = {k: v for k, v in params.items() if
-               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(method='POST', data=json.dumps(payload),
-                               endpoint='repos/{0}/{1}/releases'.format(params.get('owner'), params.get('repo')))
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/releases'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/releases'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(method='POST', data=json.dumps(payload), endpoint=endpoint)
 
 
 def list_releases(config, params):
     github = GitHub(config)
     query_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(params=query_params,
-                               endpoint='repos/{0}/{1}/releases'.format(params.get('owner'), params.get('repo')))
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/releases'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/releases'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(params=query_params, endpoint=endpoint)
 
 
 def list_stargazers(config, params):
     github = GitHub(config)
     query_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(params=query_params,
-                               endpoint='repos/{0}/{1}/stargazers'.format(params.get('owner'), params.get('repo')))
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/stargazers'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/stargazers'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(params=query_params, endpoint=endpoint)
 
 
 def star_repository(config, params):
     github = GitHub(config)
-    return github.make_request(method='PUT',
-                               endpoint='user/starred/{0}/{1}'.format(params.get('owner'), params.get('repo')))
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'user/starred/{0}/{1}'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'user/starred/{0}/{1}'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(method='PUT', endpoint=endpoint)
 
 
 def list_watchers(config, params):
     github = GitHub(config)
     query_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(params=query_params,
-                               endpoint='repos/{0}/{1}/subscribers'.format(params.get('owner'), params.get('repo')))
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/subscribers'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/subscribers'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(params=query_params, endpoint=endpoint)
 
 
 def set_repo_subscription(config, params):
     github = GitHub(config)
     payload = {k: v for k, v in params.items() if
-               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
-    return github.make_request(method='PUT', data=json.dumps(payload),
-                               endpoint='repos/{0}/{1}/subscription'.format(params.get('owner'), params.get('repo')))
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/subscription'.format(params.get('org'), params.get('repo'))
+    else:
+        endpoint = 'repos/{0}/{1}/subscription'.format(params.get('owner'), params.get('repo'))
+    return github.make_request(method='PUT', data=json.dumps(payload), endpoint=endpoint)
 
 
 def _check_health(config):
@@ -474,6 +573,10 @@ operations = {
     'get_branch_revision': get_branch_revision,
     'create_branch': create_branch,
     'merge_branch': merge_branch,
+    'delete_branch': delete_branch,
+    'create_issue': create_issue,
+    'update_issue': update_issue,
+    'list_repository_issue': list_repository_issue,
     'list_branches': list_branches,
     'fetch_upstream': fetch_upstream,
     'clone_repository': clone_repository,
