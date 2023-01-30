@@ -34,7 +34,7 @@ class GitHub(object):
             self.server_url = 'https://' + self.server_url
         if not self.server_url.endswith('/'):
             self.server_url += '/'
-        self.username = config.get('username')
+        self.git_username = config.get('username')
         self.password = config.get('password')
         self.verify_ssl = config.get('verify_ssl')
 
@@ -262,12 +262,12 @@ def clone_repository(config, params):
                         im.save('/tmp/{0}/{1}'.format(params.get('name'), file_content.path), 'PNG')
         if params.get('clone_zip') is True:
             root_path = '/tmp/{0}'.format(params.get('name'))
-            dst_path = '/tmp/cicd/{0}'.format(params.get('name'))
-            dest_folder = '/tmp/cicd'
+            dst_path = '/tmp/clone_repo/{0}'.format(params.get('name'))
+            dest_folder = '/tmp/clone_repo'
             shutil.move(root_path, dst_path)
             shutil.make_archive(dst_path, "zip", root_dir=dest_folder, base_dir=params.get('name'))
-            shutil.rmtree('/tmp/cicd/{0}/'.format(params.get('name')))
-            return {"path": "/tmp/cicd/{0}.zip".format(params.get('name'))}
+            shutil.rmtree('/tmp/clone_repo/{0}/'.format(params.get('name')))
+            return {"path": "/tmp/clone_repo/{0}.zip".format(params.get('name'))}
         else:
             return {"path": "/tmp/{0}".format(params.get('name'))}
     except Exception as err:
