@@ -23,7 +23,7 @@
         "description": "Specify the URL of the GitHub to which you will connect and perform the automated operations"
       },
       {
-        "title": "GitHub Username",
+        "title": "Username",
         "required": true,
         "editable": true,
         "visible": true,
