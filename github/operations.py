@@ -3,6 +3,8 @@ import requests
 import base64
 import json
 import os
+import calendar
+import time
 import glob
 from django.conf import settings
 from collections import namedtuple
@@ -34,7 +36,7 @@ class GitHub(object):
             self.server_url = 'https://' + self.server_url
         if not self.server_url.endswith('/'):
             self.server_url += '/'
-        self.username = config.get('username')
+        self.git_username = config.get('username')
         self.password = config.get('password')
         self.verify_ssl = config.get('verify_ssl')
 
@@ -221,9 +223,11 @@ def list_branches(config, params):
 def delete_branch(config, params):
     github = GitHub(config)
     if params.get('repo_type') == 'Organization':
-        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('org'), params.get('repo'), params.get('branch_name'))
+        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('org'), params.get('repo'),
+                                                             params.get('branch_name'))
     else:
-        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('owner'), params.get('repo'), params.get('branch_name'))
+        endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(params.get('owner'), params.get('repo'),
+                                                             params.get('branch_name'))
     return github.make_request(method='DELETE', endpoint=endpoint)
 
 
@@ -261,13 +265,15 @@ def clone_repository(config, params):
                     with Image.open(BytesIO(base64.b64decode(data))) as im:
                         im.save('/tmp/{0}/{1}'.format(params.get('name'), file_content.path), 'PNG')
         if params.get('clone_zip') is True:
+            current_GMT = time.gmtime()
+            time_stamp = calendar.timegm(current_GMT)
             root_path = '/tmp/{0}'.format(params.get('name'))
-            dst_path = '/tmp/cicd/{0}'.format(params.get('name'))
-            dest_folder = '/tmp/cicd'
+            dst_path = '/tmp/github-{0}/{1}'.format(time_stamp, params.get('name'))
+            dest_folder = '/tmp/github-{0}'.format(time_stamp)
             shutil.move(root_path, dst_path)
             shutil.make_archive(dst_path, "zip", root_dir=dest_folder, base_dir=params.get('name'))
-            shutil.rmtree('/tmp/cicd/{0}/'.format(params.get('name')))
-            return {"path": "/tmp/cicd/{0}.zip".format(params.get('name'))}
+            shutil.rmtree('/tmp/github-{0}/{1}'.format(time_stamp, params.get('name')))
+            return {"path": "/tmp/github-{0}/{0}.zip".format(time_stamp, params.get('name'))}
         else:
             return {"path": "/tmp/{0}".format(params.get('name'))}
     except Exception as err:

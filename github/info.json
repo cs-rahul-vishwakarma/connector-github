@@ -23,6 +23,15 @@
         "description": "Specify the URL of the GitHub to which you will connect and perform the automated operations"
       },
       {
+        "title": "Username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "username",
+        "description": "Specify the username used to access the GitHub server to which you will connect and perform the automated operations"
+      },
+      {
         "title": "Personal Access Token",
         "required": true,
         "editable": true,
@@ -30,6 +39,17 @@
         "type": "password",
         "name": "password",
         "description": "Specify the Personal Access Token used to access the GitHub server to which you will connect and perform the automated operations"
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
       }
     ]
   },
@@ -3845,7 +3865,7 @@
     {
       "operation": "add_reviewers",
       "title": "Add Reviewers for a Pull Request",
-      "description": "Adds reviews for the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified. \nPull request authors, repository owners, and collaborators can request a pull request review from anyone with write access to the repository. Each requested reviewer will receive a notification asking them to review the pull request",
+      "description": "Adds reviews for the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified. Pull request authors, repository owners, and collaborators can request a pull request review from anyone with write access to the repository. Each requested reviewer will receive a notification asking them to review the pull request",
       "category": "investigation",
       "annotation": "add_reviewers",
       "enabled": true,
