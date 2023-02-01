@@ -273,7 +273,7 @@ def clone_repository(config, params):
             shutil.move(root_path, dst_path)
             shutil.make_archive(dst_path, "zip", root_dir=dest_folder, base_dir=params.get('name'))
             shutil.rmtree('/tmp/github-{0}/{1}'.format(time_stamp, params.get('name')))
-            return {"path": "/tmp/github-{0}/{0}.zip".format(time_stamp, params.get('name'))}
+            return {"path": "/tmp/github-{0}/{1}.zip".format(time_stamp, params.get('name'))}
         else:
             return {"path": "/tmp/{0}".format(params.get('name'))}
     except Exception as err:
