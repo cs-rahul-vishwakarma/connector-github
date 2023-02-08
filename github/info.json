@@ -4634,7 +4634,7 @@
     {
       "operation": "list_pr_reviews",
       "title": "List Pull Request Reviews",
-      "description": "Lists the review reviews associated with the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+      "description": "Lists the reviews associated with the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "list_pr_reviews",
       "enabled": true,

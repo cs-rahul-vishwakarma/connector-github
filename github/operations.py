@@ -404,7 +404,7 @@ def list_pull_request(config, params):
         else:
             endpoint = 'repos/{0}/{1}/pulls'.format(params.get('org'), params.get('repo'))
     else:
-        if params.get('pull_number'):
+        if params.get('pull_number') is not None:
             endpoint = 'repos/{0}/{1}/pulls/{2}'.format(params.get('owner'), params.get('repo'),
                                                         params.get('pull_number'))
         else:
@@ -473,7 +473,7 @@ def submit_pr_review(config, params):
         endpoint = 'repos/{0}/{1}/pulls/{2}/reviews/{3}/events'.format(params.get('owner'), params.get('repo'),
                                                                        params.get('pull_number'),
                                                                        params.get('review_id'))
-    return github.make_request(params=query_params, endpoint=endpoint)
+    return github.make_request(method='POST', params=query_params, endpoint=endpoint)
 
 
 def merge_pull_request(config, params):
