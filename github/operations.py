@@ -395,11 +395,20 @@ def create_pull_request(config, params):
 def list_pull_request(config, params):
     github = GitHub(config)
     qyery_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo']}
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo',
+                                                                                    'pull_number']}
     if params.get('repo_type') == 'Organization':
-        endpoint = 'repos/{0}/{1}/pulls'.format(params.get('org'), params.get('repo'))
+        if params.get('pull_number'):
+            endpoint = 'repos/{0}/{1}/pulls/{2}'.format(params.get('org'), params.get('repo'),
+                                                        params.get('pull_number'))
+        else:
+            endpoint = 'repos/{0}/{1}/pulls'.format(params.get('org'), params.get('repo'))
     else:
-        endpoint = 'repos/{0}/{1}/pulls'.format(params.get('owner'), params.get('repo'))
+        if params.get('pull_number'):
+            endpoint = 'repos/{0}/{1}/pulls/{2}'.format(params.get('owner'), params.get('repo'),
+                                                        params.get('pull_number'))
+        else:
+            endpoint = 'repos/{0}/{1}/pulls'.format(params.get('owner'), params.get('repo'))
     return github.make_request(params=qyery_params, endpoint=endpoint)
 
 
@@ -434,6 +443,36 @@ def list_review_comments(config, params):
     else:
         endpoint = 'repos/{0}/{1}/pulls/{2}/comments'.format(params.get('owner'), params.get('repo'),
                                                              params.get('pull_number'))
+    return github.make_request(params=query_params, endpoint=endpoint)
+
+
+def list_pr_reviews(config, params):
+    github = GitHub(config)
+    query_params = {k: v for k, v in params.items() if
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo',
+                                                                                    'pull_number']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews'.format(params.get('org'), params.get('repo'),
+                                                            params.get('pull_number'))
+    else:
+        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews'.format(params.get('owner'), params.get('repo'),
+                                                            params.get('pull_number'))
+    return github.make_request(params=query_params, endpoint=endpoint)
+
+
+def submit_pr_review(config, params):
+    github = GitHub(config)
+    query_params = {k: v for k, v in params.items() if
+                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo',
+                                                                                    'pull_number', 'review_id']}
+    if params.get('repo_type') == 'Organization':
+        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews/{3}/events'.format(params.get('org'), params.get('repo'),
+                                                                       params.get('pull_number'),
+                                                                       params.get('review_id'))
+    else:
+        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews/{3}/events'.format(params.get('owner'), params.get('repo'),
+                                                                       params.get('pull_number'),
+                                                                       params.get('review_id'))
     return github.make_request(params=query_params, endpoint=endpoint)
 
 
@@ -592,6 +631,8 @@ operations = {
     'list_pull_request': list_pull_request,
     'add_reviewers': add_reviewers,
     'list_review_comments': list_review_comments,
+    'list_pr_reviews': list_pr_reviews,
+    'submit_pr_review': submit_pr_review,
     'merge_pull_request': merge_pull_request,
     'list_releases': list_releases,
     'create_release': create_release,
