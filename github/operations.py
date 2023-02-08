@@ -460,20 +460,17 @@ def list_pr_reviews(config, params):
     return github.make_request(params=query_params, endpoint=endpoint)
 
 
-def submit_pr_review(config, params):
+def add_pr_review(config, params):
     github = GitHub(config)
-    query_params = {k: v for k, v in params.items() if
-                    v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo',
-                                                                                    'pull_number', 'review_id']}
+    payload = {k: v for k, v in params.items() if
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo', 'pull_number']}
     if params.get('repo_type') == 'Organization':
-        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews/{3}/events'.format(params.get('org'), params.get('repo'),
-                                                                       params.get('pull_number'),
-                                                                       params.get('review_id'))
+        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews'.format(params.get('org'), params.get('repo'),
+                                                            params.get('pull_number'))
     else:
-        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews/{3}/events'.format(params.get('owner'), params.get('repo'),
-                                                                       params.get('pull_number'),
-                                                                       params.get('review_id'))
-    return github.make_request(method='POST', params=query_params, endpoint=endpoint)
+        endpoint = 'repos/{0}/{1}/pulls/{2}/reviews'.format(params.get('owner'), params.get('repo'),
+                                                            params.get('pull_number'))
+    return github.make_request(method='POST', data=json.dumps(payload), endpoint=endpoint)
 
 
 def merge_pull_request(config, params):
@@ -632,7 +629,7 @@ operations = {
     'add_reviewers': add_reviewers,
     'list_review_comments': list_review_comments,
     'list_pr_reviews': list_pr_reviews,
-    'submit_pr_review': submit_pr_review,
+    'add_pr_review': add_pr_review,
     'merge_pull_request': merge_pull_request,
     'list_releases': list_releases,
     'create_release': create_release,
