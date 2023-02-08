@@ -3772,6 +3772,16 @@
           "description": "Specify the name of the repository whose list of pull requests you want to retrieve from GitHub"
         },
         {
+          "title": "Pull Number",
+          "name": "pull_number",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the number that identifies the pull request",
+          "description": "Specify the number that identifies the pull request"
+        },
+        {
           "title": "State",
           "name": "state",
           "visible": true,
@@ -4618,6 +4628,281 @@
           ],
           "tooltip": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored",
           "description": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored"
+        }
+      ]
+    },
+    {
+      "operation": "list_pr_reviews",
+      "title": "List Pull Request Reviews",
+      "description": "Lists the reviews associated with the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "list_pr_reviews",
+      "enabled": true,
+      "output_schema": [
+        {
+          "id": "",
+          "node_id": "",
+          "user": {
+            "login": "",
+            "id": "",
+            "node_id": "",
+            "avatar_url": "",
+            "gravatar_id": "",
+            "url": "",
+            "html_url": "",
+            "followers_url": "",
+            "following_url": "",
+            "gists_url": "",
+            "starred_url": "",
+            "subscriptions_url": "",
+            "organizations_url": "",
+            "repos_url": "",
+            "events_url": "",
+            "received_events_url": "",
+            "type": "",
+            "site_admin": ""
+          },
+          "body": "",
+          "state": "",
+          "html_url": "",
+          "pull_request_url": "",
+          "author_association": "",
+          "_links": {
+            "html": {
+              "href": ""
+            },
+            "pull_request": {
+              "href": ""
+            }
+          },
+          "submitted_at": "",
+          "commit_id": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose list of reviews on the specified pull request you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose list of reviews on the specified pull request you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose list of reviews on the specified pull request you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose list of reviews on the specified pull request you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to list of reviews on the specified pull request you want to retrieve from GitHub",
+          "description": "Select the method using which you want to list of reviews on the specified pull request you want to retrieve from GitHub"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose list of reviews on the specified pull request you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose list of reviews on the specified pull request you want to retrieve from GitHub"
+        },
+        {
+          "title": "Pull Number",
+          "name": "pull_number",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the number that identifies the pull request whose associated reviews you want to retrieve from GitHub",
+          "description": "Specify the number that identifies the pull request whose associated reviews you want to retrieve from GitHub"
+        },
+        {
+          "title": "Per Page",
+          "name": "per_page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
+        }
+      ]
+    },
+    {
+      "operation": "submit_pr_review",
+      "title": "Submit Pull Request Review",
+      "description": "Submits a pending review for a pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "submit_pr_review",
+      "enabled": true,
+      "output_schema": {
+        "id": "",
+        "node_id": "",
+        "user": {
+          "login": "",
+          "id": "",
+          "node_id": "",
+          "avatar_url": "",
+          "gravatar_id": "",
+          "url": "",
+          "html_url": "",
+          "followers_url": "",
+          "following_url": "",
+          "gists_url": "",
+          "starred_url": "",
+          "subscriptions_url": "",
+          "organizations_url": "",
+          "repos_url": "",
+          "events_url": "",
+          "received_events_url": "",
+          "type": "",
+          "site_admin": ""
+        },
+        "body": "",
+        "state": "",
+        "html_url": "",
+        "pull_request_url": "",
+        "_links": {
+          "html": {
+            "href": ""
+          },
+          "pull_request": {
+            "href": ""
+          }
+        },
+        "submitted_at": "",
+        "commit_id": "",
+        "author_association": ""
+      },
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose review you want to submit for the specified pull request you want to retrieve from GitHub",
+                "description": "Specify the name of the organization of the repository whose review you want to submit for the specified pull request you want to retrieve from GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose review you want to submit for the specified pull request you want to retrieve from GitHub",
+                "description": "Specify the account holder of the repository whose list of reviews on the specified pull request you want to retrieve from GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using whose review you want to submit for the specified pull request you want to retrieve from GitHub",
+          "description": "Select the method using whose review you want to submit for the specified pull request you want to retrieve from GitHub"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose review you want to submit for the specified pull request you want to retrieve from GitHub",
+          "description": "Specify the name of the repository whose review you want to submit for the specified pull request you want to retrieve from GitHub"
+        },
+        {
+          "title": "Pull Number",
+          "name": "pull_number",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the number that identifies the pull request whose review you want to submit to GitHub",
+          "description": "Specify the number that identifies the pull request whose review you want to submit to GitHub"
+        },
+        {
+          "title": "Reviewer ID",
+          "name": "review_id",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the unique identifier of the reviewer whose review you want to submit to GitHub",
+          "description": "Specify the unique identifier of the reviewer whose review you want to submit to GitHub"
+        },
+        {
+          "title": "Review Comment",
+          "name": "body",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the body of the pull request review whose review you want to submit to GitHub",
+          "description": "Specify the body of the pull request review whose review you want to submit to GitHub"
+        },
+        {
+          "title": "Review Action",
+          "name": "event",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "APPROVE",
+            "REQUEST_CHANGES",
+            "COMMENT"
+          ],
+          "tooltip": "Specify the review action of the pull request whose review you want to submit to GitHub",
+          "description": "Specify the review action of the pull request whose review you want to submit to GitHub"
         }
       ]
     },
