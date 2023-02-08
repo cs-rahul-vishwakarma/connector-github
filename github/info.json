@@ -4873,7 +4873,7 @@
           "title": "Commit ID",
           "name": "commit_id",
           "visible": true,
-          "required": true,
+          "required": false,
           "editable": true,
           "type": "integer",
           "tooltip": "Specify the SHA of the commit that needs a review",
