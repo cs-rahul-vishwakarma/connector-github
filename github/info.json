@@ -4763,9 +4763,9 @@
       ]
     },
     {
-      "operation": "submit_pr_review",
-      "title": "Submit Pull Request Review",
-      "description": "Submits a pending review for a pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+      "operation": "add_pr_review",
+      "title": "Add Pull Request Review",
+      "description": "Add a review for a pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
       "category": "investigation",
       "annotation": "submit_pr_review",
       "enabled": true,
@@ -4790,12 +4790,13 @@
           "events_url": "",
           "received_events_url": "",
           "type": "",
-          "site_admin": ""
+          "site_admin": false
         },
         "body": "",
         "state": "",
         "html_url": "",
         "pull_request_url": "",
+        "author_association": "",
         "_links": {
           "html": {
             "href": ""
@@ -4805,8 +4806,7 @@
           }
         },
         "submitted_at": "",
-        "commit_id": "",
-        "author_association": ""
+        "commit_id": ""
       },
       "parameters": [
         {
@@ -4870,14 +4870,14 @@
           "description": "Specify the number that identifies the pull request whose review you want to submit to GitHub"
         },
         {
-          "title": "Reviewer ID",
-          "name": "review_id",
+          "title": "Commit ID",
+          "name": "commit_id",
           "visible": true,
-          "required": true,
+          "required": false,
           "editable": true,
           "type": "integer",
-          "tooltip": "Specify the unique identifier of the reviewer whose review you want to submit to GitHub",
-          "description": "Specify the unique identifier of the reviewer whose review you want to submit to GitHub"
+          "tooltip": "Specify the SHA of the commit that needs a review",
+          "description": "Specify the SHA of the commit that needs a review"
         },
         {
           "title": "Review Comment",
@@ -4886,8 +4886,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the body of the pull request review whose review you want to submit to GitHub",
-          "description": "Specify the body of the pull request review whose review you want to submit to GitHub"
+          "tooltip": "Required when using REQUEST_CHANGES or COMMENT for the event parameter. The body text of the pull request review",
+          "description": "Specify the body of the pull request review whose review you want to submit to GitHub. Required when using REQUEST_CHANGES or COMMENT for the event parameter. The body text of the pull request review"
         },
         {
           "title": "Review Action",
