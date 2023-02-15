@@ -283,7 +283,6 @@ def clone_repository(config, params):
 def unzip_protected_file(file_iri=None, *args, **kwargs):
     try:
         metadata = download_file_from_cyops(file_iri, None, *args, **kwargs)
-        logger.error("Metadata: {0}".format(metadata))
         file_name = metadata.get('cyops_file_path', None)
         source_filepath = os.path.join(settings.TMP_FILE_ROOT, file_name)
         target_filepath = os.path.join(settings.TMP_FILE_ROOT, datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
