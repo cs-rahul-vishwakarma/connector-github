@@ -283,6 +283,7 @@ def clone_repository(config, params):
 def unzip_protected_file(file_iri=None, *args, **kwargs):
     try:
         metadata = download_file_from_cyops(file_iri, None, *args, **kwargs)
+        logger.error("Metadata: {0}".format(metadata))
         file_name = metadata.get('cyops_file_path', None)
         source_filepath = os.path.join(settings.TMP_FILE_ROOT, file_name)
         target_filepath = os.path.join(settings.TMP_FILE_ROOT, datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
@@ -293,12 +294,11 @@ def unzip_protected_file(file_iri=None, *args, **kwargs):
             for info in zipinfo:
                 zf.extract(member=info, path=target_filepath)
         check_file_traversal(target_filepath)
-        env = kwargs.get('env', {})
         listOfFiles = list()
         for (dirpath, dirnames, filenames) in os.walk(target_filepath):
             listOfFiles += [os.path.join(dirpath, file) for file in filenames]
-        save_file_in_env(env, target_filepath)
-        save_file_in_env(env, file_name)
+        meta_file = os.path.join('/tmp', metadata.get('cyops_file_path'))
+        os.remove(meta_file)
         return {"filenames": listOfFiles}
     except ConnectorError as e:
         raise ConnectorError(e)
@@ -308,10 +308,6 @@ def unzip_protected_file(file_iri=None, *args, **kwargs):
 
 def update_clone_repository(config, params):
     try:
-        todays_date = date.today()
-        del_paths = glob.glob(os.path.join('/tmp/', str(todays_date.year) + '*'))
-        for del_path in del_paths:
-            shutil.rmtree(del_path)
         response = unzip_protected_file(type='File IRI', file_iri=params.get('file_iri'))
         path = response['filenames'][0].split('/')
         root_src_dir = '/tmp/{0}/{1}/'.format(path[2], path[3])
@@ -378,6 +374,10 @@ def push_repository(config, params):
             old_file = repo.get_contents(en)
             commit = repo.update_file(en, 'Update PNG content', data, old_file.sha)
     shutil.rmtree('/tmp/{0}/'.format(params.get('name')))
+    todays_date = date.today()
+    del_paths = glob.glob(os.path.join('/tmp/', str(todays_date.year) + '*'))
+    for del_path in del_paths:
+        shutil.rmtree(del_path)
     return {"status": "finish"}
 
 
