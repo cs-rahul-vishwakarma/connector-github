@@ -2,7 +2,7 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "9587687f-5c7c-47f2-9987-683466c07ac9",
+      "uuid": "f7264789-59b7-4733-8698-a93cf1deafd8",
       "@type": "WorkflowCollection",
       "name": "Sample - GitHub - 1.0.0",
       "description": "GitHub is a code hosting platform for collaboration and version control. This connector facilitates automated interactions with Github, such as to create and manage repositories, branches, issues, pull requests, and many more.",
@@ -15,8 +15,8 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "ef8cae5b-b280-487d-934a-19fcaaefc9f9",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "9bd754b8-b129-4849-99fb-793054a27560",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Creates a new organization or authenticated user repository based on the repository name, organization name, base branch name, and other input parameters you have specified",
           "name": "Create Repository",
@@ -30,16 +30,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/6e1ee811-06cb-451f-a6ed-928fd8d63d11",
+          "triggerStep": "/api/3/workflow_steps/f76015aa-85e4-4d02-aecd-f269f08eae9d",
           "steps": [
             {
-              "uuid": "6e1ee811-06cb-451f-a6ed-928fd8d63d11",
+              "uuid": "f76015aa-85e4-4d02-aecd-f269f08eae9d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "4a65c197-fe93-4311-88e4-387c075c470c",
+                "route": "65846565-8a06-4f75-94a1-e1c958cbcd45",
                 "title": "GitHub: Create Repository",
                 "resources": [
                   "alerts"
@@ -59,7 +59,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "6d3cbf6f-22ab-4df5-883e-93b7b884030e",
+              "uuid": "d3d36bf9-59a1-412b-be31-a1e967b58afd",
               "@type": "WorkflowStep",
               "name": "Create Repository",
               "description": null,
@@ -90,19 +90,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "872b22a2-7c2c-4c6f-aa2a-b0cb9d79db6e",
+              "uuid": "552d7a84-0550-4b45-b954-784cca497229",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Repository",
-              "sourceStep": "/api/3/workflow_steps/6e1ee811-06cb-451f-a6ed-928fd8d63d11",
-              "targetStep": "/api/3/workflow_steps/6d3cbf6f-22ab-4df5-883e-93b7b884030e"
+              "sourceStep": "/api/3/workflow_steps/f76015aa-85e4-4d02-aecd-f269f08eae9d",
+              "targetStep": "/api/3/workflow_steps/d3d36bf9-59a1-412b-be31-a1e967b58afd"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "dcf031be-4102-48c8-8e3a-95f1a2e08382",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "b84b85b2-6624-40ed-9ce0-b64e1b24448b",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Creates a new repository using a repository template based on the template repository, repository name, and other input parameters you have specified",
           "name": "Create Repository Using Template",
@@ -116,16 +116,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/b3209375-f69d-45ab-8fbe-5bfde4dfce23",
+          "triggerStep": "/api/3/workflow_steps/7f2a6017-f1c7-47e5-a445-35a7e6b40607",
           "steps": [
             {
-              "uuid": "b3209375-f69d-45ab-8fbe-5bfde4dfce23",
+              "uuid": "7f2a6017-f1c7-47e5-a445-35a7e6b40607",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "af7609fb-44e5-4ed4-8efa-ee62cc19846e",
+                "route": "667a1730-675b-442f-8775-879ccf3c818f",
                 "title": "GitHub: Create Repository Using Template",
                 "resources": [
                   "alerts"
@@ -145,7 +145,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "9cfe3afb-8931-43a8-a6b3-af81132c5acf",
+              "uuid": "7a61fc77-d915-4bfe-ae64-0390a49ef544",
               "@type": "WorkflowStep",
               "name": "Create Repository Using Template",
               "description": null,
@@ -173,19 +173,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "7a5faa93-83b3-479c-8b27-7607adbe4bb5",
+              "uuid": "52bf3dc1-d234-4b8b-a6ec-1b03db613ee7",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Repository Using Template",
-              "sourceStep": "/api/3/workflow_steps/b3209375-f69d-45ab-8fbe-5bfde4dfce23",
-              "targetStep": "/api/3/workflow_steps/9cfe3afb-8931-43a8-a6b3-af81132c5acf"
+              "sourceStep": "/api/3/workflow_steps/7f2a6017-f1c7-47e5-a445-35a7e6b40607",
+              "targetStep": "/api/3/workflow_steps/7a61fc77-d915-4bfe-ae64-0390a49ef544"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "6fa6ce1b-7d4e-40b7-a646-aab4ed41901c",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "f3a0d166-7f8e-4058-bf03-80c6daf24761",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists repositories for the specified organization based on the organization name, repository type, and other input parameters you have specified",
           "name": "List Organization Repositories",
@@ -199,16 +199,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/56913e69-3c5c-48b8-8b2a-6122540196ac",
+          "triggerStep": "/api/3/workflow_steps/502f2b92-c8d8-40d8-9f9c-45a3f35af074",
           "steps": [
             {
-              "uuid": "56913e69-3c5c-48b8-8b2a-6122540196ac",
+              "uuid": "502f2b92-c8d8-40d8-9f9c-45a3f35af074",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "a11853bb-2dd0-49a8-8681-9c21b28b99a9",
+                "route": "5e77fc31-a9b5-4230-9d3d-f160fdc5de49",
                 "title": "GitHub: List Organization Repositories",
                 "resources": [
                   "alerts"
@@ -228,7 +228,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "368006d4-59b6-4766-9fe8-76a7b6a75ec4",
+              "uuid": "a4b047ba-6a04-4363-b8fd-101a42badaf8",
               "@type": "WorkflowStep",
               "name": "List Organization Repositories",
               "description": null,
@@ -237,9 +237,9 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "type": "all",
-                  "sort": "created",
-                  "direction": "desc"
+                  "type": "All",
+                  "sort": "Created",
+                  "direction": "Desc"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -257,19 +257,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "daaab993-03cc-4190-b690-8349ce3f3e3c",
+              "uuid": "7e02f90f-5601-49eb-8443-979789836bc3",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Organization Repositories",
-              "sourceStep": "/api/3/workflow_steps/56913e69-3c5c-48b8-8b2a-6122540196ac",
-              "targetStep": "/api/3/workflow_steps/368006d4-59b6-4766-9fe8-76a7b6a75ec4"
+              "sourceStep": "/api/3/workflow_steps/502f2b92-c8d8-40d8-9f9c-45a3f35af074",
+              "targetStep": "/api/3/workflow_steps/a4b047ba-6a04-4363-b8fd-101a42badaf8"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "8d81901a-60ff-477e-b924-832ddfc88676",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "49c36ac3-b2e4-4ac1-84c8-e215cf28cf2f",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists public repositories for the specified user based on the username, repository type, and other input parameters you have specified",
           "name": "List User Repositories",
@@ -283,16 +283,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/814ab03f-25e2-44ef-8e14-6ed45ab98777",
+          "triggerStep": "/api/3/workflow_steps/46ce03ee-4a0b-431a-af8d-791b01bc7d02",
           "steps": [
             {
-              "uuid": "814ab03f-25e2-44ef-8e14-6ed45ab98777",
+              "uuid": "46ce03ee-4a0b-431a-af8d-791b01bc7d02",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "3229af1a-3a6c-4999-8a32-b7372f0bb64f",
+                "route": "2b8c0c3e-1920-4010-ba1b-6e279c32d64d",
                 "title": "GitHub: List User Repositories",
                 "resources": [
                   "alerts"
@@ -312,7 +312,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "05a46280-905a-4df6-8f5c-dea8f3800fb7",
+              "uuid": "92954eae-e4cb-400b-8396-4beebae2140c",
               "@type": "WorkflowStep",
               "name": "List User Repositories",
               "description": null,
@@ -321,9 +321,9 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "type": "owner",
-                  "sort": "full_name",
-                  "direction": "desc"
+                  "type": "Owner",
+                  "sort": "Full Name",
+                  "direction": "Desc"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -341,19 +341,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "037c9679-6042-4e1d-a10c-0fd5e76b7184",
+              "uuid": "f856f755-7b13-4a79-8692-4c2ee8a32864",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List User Repositories",
-              "sourceStep": "/api/3/workflow_steps/814ab03f-25e2-44ef-8e14-6ed45ab98777",
-              "targetStep": "/api/3/workflow_steps/05a46280-905a-4df6-8f5c-dea8f3800fb7"
+              "sourceStep": "/api/3/workflow_steps/46ce03ee-4a0b-431a-af8d-791b01bc7d02",
+              "targetStep": "/api/3/workflow_steps/92954eae-e4cb-400b-8396-4beebae2140c"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "cbae1d66-2dfb-4b24-ac36-c8744aafe9de",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "dcf0e0b0-675a-4add-8375-28b897f5152b",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists repositories that the authenticated user has explicit permission (:read, :write, or :admin) to access.",
           "name": "List Authenticated User Repositories",
@@ -367,16 +367,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/d047c9bb-2ef4-4b7f-b2ec-1ea5bb603671",
+          "triggerStep": "/api/3/workflow_steps/1f32b41c-252f-43a5-b908-a5caced4a5a5",
           "steps": [
             {
-              "uuid": "d047c9bb-2ef4-4b7f-b2ec-1ea5bb603671",
+              "uuid": "1f32b41c-252f-43a5-b908-a5caced4a5a5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "79a48d8b-d332-40eb-a481-ca827d0e3cc5",
+                "route": "172cfdbe-2ee6-4c7c-9ce0-672585a1da65",
                 "title": "GitHub: List Authenticated User Repositories",
                 "resources": [
                   "alerts"
@@ -396,7 +396,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "24f4f138-af77-4d75-8efd-5deb100870c2",
+              "uuid": "4f6d9ba3-f7c4-456c-87e6-1d26836f3012",
               "@type": "WorkflowStep",
               "name": "List Authenticated User Repositories",
               "description": null,
@@ -405,11 +405,11 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "visibility": "all",
+                  "visibility": "All",
                   "affiliation": "owner,collaborator,organization_member",
-                  "type": "all",
-                  "sort": "full_name",
-                  "direction": "desc"
+                  "type": "All",
+                  "sort": "Full Name",
+                  "direction": "Desc"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -427,19 +427,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "2eb767e2-a00a-4062-8d2f-d2aec2a91804",
+              "uuid": "2c55af5b-248a-486f-afd5-345a53516df7",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Authenticated User Repositories",
-              "sourceStep": "/api/3/workflow_steps/d047c9bb-2ef4-4b7f-b2ec-1ea5bb603671",
-              "targetStep": "/api/3/workflow_steps/24f4f138-af77-4d75-8efd-5deb100870c2"
+              "sourceStep": "/api/3/workflow_steps/1f32b41c-252f-43a5-b908-a5caced4a5a5",
+              "targetStep": "/api/3/workflow_steps/4f6d9ba3-f7c4-456c-87e6-1d26836f3012"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ee5c5c06-ea26-41fd-9cc5-6a46367e6aad",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "39ca194b-ce80-4a6f-9fb3-b3e69589447f",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Updates a personal repository of a specified user based on the repository name, repository owner, and other input parameters you have specified",
           "name": "Update Repository",
@@ -453,16 +453,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/d722f9fe-ad10-48bc-a0ae-8d33b42b8805",
+          "triggerStep": "/api/3/workflow_steps/3ae6156b-5bac-4188-8673-2ffe57f4a9f8",
           "steps": [
             {
-              "uuid": "d722f9fe-ad10-48bc-a0ae-8d33b42b8805",
+              "uuid": "3ae6156b-5bac-4188-8673-2ffe57f4a9f8",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "4d735082-b6b6-4c10-bf95-59aef2844871",
+                "route": "c1ecdb86-8226-44bf-82b7-923e859d4417",
                 "title": "GitHub: Update Repository",
                 "resources": [
                   "alerts"
@@ -482,7 +482,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "2559ddb9-560c-4154-ae62-183cc8409cb8",
+              "uuid": "1904232b-7b05-47f1-a03e-31d29f1ae7f3",
               "@type": "WorkflowStep",
               "name": "Update Repository",
               "description": null,
@@ -512,19 +512,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "4e19865e-34a2-4bee-93fd-e90a2ac43f43",
+              "uuid": "f0115ef7-0c8d-4b68-a8c9-d8a6dbe1de5a",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Update Repository",
-              "sourceStep": "/api/3/workflow_steps/d722f9fe-ad10-48bc-a0ae-8d33b42b8805",
-              "targetStep": "/api/3/workflow_steps/2559ddb9-560c-4154-ae62-183cc8409cb8"
+              "sourceStep": "/api/3/workflow_steps/3ae6156b-5bac-4188-8673-2ffe57f4a9f8",
+              "targetStep": "/api/3/workflow_steps/1904232b-7b05-47f1-a03e-31d29f1ae7f3"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "3e8c7377-faa0-43fa-a55c-e98a3f227ef8",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "1c3d9814-5c26-4a88-9e77-abb5b4ae079b",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Delete the specified organization or user repository from GitHub",
           "name": "Delete Repository",
@@ -538,16 +538,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/69093cd0-f2f5-4eb3-89d7-23477fb92546",
+          "triggerStep": "/api/3/workflow_steps/122a8652-3840-42e7-b892-27cc8e4d88ec",
           "steps": [
             {
-              "uuid": "69093cd0-f2f5-4eb3-89d7-23477fb92546",
+              "uuid": "122a8652-3840-42e7-b892-27cc8e4d88ec",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "5f7efe8c-93b8-4dc7-8c03-66bb234f9906",
+                "route": "2a07114a-8284-4e99-bbb7-aed6e39e89da",
                 "title": "GitHub: Delete Repository",
                 "resources": [
                   "alerts"
@@ -567,7 +567,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "75d2833a-c58b-4aa9-b642-05b7b43c079f",
+              "uuid": "07c93919-e7f4-4603-bbb8-c03f2ad0fa4f",
               "@type": "WorkflowStep",
               "name": "Delete Repository",
               "description": null,
@@ -592,19 +592,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "1f35e9c6-c0d9-4252-8320-092f611fdfe6",
+              "uuid": "8ab8d1e9-da36-4c33-8cce-95197e9e4d87",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Repository",
-              "sourceStep": "/api/3/workflow_steps/69093cd0-f2f5-4eb3-89d7-23477fb92546",
-              "targetStep": "/api/3/workflow_steps/75d2833a-c58b-4aa9-b642-05b7b43c079f"
+              "sourceStep": "/api/3/workflow_steps/122a8652-3840-42e7-b892-27cc8e4d88ec",
+              "targetStep": "/api/3/workflow_steps/07c93919-e7f4-4603-bbb8-c03f2ad0fa4f"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "9866ed96-a1f6-4046-9ced-1614952f83de",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "a1ba465c-2943-4dca-a75c-c65a5d3d9b7e",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Forks an organization repository for the specified repository owner based on the repository owner, repository name, and organization name you have specified",
           "name": "Fork Organization Repository",
@@ -618,16 +618,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/b699a881-5e40-4519-8c1f-c325201b5c33",
+          "triggerStep": "/api/3/workflow_steps/bae2e63e-d9b4-49f6-aa2c-9384cf0d5cff",
           "steps": [
             {
-              "uuid": "b699a881-5e40-4519-8c1f-c325201b5c33",
+              "uuid": "bae2e63e-d9b4-49f6-aa2c-9384cf0d5cff",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "1c465150-2a8e-4542-abd3-b6693b638774",
+                "route": "30021de9-00ee-4c87-ada0-4fd95eb20b7a",
                 "title": "GitHub: Fork Organization Repository",
                 "resources": [
                   "alerts"
@@ -647,7 +647,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "af10bbc4-0139-4316-ba7d-78a33cea680e",
+              "uuid": "22635094-ecce-4035-8ba3-df145cd0ec93",
               "@type": "WorkflowStep",
               "name": "Fork Organization Repository",
               "description": null,
@@ -672,19 +672,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "e4fd1b4c-56fe-4ab9-a87c-13f36ad5f704",
+              "uuid": "f128ba33-d5e7-4518-8ad1-ce45e2450c22",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Fork Organization Repository",
-              "sourceStep": "/api/3/workflow_steps/b699a881-5e40-4519-8c1f-c325201b5c33",
-              "targetStep": "/api/3/workflow_steps/af10bbc4-0139-4316-ba7d-78a33cea680e"
+              "sourceStep": "/api/3/workflow_steps/bae2e63e-d9b4-49f6-aa2c-9384cf0d5cff",
+              "targetStep": "/api/3/workflow_steps/22635094-ecce-4035-8ba3-df145cd0ec93"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f6cc52ee-9c1d-4d6f-b57b-cfcb42f8c637",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "3c96e7f5-57ca-4859-a3c7-3ef41ff98e7d",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists the repositories that have been forked for the specified organization based on the repository owner, repository name, and other input parameters you have specified",
           "name": "List Fork Repositories",
@@ -698,16 +698,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/24767377-53ea-443d-935f-80a200c11754",
+          "triggerStep": "/api/3/workflow_steps/0764abd4-f526-4c46-ba0e-caec33e7904f",
           "steps": [
             {
-              "uuid": "24767377-53ea-443d-935f-80a200c11754",
+              "uuid": "0764abd4-f526-4c46-ba0e-caec33e7904f",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "167f6fb7-8761-4c1c-a4f6-d2fa5a93b321",
+                "route": "bd76c92c-bbaa-4b94-be9c-5e54400aa497",
                 "title": "GitHub: List Fork Repositories",
                 "resources": [
                   "alerts"
@@ -727,7 +727,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "c91c8fbc-1da0-4691-951e-bc43c6fc3b3d",
+              "uuid": "8c1e1246-a036-40c8-ac18-4b0a4b56f274",
               "@type": "WorkflowStep",
               "name": "List Fork Repositories",
               "description": null,
@@ -736,7 +736,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "sort": "newest"
+                  "sort": "Newest"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -754,19 +754,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "6efc0ead-b967-4f03-a08e-1e91f74b0e01",
+              "uuid": "d0c6658e-ad63-4499-94fc-ca530c3abcb3",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Fork Repositories",
-              "sourceStep": "/api/3/workflow_steps/24767377-53ea-443d-935f-80a200c11754",
-              "targetStep": "/api/3/workflow_steps/c91c8fbc-1da0-4691-951e-bc43c6fc3b3d"
+              "sourceStep": "/api/3/workflow_steps/0764abd4-f526-4c46-ba0e-caec33e7904f",
+              "targetStep": "/api/3/workflow_steps/8c1e1246-a036-40c8-ac18-4b0a4b56f274"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d1f5c08a-5579-4842-88f2-8b7abd5ced06",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "c8f8b069-433e-4976-9747-8504b042982c",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Creates a new repository using a repository template based on the template repository, repository name, and other input parameters you have specified",
           "name": "Create or Update File Contents",
@@ -780,16 +780,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/2d9856af-c2b5-4a54-8312-f5e6004244b1",
+          "triggerStep": "/api/3/workflow_steps/48cc96c9-348e-4306-b5d0-7df81c671925",
           "steps": [
             {
-              "uuid": "2d9856af-c2b5-4a54-8312-f5e6004244b1",
+              "uuid": "48cc96c9-348e-4306-b5d0-7df81c671925",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "6ae2aff5-705f-4a21-837b-10c3f89fb53e",
+                "route": "33df69b0-2e29-43ba-b2b9-77c1f7726d2c",
                 "title": "GitHub: Create or Update File Contents",
                 "resources": [
                   "alerts"
@@ -809,7 +809,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "eeb578f5-3dc8-4f29-be82-7ec2b3e62ecd",
+              "uuid": "d046bace-34ed-4859-9eb8-01477a5924a6",
               "@type": "WorkflowStep",
               "name": "Create or Update File Contents",
               "description": null,
@@ -834,19 +834,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "f995a8ab-3816-45fe-b547-b1aac9034f67",
+              "uuid": "2c966a14-1dca-4d5f-b708-3a88c1a9fe19",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create or Update File Contents",
-              "sourceStep": "/api/3/workflow_steps/2d9856af-c2b5-4a54-8312-f5e6004244b1",
-              "targetStep": "/api/3/workflow_steps/eeb578f5-3dc8-4f29-be82-7ec2b3e62ecd"
+              "sourceStep": "/api/3/workflow_steps/48cc96c9-348e-4306-b5d0-7df81c671925",
+              "targetStep": "/api/3/workflow_steps/d046bace-34ed-4859-9eb8-01477a5924a6"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "5117c7a1-1cce-4943-8063-8341a711d9ae",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "fb87830e-453d-4f48-8bab-4d17d58815f6",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Updates a personal repository of a specified user to add a collaborator for the repository based on the repository name, collaborator username, repository owner, and other input parameters you have specified",
           "name": "Add Repository Collaborator",
@@ -860,16 +860,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/5185ac70-d971-48e3-8df2-5a28b9ae8080",
+          "triggerStep": "/api/3/workflow_steps/bc58d8a9-75c4-4f59-a3d2-40e0a211a8ad",
           "steps": [
             {
-              "uuid": "5185ac70-d971-48e3-8df2-5a28b9ae8080",
+              "uuid": "bc58d8a9-75c4-4f59-a3d2-40e0a211a8ad",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d6cfb40b-cf62-4b7f-a702-1b95c431f058",
+                "route": "63ca69cb-b28d-4205-a94e-427919c6129b",
                 "title": "GitHub: Add Repository Collaborator",
                 "resources": [
                   "alerts"
@@ -889,7 +889,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "1f9d4885-4430-4462-8338-04755a7c3b44",
+              "uuid": "1933057c-681a-44dd-868a-313cbbaf5c2a",
               "@type": "WorkflowStep",
               "name": "Add Repository Collaborator",
               "description": null,
@@ -898,7 +898,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "permission": "push"
+                  "permission": "Push"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -916,19 +916,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "c3a6202f-5770-4d25-8b78-b3c8108779fe",
+              "uuid": "93fec706-ba91-476d-8356-9126d75a20e8",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Repository Collaborator",
-              "sourceStep": "/api/3/workflow_steps/5185ac70-d971-48e3-8df2-5a28b9ae8080",
-              "targetStep": "/api/3/workflow_steps/1f9d4885-4430-4462-8338-04755a7c3b44"
+              "sourceStep": "/api/3/workflow_steps/bc58d8a9-75c4-4f59-a3d2-40e0a211a8ad",
+              "targetStep": "/api/3/workflow_steps/1933057c-681a-44dd-868a-313cbbaf5c2a"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d444c6ca-b6e1-4063-a6ca-ae5088bbd8f4",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "c9875b68-f55d-4e9e-9723-f3cf76662bf5",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Retrieves branch revision details of the specified branch in GitHub based on the base branch, repository name, and repository owner you have specified",
           "name": "Get Branch Revision",
@@ -942,16 +942,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/02d9457e-3431-4410-861d-1b1e40e025c8",
+          "triggerStep": "/api/3/workflow_steps/a99651d0-baba-4e67-bac7-4b5226d1d95b",
           "steps": [
             {
-              "uuid": "02d9457e-3431-4410-861d-1b1e40e025c8",
+              "uuid": "a99651d0-baba-4e67-bac7-4b5226d1d95b",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b1856022-1566-457b-b99d-34d1639b8702",
+                "route": "a569c3cd-224f-4607-afa5-d7e7571afac6",
                 "title": "GitHub: Get Branch Revision",
                 "resources": [
                   "alerts"
@@ -971,7 +971,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "847f9371-317d-49b9-88ff-fdd075a40366",
+              "uuid": "8beafea1-0e7c-45c1-8f3a-e8fea05ed2ca",
               "@type": "WorkflowStep",
               "name": "Get Branch Revision",
               "description": null,
@@ -996,19 +996,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "942e137e-cbc6-4332-a033-c0537bbfa690",
+              "uuid": "0192c309-ac15-4d5d-9a0a-be50414b7440",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Branch Revision",
-              "sourceStep": "/api/3/workflow_steps/02d9457e-3431-4410-861d-1b1e40e025c8",
-              "targetStep": "/api/3/workflow_steps/847f9371-317d-49b9-88ff-fdd075a40366"
+              "sourceStep": "/api/3/workflow_steps/a99651d0-baba-4e67-bac7-4b5226d1d95b",
+              "targetStep": "/api/3/workflow_steps/8beafea1-0e7c-45c1-8f3a-e8fea05ed2ca"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "6a716c7c-e373-4bed-9be5-1ce45c4e4fe6",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "db82b793-da18-45fa-b548-6b4e32097260",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Creates a new branch in GitHub based on the repository name, base branch type, repository owner, and other input parameters you have specified",
           "name": "Create Branch",
@@ -1022,16 +1022,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/7616446c-60f9-424d-be61-8d323bf55ae5",
+          "triggerStep": "/api/3/workflow_steps/bb91dd5e-02e3-4636-ae9b-1147da945a27",
           "steps": [
             {
-              "uuid": "7616446c-60f9-424d-be61-8d323bf55ae5",
+              "uuid": "bb91dd5e-02e3-4636-ae9b-1147da945a27",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "1ba231c6-3c74-4b89-9978-2be54afdb064",
+                "route": "e4ae9cf8-9597-4523-8f2f-97ba1b5927bb",
                 "title": "GitHub: Create Branch",
                 "resources": [
                   "alerts"
@@ -1051,7 +1051,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "5fb8bc93-76a5-4c24-b852-5d1859cdb092",
+              "uuid": "f732fdb8-18f2-4752-aa1f-b89bfda6d18f",
               "@type": "WorkflowStep",
               "name": "Create Branch",
               "description": null,
@@ -1076,19 +1076,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "ed83d97c-856c-4104-8456-762dfbcf32ce",
+              "uuid": "c6b166cf-79f8-4c4b-8b58-2bacb19eed2c",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Branch",
-              "sourceStep": "/api/3/workflow_steps/7616446c-60f9-424d-be61-8d323bf55ae5",
-              "targetStep": "/api/3/workflow_steps/5fb8bc93-76a5-4c24-b852-5d1859cdb092"
+              "sourceStep": "/api/3/workflow_steps/bb91dd5e-02e3-4636-ae9b-1147da945a27",
+              "targetStep": "/api/3/workflow_steps/f732fdb8-18f2-4752-aa1f-b89bfda6d18f"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "0b2f84a2-ff74-42ae-8994-cea581a69722",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "44b83695-a43e-4ded-adda-d956ee220711",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Merges a specified branch to the base branch in GitHub based on the repository name, base branch name, repository owner, and other input parameters you have specified",
           "name": "Merge Branch",
@@ -1102,16 +1102,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/967945b3-5f11-40b0-97ad-1df1e2bd569e",
+          "triggerStep": "/api/3/workflow_steps/302c09a6-93f0-47df-9797-bcb841a7a221",
           "steps": [
             {
-              "uuid": "967945b3-5f11-40b0-97ad-1df1e2bd569e",
+              "uuid": "302c09a6-93f0-47df-9797-bcb841a7a221",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "7f7927d9-b8aa-4589-aa07-8a13a5d091d0",
+                "route": "63c5495f-f5a3-49f4-8a0d-19b27853d9b6",
                 "title": "GitHub: Merge Branch",
                 "resources": [
                   "alerts"
@@ -1131,7 +1131,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "20dfa6c3-8287-422e-8738-f05a5c9761bd",
+              "uuid": "95bffca5-f4a3-4f0e-bac2-d726b861fe55",
               "@type": "WorkflowStep",
               "name": "Merge Branch",
               "description": null,
@@ -1156,19 +1156,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "0dbbcc2c-ee04-4afc-bc1b-003db2fb75ed",
+              "uuid": "06d7bff5-2375-4241-b9c0-789eac09cafb",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Merge Branch",
-              "sourceStep": "/api/3/workflow_steps/967945b3-5f11-40b0-97ad-1df1e2bd569e",
-              "targetStep": "/api/3/workflow_steps/20dfa6c3-8287-422e-8738-f05a5c9761bd"
+              "sourceStep": "/api/3/workflow_steps/302c09a6-93f0-47df-9797-bcb841a7a221",
+              "targetStep": "/api/3/workflow_steps/95bffca5-f4a3-4f0e-bac2-d726b861fe55"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "32852d80-e5e3-446c-a183-a59e6bc10057",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "5ff0871d-c10c-45fa-b49f-429a0eb35ce7",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists branches of the specified repository based on the repository name, repository owner, and other input parameters you have specified",
           "name": "List Branches",
@@ -1182,16 +1182,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/45720264-eecf-4863-958d-df94845cadba",
+          "triggerStep": "/api/3/workflow_steps/e10e28f9-144c-4b96-93f0-e21021853a44",
           "steps": [
             {
-              "uuid": "45720264-eecf-4863-958d-df94845cadba",
+              "uuid": "e10e28f9-144c-4b96-93f0-e21021853a44",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "4730ccbb-00f6-43bf-a73e-436c56417ca2",
+                "route": "7d393c8d-dfc8-4665-9883-94eab457b991",
                 "title": "GitHub: List Branches",
                 "resources": [
                   "alerts"
@@ -1211,7 +1211,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "7fa9d98c-b824-44fb-a318-994c1cd0accb",
+              "uuid": "62596b3b-a582-44bf-951e-23aa09cc5eac",
               "@type": "WorkflowStep",
               "name": "List Branches",
               "description": null,
@@ -1238,19 +1238,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "78c3c8f1-db0d-4d28-a377-2f8eb0c2329e",
+              "uuid": "abaf5e82-fc00-42e9-8e56-fa77646de781",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Branches",
-              "sourceStep": "/api/3/workflow_steps/45720264-eecf-4863-958d-df94845cadba",
-              "targetStep": "/api/3/workflow_steps/7fa9d98c-b824-44fb-a318-994c1cd0accb"
+              "sourceStep": "/api/3/workflow_steps/e10e28f9-144c-4b96-93f0-e21021853a44",
+              "targetStep": "/api/3/workflow_steps/62596b3b-a582-44bf-951e-23aa09cc5eac"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "fbe0c9ab-c234-42d1-85b5-e3e045b154f2",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "30e99764-f64b-4111-a1de-0a08cfa19a6d",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Delete a new branch in GitHub based on the repository name, branch name, repository owner, and other input parameters you have specified",
           "name": "Delete Branch",
@@ -1264,16 +1264,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ff73b0e7-efc1-4194-b5c9-e34b2839ca3a",
+          "triggerStep": "/api/3/workflow_steps/d64bc694-c966-4b36-9102-97a9a86bb6c9",
           "steps": [
             {
-              "uuid": "ff73b0e7-efc1-4194-b5c9-e34b2839ca3a",
+              "uuid": "d64bc694-c966-4b36-9102-97a9a86bb6c9",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d8b4f10f-0f97-4be4-ad3d-d54c43169d98",
+                "route": "a07550d5-e4c7-4611-9f87-5a428bd12ad0",
                 "title": "GitHub: Delete Branch",
                 "resources": [
                   "alerts"
@@ -1293,7 +1293,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "f05ce372-6499-4ee9-a69e-5928b6d5ae32",
+              "uuid": "6fd9a057-f95b-495d-b009-b66d8c02de68",
               "@type": "WorkflowStep",
               "name": "Delete Branch",
               "description": null,
@@ -1318,19 +1318,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "c8ef8969-eb34-4c2b-84d2-1f92b5ac7489",
+              "uuid": "9591c603-9b70-4e5d-9b52-abc46681ac5d",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Branch",
-              "sourceStep": "/api/3/workflow_steps/ff73b0e7-efc1-4194-b5c9-e34b2839ca3a",
-              "targetStep": "/api/3/workflow_steps/f05ce372-6499-4ee9-a69e-5928b6d5ae32"
+              "sourceStep": "/api/3/workflow_steps/d64bc694-c966-4b36-9102-97a9a86bb6c9",
+              "targetStep": "/api/3/workflow_steps/6fd9a057-f95b-495d-b009-b66d8c02de68"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "796dae29-db9f-4015-a478-1acec0239404",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "34586e3e-1bb6-4e91-8c73-b444b4f133e9",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Synchronizes a branch of a forked repository to keep it up-to-date with the upstream repository based on the repository name, repository owner, and other input parameters you have specified",
           "name": "Fetch Upstream",
@@ -1344,16 +1344,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/3295c08a-edb6-4207-afe3-51a768104eb5",
+          "triggerStep": "/api/3/workflow_steps/4e3317aa-2583-4187-af92-0a0e411b2842",
           "steps": [
             {
-              "uuid": "3295c08a-edb6-4207-afe3-51a768104eb5",
+              "uuid": "4e3317aa-2583-4187-af92-0a0e411b2842",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "14491a50-1848-4cf4-abf7-efdb8a5c88c4",
+                "route": "6458cd55-d4e8-4e1c-b327-3474dfd34015",
                 "title": "GitHub: Fetch Upstream",
                 "resources": [
                   "alerts"
@@ -1373,7 +1373,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "7543a929-1c06-4a43-8fb4-5a46d8cdccde",
+              "uuid": "a842efa6-b699-4ab2-856a-387804262eb0",
               "@type": "WorkflowStep",
               "name": "Fetch Upstream",
               "description": null,
@@ -1398,19 +1398,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "998588d9-44c4-4cb4-b03e-839d28a2752a",
+              "uuid": "1bab8402-6111-4179-8844-cddb6b610779",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Fetch Upstream",
-              "sourceStep": "/api/3/workflow_steps/3295c08a-edb6-4207-afe3-51a768104eb5",
-              "targetStep": "/api/3/workflow_steps/7543a929-1c06-4a43-8fb4-5a46d8cdccde"
+              "sourceStep": "/api/3/workflow_steps/4e3317aa-2583-4187-af92-0a0e411b2842",
+              "targetStep": "/api/3/workflow_steps/a842efa6-b699-4ab2-856a-387804262eb0"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "4f4843cb-53bb-46e5-bfc3-1145b9ab314c",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "ceb8fb4b-deb3-4e0c-8c86-28c804fad7a9",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Clones the specified repository in GitHub based on the repository name you have specified. You can choose to clone the repository in the 'zip' format",
           "name": "Clone Repository",
@@ -1424,16 +1424,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/6b8d21d5-ece3-426e-9ca8-1c3ade289cb4",
+          "triggerStep": "/api/3/workflow_steps/3db0a125-e3da-4300-864a-c71e04095f5c",
           "steps": [
             {
-              "uuid": "6b8d21d5-ece3-426e-9ca8-1c3ade289cb4",
+              "uuid": "3db0a125-e3da-4300-864a-c71e04095f5c",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "a3104a7c-1c4b-4ca2-afc2-37bc3781d957",
+                "route": "10c42b49-879f-41b7-9666-125c55bda912",
                 "title": "GitHub: Clone Repository",
                 "resources": [
                   "alerts"
@@ -1453,7 +1453,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "44f32c1c-7956-4b9c-baa1-2351eed341b1",
+              "uuid": "2bcf7458-2b32-4669-9175-2cf0e9334afa",
               "@type": "WorkflowStep",
               "name": "Clone Repository",
               "description": null,
@@ -1480,19 +1480,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "2adcd756-1ee1-4a45-a896-ed1b87aeca1a",
+              "uuid": "9712d98a-3f8d-4321-8a0b-6ce6fea95bc4",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Clone Repository",
-              "sourceStep": "/api/3/workflow_steps/6b8d21d5-ece3-426e-9ca8-1c3ade289cb4",
-              "targetStep": "/api/3/workflow_steps/44f32c1c-7956-4b9c-baa1-2351eed341b1"
+              "sourceStep": "/api/3/workflow_steps/3db0a125-e3da-4300-864a-c71e04095f5c",
+              "targetStep": "/api/3/workflow_steps/2bcf7458-2b32-4669-9175-2cf0e9334afa"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ccf0de35-bc63-42d0-b39f-5e508396cd19",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "848f7fcf-dd18-433f-b09d-176993384d9c",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Applies changes made in a FortiSOAR file to the specified remote repository that is cloned from GitHub based on the file IRI and cloned repository path you have specified",
           "name": "Update Remote Repository",
@@ -1506,16 +1506,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/0ddc05ef-248c-4179-90f8-0d7a60a64461",
+          "triggerStep": "/api/3/workflow_steps/472bf2b6-4d4e-45ee-ba15-8dd3f06a383a",
           "steps": [
             {
-              "uuid": "0ddc05ef-248c-4179-90f8-0d7a60a64461",
+              "uuid": "472bf2b6-4d4e-45ee-ba15-8dd3f06a383a",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "4603ae65-fdc5-4b6a-847a-32c69a6d5d26",
+                "route": "588da217-c5d2-4c26-8f9d-44ef0926d6c0",
                 "title": "GitHub: Update Remote Repository",
                 "resources": [
                   "alerts"
@@ -1535,7 +1535,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "d0c79651-f553-47bb-af58-a1bebf9d7f1b",
+              "uuid": "2c58e7c5-b89b-4f0a-a7d0-e03c6f960bed",
               "@type": "WorkflowStep",
               "name": "Update Remote Repository",
               "description": null,
@@ -1560,19 +1560,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "4c7e615d-96bc-41e5-a56a-b1b848feaec5",
+              "uuid": "a06b0168-3e5f-4148-a90d-6f6eb2f847ec",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Update Remote Repository",
-              "sourceStep": "/api/3/workflow_steps/0ddc05ef-248c-4179-90f8-0d7a60a64461",
-              "targetStep": "/api/3/workflow_steps/d0c79651-f553-47bb-af58-a1bebf9d7f1b"
+              "sourceStep": "/api/3/workflow_steps/472bf2b6-4d4e-45ee-ba15-8dd3f06a383a",
+              "targetStep": "/api/3/workflow_steps/2c58e7c5-b89b-4f0a-a7d0-e03c6f960bed"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "cf06347d-443f-4006-bdf7-c4e9f8c2b390",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "cc2625aa-60eb-4ebf-9fee-3895999a0665",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Commits the local repository changes to the specified repository in GitHub based on the repository name, cloned repository path, and other input parameters you have specified",
           "name": "Push Changes",
@@ -1586,16 +1586,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/9628ff6f-769a-42f0-a556-db12c70e1157",
+          "triggerStep": "/api/3/workflow_steps/0ea957d9-02f9-4b07-b65c-2b4f786d6140",
           "steps": [
             {
-              "uuid": "9628ff6f-769a-42f0-a556-db12c70e1157",
+              "uuid": "0ea957d9-02f9-4b07-b65c-2b4f786d6140",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "139d6c24-41c5-46b5-8a43-30c43aedc8c5",
+                "route": "46c9a97c-a989-439a-9fb0-e1bdb58981d9",
                 "title": "GitHub: Push Changes",
                 "resources": [
                   "alerts"
@@ -1615,7 +1615,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "85198c3f-10e8-4a1a-9cb7-3f3f7b880868",
+              "uuid": "a9913fd0-df99-41a3-932f-4493f533d626",
               "@type": "WorkflowStep",
               "name": "Push Changes",
               "description": null,
@@ -1640,19 +1640,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "db75fcbc-44e5-4f98-ae9d-ab1e91983d1e",
+              "uuid": "665ad376-6ffc-43be-9d2b-4ed8b12c398c",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Push Changes",
-              "sourceStep": "/api/3/workflow_steps/9628ff6f-769a-42f0-a556-db12c70e1157",
-              "targetStep": "/api/3/workflow_steps/85198c3f-10e8-4a1a-9cb7-3f3f7b880868"
+              "sourceStep": "/api/3/workflow_steps/0ea957d9-02f9-4b07-b65c-2b4f786d6140",
+              "targetStep": "/api/3/workflow_steps/a9913fd0-df99-41a3-932f-4493f533d626"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "05a9bf95-867a-41c2-8379-7f4ed75ec797",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "2d0269c1-e360-4a5a-9202-646e57b8c062",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Creates a pull request for the specified repository on GitHub based on the repository name, repository owner, and other input parameters you have specified",
           "name": "Create Pull Request",
@@ -1666,16 +1666,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c91fbfc8-1134-4e3d-b9ab-6d4e67fa615f",
+          "triggerStep": "/api/3/workflow_steps/5ce15dc0-1349-4e0c-95e0-6a91f0699af4",
           "steps": [
             {
-              "uuid": "c91fbfc8-1134-4e3d-b9ab-6d4e67fa615f",
+              "uuid": "5ce15dc0-1349-4e0c-95e0-6a91f0699af4",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "0da1bdba-b389-41cc-8c4e-3a95df1dfef9",
+                "route": "6e205030-c933-4a9c-bf31-c3e745119654",
                 "title": "GitHub: Create Pull Request",
                 "resources": [
                   "alerts"
@@ -1695,7 +1695,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "876ba529-ecd2-44ac-b07c-1c2f0160b6bf",
+              "uuid": "cbe6b4e9-9b96-4ed0-9a55-929d9470b13d",
               "@type": "WorkflowStep",
               "name": "Create Pull Request",
               "description": null,
@@ -1723,19 +1723,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "42651241-d08e-4c69-bfa0-2d853f1ab33d",
+              "uuid": "348d0e79-6bbf-4cec-938a-00e41a4d1d69",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Pull Request",
-              "sourceStep": "/api/3/workflow_steps/c91fbfc8-1134-4e3d-b9ab-6d4e67fa615f",
-              "targetStep": "/api/3/workflow_steps/876ba529-ecd2-44ac-b07c-1c2f0160b6bf"
+              "sourceStep": "/api/3/workflow_steps/5ce15dc0-1349-4e0c-95e0-6a91f0699af4",
+              "targetStep": "/api/3/workflow_steps/cbe6b4e9-9b96-4ed0-9a55-929d9470b13d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "46678a44-8c0a-4243-83f3-0cd189478c15",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "86a794a3-d586-46ae-bbb1-7d22cf1f8749",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists pull requests for the specified repository on GitHub based on the repository name, repository owner, and other input parameters you have specified",
           "name": "List Pull Request",
@@ -1749,16 +1749,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/d5a6f0ac-7f0e-438c-9900-ce4ff21517cc",
+          "triggerStep": "/api/3/workflow_steps/7fa85f1f-85a3-49cc-832f-3789bce6e590",
           "steps": [
             {
-              "uuid": "d5a6f0ac-7f0e-438c-9900-ce4ff21517cc",
+              "uuid": "7fa85f1f-85a3-49cc-832f-3789bce6e590",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "1b47eb23-af2e-40c7-b7b7-ee87ee72cfbf",
+                "route": "239222a6-d41b-4c69-9a95-21117996028a",
                 "title": "GitHub: List Pull Request",
                 "resources": [
                   "alerts"
@@ -1778,7 +1778,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "49ab6869-5c4a-4327-8884-04469c3b62cd",
+              "uuid": "cdde6c2e-0e4f-41ca-90c4-f9953fe74297",
               "@type": "WorkflowStep",
               "name": "List Pull Request",
               "description": null,
@@ -1787,9 +1787,9 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "state": "open",
-                  "sort": "created",
-                  "direction": "desc"
+                  "state": "Open",
+                  "sort": "Created",
+                  "direction": "Desc"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -1807,19 +1807,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "7f632bc3-0c86-46cb-85a6-3b210ffcd594",
+              "uuid": "4e0901bb-ec70-4f30-a81c-563ab14c32da",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Pull Request",
-              "sourceStep": "/api/3/workflow_steps/d5a6f0ac-7f0e-438c-9900-ce4ff21517cc",
-              "targetStep": "/api/3/workflow_steps/49ab6869-5c4a-4327-8884-04469c3b62cd"
+              "sourceStep": "/api/3/workflow_steps/7fa85f1f-85a3-49cc-832f-3789bce6e590",
+              "targetStep": "/api/3/workflow_steps/cdde6c2e-0e4f-41ca-90c4-f9953fe74297"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "bcba3a0a-f6bc-40ec-b504-3edc9385dedc",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "5d648174-2e21-4328-9940-91f529ac1600",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Adds reviews for the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified. Pull request authors, repository owners, and collaborators can request a pull request review from anyone with write access to the repository. Each requested reviewer will receive a notification asking them to review the pull request",
           "name": "Add Reviewers for a Pull Request",
@@ -1833,16 +1833,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/05b128bf-2f7c-483e-aa71-590ca2cd6c33",
+          "triggerStep": "/api/3/workflow_steps/b58f544d-ccbd-4785-ba44-0f761732d417",
           "steps": [
             {
-              "uuid": "05b128bf-2f7c-483e-aa71-590ca2cd6c33",
+              "uuid": "b58f544d-ccbd-4785-ba44-0f761732d417",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "41072b8e-0cf9-4387-88ab-649746494cf8",
+                "route": "e87b38de-657c-42f8-a881-9b4524ddb266",
                 "title": "GitHub: Add Reviewers for a Pull Request",
                 "resources": [
                   "alerts"
@@ -1862,7 +1862,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "51942846-f5c5-4e4a-860f-b08732640368",
+              "uuid": "b204b9dd-20ed-430b-ba13-c44ef84291d9",
               "@type": "WorkflowStep",
               "name": "Add Reviewers for a Pull Request",
               "description": null,
@@ -1887,19 +1887,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "e1c5b53a-e039-4869-89d8-32162122c00f",
+              "uuid": "8d18f407-d710-4183-8861-66674b7f7eda",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Reviewers for a Pull Request",
-              "sourceStep": "/api/3/workflow_steps/05b128bf-2f7c-483e-aa71-590ca2cd6c33",
-              "targetStep": "/api/3/workflow_steps/51942846-f5c5-4e4a-860f-b08732640368"
+              "sourceStep": "/api/3/workflow_steps/b58f544d-ccbd-4785-ba44-0f761732d417",
+              "targetStep": "/api/3/workflow_steps/b204b9dd-20ed-430b-ba13-c44ef84291d9"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c15b594a-8987-4892-8fd2-d66db603009f",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "6ba09efe-d071-4ae2-ad84-0339849ba437",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists the review comments associated with the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
           "name": "List Review Comments on a Pull Request",
@@ -1913,16 +1913,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c13de75f-23be-417d-bc78-6d428bb03891",
+          "triggerStep": "/api/3/workflow_steps/ca229618-a53c-4b8d-8ac9-afd3807c1e76",
           "steps": [
             {
-              "uuid": "c13de75f-23be-417d-bc78-6d428bb03891",
+              "uuid": "ca229618-a53c-4b8d-8ac9-afd3807c1e76",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "9a0b559c-321f-4ab8-b712-e942a601f83f",
+                "route": "85b86b35-9f2f-4c33-9793-e54182364fe7",
                 "title": "GitHub: List Review Comments on a Pull Request",
                 "resources": [
                   "alerts"
@@ -1942,7 +1942,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "e0c27e38-d7be-4494-9bb6-3d7fd19742f3",
+              "uuid": "e3939d63-9dc6-42e6-b6c2-35a4f7c445a6",
               "@type": "WorkflowStep",
               "name": "List Review Comments on a Pull Request",
               "description": null,
@@ -1951,7 +1951,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "sort": "created"
+                  "sort": "Created"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -1969,19 +1969,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "cc7a4e7c-4a2b-496e-ab38-e327a4bb17df",
+              "uuid": "2a8a1972-6e2d-4ee6-95f7-e6f677f411ad",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Review Comments on a Pull Request",
-              "sourceStep": "/api/3/workflow_steps/c13de75f-23be-417d-bc78-6d428bb03891",
-              "targetStep": "/api/3/workflow_steps/e0c27e38-d7be-4494-9bb6-3d7fd19742f3"
+              "sourceStep": "/api/3/workflow_steps/ca229618-a53c-4b8d-8ac9-afd3807c1e76",
+              "targetStep": "/api/3/workflow_steps/e3939d63-9dc6-42e6-b6c2-35a4f7c445a6"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "1b7561cb-b735-48ce-8e9c-c20fb0737689",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "2e08deb3-ae55-4e1b-a786-f8c8ba2ac4b4",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists the reviews associated with the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
           "name": "List Pull Request Reviews",
@@ -1995,16 +1995,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/bc72dfea-742e-414c-b80d-57ccf8a6305a",
+          "triggerStep": "/api/3/workflow_steps/e4938d8b-8d36-485a-9db9-e4dfa56e955a",
           "steps": [
             {
-              "uuid": "bc72dfea-742e-414c-b80d-57ccf8a6305a",
+              "uuid": "e4938d8b-8d36-485a-9db9-e4dfa56e955a",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "79547b23-9b7e-40f0-a5eb-6228af0ec80a",
+                "route": "c3fb3ff3-9d82-417c-9db4-4bd725297209",
                 "title": "GitHub: List Pull Request Reviews",
                 "resources": [
                   "alerts"
@@ -2024,7 +2024,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "28b41c61-77b3-4467-a1b3-f5627fd42fe9",
+              "uuid": "dbd83dec-f82d-4df2-81f9-47289d3bfb30",
               "@type": "WorkflowStep",
               "name": "List Pull Request Reviews",
               "description": null,
@@ -2049,19 +2049,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "51e67a37-4eb7-4c02-a9c5-43127c8814f7",
+              "uuid": "f013c88b-2a34-48fb-a270-14e4f2654012",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Pull Request Reviews",
-              "sourceStep": "/api/3/workflow_steps/bc72dfea-742e-414c-b80d-57ccf8a6305a",
-              "targetStep": "/api/3/workflow_steps/28b41c61-77b3-4467-a1b3-f5627fd42fe9"
+              "sourceStep": "/api/3/workflow_steps/e4938d8b-8d36-485a-9db9-e4dfa56e955a",
+              "targetStep": "/api/3/workflow_steps/dbd83dec-f82d-4df2-81f9-47289d3bfb30"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "2fcff4cd-3e35-44c8-acc6-425558832226",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "9cc0bc56-efaa-4447-ad88-1ae4339033a2",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Add a review for a pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
           "name": "Add Pull Request Review",
@@ -2075,16 +2075,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/81190af7-1d61-4eac-892a-bf2e4f3bf193",
+          "triggerStep": "/api/3/workflow_steps/70397b99-2a2f-4fbb-ab81-6b0a13f61b2f",
           "steps": [
             {
-              "uuid": "81190af7-1d61-4eac-892a-bf2e4f3bf193",
+              "uuid": "70397b99-2a2f-4fbb-ab81-6b0a13f61b2f",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "24d01c08-cc78-4232-9210-6638520c648e",
+                "route": "c0f22631-4c1d-4412-9b02-26758d6adbae",
                 "title": "GitHub: Add Pull Request Review",
                 "resources": [
                   "alerts"
@@ -2104,7 +2104,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "f7f05c24-8a25-4098-8f78-158c7cb799f0",
+              "uuid": "2bbc8603-340c-4592-b760-cd7e7ebad7c5",
               "@type": "WorkflowStep",
               "name": "Add Pull Request Review",
               "description": null,
@@ -2129,19 +2129,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "cbacf147-387e-4473-905a-e4b38d16bb28",
+              "uuid": "ef163ece-6129-47df-b4eb-3e511f6693e4",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Add Pull Request Review",
-              "sourceStep": "/api/3/workflow_steps/81190af7-1d61-4eac-892a-bf2e4f3bf193",
-              "targetStep": "/api/3/workflow_steps/f7f05c24-8a25-4098-8f78-158c7cb799f0"
+              "sourceStep": "/api/3/workflow_steps/70397b99-2a2f-4fbb-ab81-6b0a13f61b2f",
+              "targetStep": "/api/3/workflow_steps/2bbc8603-340c-4592-b760-cd7e7ebad7c5"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "b1cd6fdb-9a2b-41ed-a2ce-d60768def34b",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "622e8faf-0023-4eca-850b-da494f041c63",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Merges the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
           "name": "Merge Pull Request",
@@ -2155,16 +2155,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/5a145ce9-47ad-48df-9879-c43597f2c10b",
+          "triggerStep": "/api/3/workflow_steps/6866a659-d0ac-44cf-ae55-928be2eafbc5",
           "steps": [
             {
-              "uuid": "5a145ce9-47ad-48df-9879-c43597f2c10b",
+              "uuid": "6866a659-d0ac-44cf-ae55-928be2eafbc5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "577c8c67-0433-4e6e-98a3-5287b13b1913",
+                "route": "b845c9f5-5140-4f5e-aa93-f26a7f828525",
                 "title": "GitHub: Merge Pull Request",
                 "resources": [
                   "alerts"
@@ -2184,7 +2184,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "0c789239-a363-4934-8376-289fa40adb99",
+              "uuid": "0e24c783-567e-4668-8aa1-817389d00b2d",
               "@type": "WorkflowStep",
               "name": "Merge Pull Request",
               "description": null,
@@ -2193,7 +2193,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "merge_method": "merge"
+                  "merge_method": "Merge"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -2211,19 +2211,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "f098a006-3ff1-41c3-9505-439c60addd52",
+              "uuid": "0a2b3a41-0ce8-4e45-847e-faed2914c0a9",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Merge Pull Request",
-              "sourceStep": "/api/3/workflow_steps/5a145ce9-47ad-48df-9879-c43597f2c10b",
-              "targetStep": "/api/3/workflow_steps/0c789239-a363-4934-8376-289fa40adb99"
+              "sourceStep": "/api/3/workflow_steps/6866a659-d0ac-44cf-ae55-928be2eafbc5",
+              "targetStep": "/api/3/workflow_steps/0e24c783-567e-4668-8aa1-817389d00b2d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "d949b7f8-db75-4754-b468-df193232997f",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "b81c27a4-d875-4428-a78a-544cf63c8704",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Creates an issue for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
           "name": "Create Issue",
@@ -2237,16 +2237,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/4e338dea-bedc-4c47-878f-d0e99a3ecfc1",
+          "triggerStep": "/api/3/workflow_steps/92d35c82-3fb3-4f92-ae88-e1b4ec3d3544",
           "steps": [
             {
-              "uuid": "4e338dea-bedc-4c47-878f-d0e99a3ecfc1",
+              "uuid": "92d35c82-3fb3-4f92-ae88-e1b4ec3d3544",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "a972dd5c-5d54-454c-8c9a-dadd685b69fc",
+                "route": "c6524dc2-307f-47f5-a019-2037fe011ed1",
                 "title": "GitHub: Create Issue",
                 "resources": [
                   "alerts"
@@ -2266,7 +2266,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "18602307-e6d5-4c18-9524-55add55414fc",
+              "uuid": "519746d5-183e-4889-ac15-11f5ae833ec1",
               "@type": "WorkflowStep",
               "name": "Create Issue",
               "description": null,
@@ -2291,19 +2291,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "19c0fedf-6c0e-424a-8569-4ea985078503",
+              "uuid": "7fd1ad02-6d78-4386-b3de-7a925d79dc25",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Issue",
-              "sourceStep": "/api/3/workflow_steps/4e338dea-bedc-4c47-878f-d0e99a3ecfc1",
-              "targetStep": "/api/3/workflow_steps/18602307-e6d5-4c18-9524-55add55414fc"
+              "sourceStep": "/api/3/workflow_steps/92d35c82-3fb3-4f92-ae88-e1b4ec3d3544",
+              "targetStep": "/api/3/workflow_steps/519746d5-183e-4889-ac15-11f5ae833ec1"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "2c43b007-2404-42d0-8a99-e6d232a0adac",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "6051bb15-be2e-4c85-81d1-e245a390fdcb",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "List an issues for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
           "name": "List Repository Issue",
@@ -2317,16 +2317,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/27054425-d25a-42ee-9a49-b08e054713d7",
+          "triggerStep": "/api/3/workflow_steps/6eb57a75-6de6-46bb-b1b3-0eff263f4ed5",
           "steps": [
             {
-              "uuid": "27054425-d25a-42ee-9a49-b08e054713d7",
+              "uuid": "6eb57a75-6de6-46bb-b1b3-0eff263f4ed5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "f07e883d-a0c1-4927-9594-367b84bc4c2e",
+                "route": "81603fe5-3cd0-40fb-b336-3e8d165645a3",
                 "title": "GitHub: List Repository Issue",
                 "resources": [
                   "alerts"
@@ -2346,7 +2346,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "8ecd83dc-a0b1-42df-aa74-4c62931b9012",
+              "uuid": "b9be7130-46c3-4ff6-99e7-e1cf1c117673",
               "@type": "WorkflowStep",
               "name": "List Repository Issue",
               "description": null,
@@ -2355,9 +2355,9 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": {
-                  "state": "open",
-                  "sort": "created",
-                  "direction": "desc"
+                  "state": "Open",
+                  "sort": "Created",
+                  "direction": "Desc"
                 },
                 "version": "1.0.0",
                 "connector": "github",
@@ -2375,19 +2375,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "bf028a37-ad13-45f3-b284-6154758ecb26",
+              "uuid": "166ca0aa-c36e-4b92-9362-b490f64de1a1",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Repository Issue",
-              "sourceStep": "/api/3/workflow_steps/27054425-d25a-42ee-9a49-b08e054713d7",
-              "targetStep": "/api/3/workflow_steps/8ecd83dc-a0b1-42df-aa74-4c62931b9012"
+              "sourceStep": "/api/3/workflow_steps/6eb57a75-6de6-46bb-b1b3-0eff263f4ed5",
+              "targetStep": "/api/3/workflow_steps/b9be7130-46c3-4ff6-99e7-e1cf1c117673"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "a130b97a-1545-4969-a40a-e08266689131",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "8ef337e7-99e9-4536-b32a-979c7dbfeb3f",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Update an issues for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
           "name": "Update Issue",
@@ -2401,16 +2401,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e2786301-3b0d-4a8a-adbe-cd642a3ba97b",
+          "triggerStep": "/api/3/workflow_steps/c9f2c12c-cd19-4357-8950-fe4ed79bdaf7",
           "steps": [
             {
-              "uuid": "e2786301-3b0d-4a8a-adbe-cd642a3ba97b",
+              "uuid": "c9f2c12c-cd19-4357-8950-fe4ed79bdaf7",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "c572ecb1-f956-4c0e-ac32-4456bd9defdb",
+                "route": "a9b86b26-7a10-45f4-9516-55a42504aeed",
                 "title": "GitHub: Update Issue",
                 "resources": [
                   "alerts"
@@ -2430,7 +2430,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "fac86ffe-723b-4bd7-9ede-04370c95703d",
+              "uuid": "4c617d96-960f-43cd-9a01-e3f59222785c",
               "@type": "WorkflowStep",
               "name": "Update Issue",
               "description": null,
@@ -2455,19 +2455,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "e7a64751-a257-4744-8014-432fb8002ebf",
+              "uuid": "ffe0218b-9518-4864-a7a7-c5096bbe5988",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Update Issue",
-              "sourceStep": "/api/3/workflow_steps/e2786301-3b0d-4a8a-adbe-cd642a3ba97b",
-              "targetStep": "/api/3/workflow_steps/fac86ffe-723b-4bd7-9ede-04370c95703d"
+              "sourceStep": "/api/3/workflow_steps/c9f2c12c-cd19-4357-8950-fe4ed79bdaf7",
+              "targetStep": "/api/3/workflow_steps/4c617d96-960f-43cd-9a01-e3f59222785c"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ed2034b1-6d80-4604-87e7-1285c98f09ad",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "7c984926-9614-42ef-be4e-fa3d72bf4ddc",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Creates a release for the specified repository on GitHub based on the repository name, repository owner, target branch, and other input parameters you have specified",
           "name": "Create Release",
@@ -2481,16 +2481,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/38098bfe-9b79-49f4-a8e3-f268b1cff464",
+          "triggerStep": "/api/3/workflow_steps/d0b33f17-59f1-426f-a56f-d10efffedc3d",
           "steps": [
             {
-              "uuid": "38098bfe-9b79-49f4-a8e3-f268b1cff464",
+              "uuid": "d0b33f17-59f1-426f-a56f-d10efffedc3d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b540b33c-0130-4827-bdd3-dc4e52d4777b",
+                "route": "14acae6b-6364-4c3e-abad-ffa9f94df16e",
                 "title": "GitHub: Create Release",
                 "resources": [
                   "alerts"
@@ -2510,7 +2510,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "94a08e5a-24e4-44b9-9970-eb28174247c4",
+              "uuid": "b33aac09-66ee-459e-abb7-92ebd3bb6c1d",
               "@type": "WorkflowStep",
               "name": "Create Release",
               "description": null,
@@ -2537,19 +2537,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "56d11527-9060-4836-9322-a60e4a604593",
+              "uuid": "284a29e8-0e7c-4ed6-be3a-0fafae01f064",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Create Release",
-              "sourceStep": "/api/3/workflow_steps/38098bfe-9b79-49f4-a8e3-f268b1cff464",
-              "targetStep": "/api/3/workflow_steps/94a08e5a-24e4-44b9-9970-eb28174247c4"
+              "sourceStep": "/api/3/workflow_steps/d0b33f17-59f1-426f-a56f-d10efffedc3d",
+              "targetStep": "/api/3/workflow_steps/b33aac09-66ee-459e-abb7-92ebd3bb6c1d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "a89fe148-0c59-4cb6-a5f4-bd46e72972ba",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "6f0c834b-00b4-42ff-9659-7204df643155",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Returns a list of releases, which does not include regular Git tags that have not been associated with a release. Information about published releases is available to everyone. Only users with push access will receive listings for draft releases. The list of releases is retrieved from GitHub based on the repository name, repository owner, and other input parameters you have specified",
           "name": "List Releases",
@@ -2563,16 +2563,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/be382249-eddb-468c-aebd-62d06a94cafd",
+          "triggerStep": "/api/3/workflow_steps/7ab1b13d-d3ba-47c6-8dd3-55f0ed371f6d",
           "steps": [
             {
-              "uuid": "be382249-eddb-468c-aebd-62d06a94cafd",
+              "uuid": "7ab1b13d-d3ba-47c6-8dd3-55f0ed371f6d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "512d0340-8dcd-479b-b153-3008cba1a366",
+                "route": "6f5f3fe5-d46e-4959-8c52-818ff1662e7f",
                 "title": "GitHub: List Releases",
                 "resources": [
                   "alerts"
@@ -2592,7 +2592,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "1ac2259b-1374-4619-84d3-180eea6bdaad",
+              "uuid": "72e9e402-0fb5-4ba0-9412-674e5d5648a0",
               "@type": "WorkflowStep",
               "name": "List Releases",
               "description": null,
@@ -2617,19 +2617,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "8905ee50-80c1-4827-81c9-17b44e8e332e",
+              "uuid": "083c3fdc-d0ee-4d03-9b58-630f526657f0",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Releases",
-              "sourceStep": "/api/3/workflow_steps/be382249-eddb-468c-aebd-62d06a94cafd",
-              "targetStep": "/api/3/workflow_steps/1ac2259b-1374-4619-84d3-180eea6bdaad"
+              "sourceStep": "/api/3/workflow_steps/7ab1b13d-d3ba-47c6-8dd3-55f0ed371f6d",
+              "targetStep": "/api/3/workflow_steps/72e9e402-0fb5-4ba0-9412-674e5d5648a0"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "f8c2e937-649b-4478-8269-001b2d2722c3",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "65ed79dd-af8b-486a-a2f3-3a8dad90cf5c",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists the people that have marked the specified repository in GitHub with a star based on the repository name, repository owner, and other input parameters you have specified",
           "name": "List Stargazers",
@@ -2643,16 +2643,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/fc7ff2f3-8526-43ef-9b2a-27650ff07f9d",
+          "triggerStep": "/api/3/workflow_steps/293b62e9-54ce-491c-a5b6-f6bed87b6ae5",
           "steps": [
             {
-              "uuid": "fc7ff2f3-8526-43ef-9b2a-27650ff07f9d",
+              "uuid": "293b62e9-54ce-491c-a5b6-f6bed87b6ae5",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "ac954bb2-6c88-4eee-bf2b-ab706cb813c3",
+                "route": "b459afb5-7800-4ce9-bb40-3013b042f509",
                 "title": "GitHub: List Stargazers",
                 "resources": [
                   "alerts"
@@ -2672,7 +2672,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "3553ae28-3d13-43e1-b147-519df7372434",
+              "uuid": "d048ad25-2141-4d0d-a42a-91467297267c",
               "@type": "WorkflowStep",
               "name": "List Stargazers",
               "description": null,
@@ -2697,19 +2697,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "1887a2ef-90a4-472e-9d78-8280909c8f4c",
+              "uuid": "8932f112-6ad9-45c7-9ee3-668869ca41d1",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Stargazers",
-              "sourceStep": "/api/3/workflow_steps/fc7ff2f3-8526-43ef-9b2a-27650ff07f9d",
-              "targetStep": "/api/3/workflow_steps/3553ae28-3d13-43e1-b147-519df7372434"
+              "sourceStep": "/api/3/workflow_steps/293b62e9-54ce-491c-a5b6-f6bed87b6ae5",
+              "targetStep": "/api/3/workflow_steps/d048ad25-2141-4d0d-a42a-91467297267c"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "5433e868-d4bd-4ce9-a4f0-69c0d4dca4d0",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "e885a8ee-43be-412a-baed-6f0c8c6fdaeb",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Stars the specified repository for the authenticated user in GitHub based on the repository name and repository owner you have specified",
           "name": "Star Repository",
@@ -2723,16 +2723,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ac051225-4c44-4d55-9f69-722993737176",
+          "triggerStep": "/api/3/workflow_steps/77aecf42-7230-4e81-a1a3-403d10e5abf7",
           "steps": [
             {
-              "uuid": "ac051225-4c44-4d55-9f69-722993737176",
+              "uuid": "77aecf42-7230-4e81-a1a3-403d10e5abf7",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "be67da94-8a1e-4449-bf1e-dba396b98e98",
+                "route": "0e0e0112-9fd6-40ed-997e-04a36e1c1610",
                 "title": "GitHub: Star Repository",
                 "resources": [
                   "alerts"
@@ -2752,7 +2752,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "70fcb568-f1bc-46d1-b5a3-7d6bb09df978",
+              "uuid": "8acd86f7-3fed-4b33-b6a2-93160f8e85fe",
               "@type": "WorkflowStep",
               "name": "Star Repository",
               "description": null,
@@ -2777,19 +2777,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "dcca3199-8bc3-4b71-8e0a-d526375b1177",
+              "uuid": "3fa00950-5bc4-4790-b92a-ae9f1163d481",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Star Repository",
-              "sourceStep": "/api/3/workflow_steps/ac051225-4c44-4d55-9f69-722993737176",
-              "targetStep": "/api/3/workflow_steps/70fcb568-f1bc-46d1-b5a3-7d6bb09df978"
+              "sourceStep": "/api/3/workflow_steps/77aecf42-7230-4e81-a1a3-403d10e5abf7",
+              "targetStep": "/api/3/workflow_steps/8acd86f7-3fed-4b33-b6a2-93160f8e85fe"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "6d38012c-6b74-4cd5-8c87-e2928d6d30fe",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "63db426c-cc50-42b8-8321-7dc3f9f4fc11",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Lists the people that are watching the specified repository in GitHub based on the repository name, repository owner, and other input parameters you have specified",
           "name": "List Watchers",
@@ -2803,16 +2803,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/af508e80-4c36-4292-bec5-7f013c6ac837",
+          "triggerStep": "/api/3/workflow_steps/7927c2f5-aa04-4be0-b72d-ffdf37046f9b",
           "steps": [
             {
-              "uuid": "af508e80-4c36-4292-bec5-7f013c6ac837",
+              "uuid": "7927c2f5-aa04-4be0-b72d-ffdf37046f9b",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "efdfcf27-e87e-4d43-bf1d-da6cf6b061b9",
+                "route": "8f1012e2-3e5e-4ed3-8b9b-cc408848bbdb",
                 "title": "GitHub: List Watchers",
                 "resources": [
                   "alerts"
@@ -2832,7 +2832,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "3cf49234-cf97-46af-a823-f8a20e96e5c6",
+              "uuid": "d0effaa7-a0c6-4cc7-a7ca-a60c320a6a67",
               "@type": "WorkflowStep",
               "name": "List Watchers",
               "description": null,
@@ -2857,19 +2857,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "beebd46b-baf6-45f8-ae80-d53fb31e1f3f",
+              "uuid": "f5e46f82-464f-437c-af96-9bdd279a0b2e",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Watchers",
-              "sourceStep": "/api/3/workflow_steps/af508e80-4c36-4292-bec5-7f013c6ac837",
-              "targetStep": "/api/3/workflow_steps/3cf49234-cf97-46af-a823-f8a20e96e5c6"
+              "sourceStep": "/api/3/workflow_steps/7927c2f5-aa04-4be0-b72d-ffdf37046f9b",
+              "targetStep": "/api/3/workflow_steps/d0effaa7-a0c6-4cc7-a7ca-a60c320a6a67"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "43fca4ee-f738-4510-8189-8e8c3e8dfa16",
-          "collection": "/api/3/workflow_collections/9587687f-5c7c-47f2-9987-683466c07ac9",
+          "uuid": "a65648a2-48b4-4ec7-9bfa-3924a3ccf2b3",
+          "collection": "/api/3/workflow_collections/f7264789-59b7-4733-8698-a93cf1deafd8",
           "triggerLimit": null,
           "description": "Sets the subscription to the specified repository in GitHub based on the repository name, repository owner, and other input parameters you have specified",
           "name": "Set Repository Subscription",
@@ -2883,16 +2883,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/cb67ec7b-ad44-4792-948a-bc9ec07a28cc",
+          "triggerStep": "/api/3/workflow_steps/1b804ef9-3bb4-48b5-9fc9-fd15fa1afe55",
           "steps": [
             {
-              "uuid": "cb67ec7b-ad44-4792-948a-bc9ec07a28cc",
+              "uuid": "1b804ef9-3bb4-48b5-9fc9-fd15fa1afe55",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "47f44d87-e47f-4159-93d8-203e5baf50ad",
+                "route": "27267eef-fcb6-44ce-95d2-7d59c7594ab1",
                 "title": "GitHub: Set Repository Subscription",
                 "resources": [
                   "alerts"
@@ -2912,7 +2912,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "61b5c8c5-6038-463d-97d3-f87829592689",
+              "uuid": "a193f85d-88df-4e4b-9da1-b5eda0aab0b6",
               "@type": "WorkflowStep",
               "name": "Set Repository Subscription",
               "description": null,
@@ -2940,12 +2940,12 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "35398c22-21e5-4f18-b30f-6cc0f312fe22",
+              "uuid": "679ee87a-959b-46a1-96bf-a6a5eb86d40f",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Set Repository Subscription",
-              "sourceStep": "/api/3/workflow_steps/cb67ec7b-ad44-4792-948a-bc9ec07a28cc",
-              "targetStep": "/api/3/workflow_steps/61b5c8c5-6038-463d-97d3-f87829592689"
+              "sourceStep": "/api/3/workflow_steps/1b804ef9-3bb4-48b5-9fc9-fd15fa1afe55",
+              "targetStep": "/api/3/workflow_steps/a193f85d-88df-4e4b-9da1-b5eda0aab0b6"
             }
           ]
         }

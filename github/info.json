@@ -622,15 +622,15 @@
           "editable": true,
           "type": "select",
           "options": [
-            "all",
-            "public",
-            "private",
-            "forks",
-            "sources",
-            "member",
-            "internal"
+            "All",
+            "Public",
+            "Private",
+            "Forks",
+            "Sources",
+            "Member",
+            "Internal"
           ],
-          "value": "all",
+          "value": "All",
           "tooltip": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, private, public, fork, sources, member, or internal",
           "description": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, private, public, fork, sources, member, or internal"
         },
@@ -642,12 +642,12 @@
           "editable": true,
           "type": "select",
           "options": [
-            "created",
-            "updated",
-            "pushed",
-            "full_name"
+            "Created",
+            "Updated",
+            "Pushed",
+            "Full Name"
           ],
-          "value": "created",
+          "value": "Created",
           "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name",
           "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name"
         },
@@ -659,10 +659,10 @@
           "editable": true,
           "type": "select",
           "options": [
-            "asc",
-            "desc"
+            "Asc",
+            "Desc"
           ],
-          "value": "desc",
+          "value": "Desc",
           "tooltip": "Select the property to sort the direction of the results returned by this operation. You can choose between asc, or desc. Default: asc when using full_name, otherwise desc",
           "description": "Select the property to sort the direction of the results returned by this operation. You can choose between asc, or desc. Default: asc when using full_name, otherwise desc"
         },
@@ -827,11 +827,11 @@
           "editable": true,
           "type": "select",
           "options": [
-            "all",
-            "owner",
-            "member"
+            "All",
+            "Owner",
+            "Member"
           ],
-          "value": "owner",
+          "value": "Owner",
           "tooltip": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, owner, or member",
           "description": "Select the type of repository you want to retrieve from GitHub. The repository type limits the results to the repositories you have selected. You can choose between all, owner, or member"
         },
@@ -843,12 +843,12 @@
           "editable": true,
           "type": "select",
           "options": [
-            "created",
-            "updated",
-            "pushed",
-            "full_name"
+            "Created",
+            "Updated",
+            "Pushed",
+            "Full Name"
           ],
-          "value": "full_name",
+          "value": "Full Name",
           "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name",
           "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, pushed, or full_name"
         },
@@ -860,10 +860,10 @@
           "editable": true,
           "type": "select",
           "options": [
-            "asc",
-            "desc"
+            "Asc",
+            "Desc"
           ],
-          "value": "desc",
+          "value": "Desc",
           "tooltip": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored",
           "description": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored"
         },
@@ -1026,11 +1026,11 @@
           "editable": true,
           "type": "select",
           "options": [
-            "all",
-            "public",
-            "private"
+            "All",
+            "Public",
+            "Private"
           ],
-          "value": "all",
+          "value": "All",
           "tooltip": "Limit results to repositories with the specified visibility.",
           "description": "Limit results to repositories with the specified visibility."
         },
@@ -1054,13 +1054,13 @@
           "editable": true,
           "type": "select",
           "options": [
-            "all",
-            "owner",
-            "public",
-            "private",
-            "member"
+            "All",
+            "Owner",
+            "Public",
+            "Private",
+            "Member"
           ],
-          "value": "all",
+          "value": "All",
           "tooltip": "Limit results to repositories of the specified type.",
           "description": "Limit results to repositories of the specified type."
         },
@@ -1072,12 +1072,12 @@
           "editable": true,
           "type": "select",
           "options": [
-            "created",
-            "updated",
-            "pushed",
-            "full_name"
+            "Created",
+            "Updated",
+            "Pushed",
+            "Full Name"
           ],
-          "value": "full_name",
+          "value": "Full Name",
           "tooltip": "The property to sort the results by.",
           "description": "The property to sort the results by."
         },
@@ -1089,10 +1089,10 @@
           "editable": true,
           "type": "select",
           "options": [
-            "asc",
-            "desc"
+            "Asc",
+            "Desc"
           ],
-          "value": "desc",
+          "value": "Desc",
           "tooltip": "The order to sort by. Default: asc when using full_name, otherwise desc.",
           "description": "The order to sort by. Default: asc when using full_name, otherwise desc."
         },
@@ -1758,12 +1758,12 @@
           "editable": true,
           "type": "select",
           "options": [
-            "newest",
-            "oldest",
-            "stargazers",
-            "watchers"
+            "Newest",
+            "Oldest",
+            "Stargazers",
+            "Watchers"
           ],
-          "value": "newest",
+          "value": "Newest",
           "tooltip": "Select the property to sort the results returned by this operation. You can choose between newest, oldest, stargazers, or watchers",
           "description": "Select the property to sort the results returned by this operation. You can choose between newest, oldest, stargazers, or watchers"
         },
@@ -2108,13 +2108,13 @@
           "editable": true,
           "type": "select",
           "options": [
-            "pull",
-            "push",
-            "admin",
-            "maintain",
-            "triage"
+            "Pull",
+            "Push",
+            "Admin",
+            "Maintain",
+            "Triage"
           ],
-          "value": "push",
+          "value": "Push",
           "tooltip": "Select the permission that you want to grant to the specified collaborator. Permissions are valid only on organization-owned repositories. You can choose between pull, push, admin, maintain, or triage",
           "description": "Select the permission that you want to grant to the specified collaborator. Permissions are valid only on organization-owned repositories. You can choose between pull, push, admin, maintain, or triage"
         }
@@ -2671,14 +2671,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository to which you want to synchronize the specified branch",
-          "description": "Specify the account holder of the repository to which you want to synchronize the specified branch"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization repository to which you want to synchronize the specified branch",
+                "description": "Specify the name of the organization repository to which you want to synchronize the specified branch"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository to which you want to synchronize the specified branch",
+                "description": "Specify the account holder of the repository to which you want to synchronize the specified branch"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to delete the branch on GitHub",
+          "description": "Select the method using which you want to delete the branch on GitHub"
         },
         {
           "title": "Repository Name",
@@ -3789,11 +3819,11 @@
           "editable": true,
           "type": "select",
           "options": [
-            "open",
-            "closed",
-            "all"
+            "Open",
+            "Closed",
+            "All"
           ],
-          "value": "open",
+          "value": "Open",
           "tooltip": "Select the state of the pull requests whose details you want to retrieve from GitHub. The state parameter filters the results returned by this operation to only pull requests that match the selected state. You can choose between open, closed, or all",
           "description": "Select the state of the pull requests whose details you want to retrieve from GitHub. The state parameter filters the results returned by this operation to only pull requests that match the selected state. You can choose between open, closed, or all"
         },
@@ -3826,12 +3856,12 @@
           "editable": true,
           "type": "select",
           "options": [
-            "created",
-            "updated",
-            "popularity",
-            "long-running"
+            "Created",
+            "Updated",
+            "Popularity",
+            "Long Running"
           ],
-          "value": "created",
+          "value": "Created",
           "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, popularity (comment count), or long-running (age, filtering by pulls updated in the last month)",
           "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, popularity (comment count), or long-running (age, filtering by pulls updated in the last month)"
         },
@@ -3843,10 +3873,10 @@
           "editable": true,
           "type": "select",
           "options": [
-            "asc",
-            "desc"
+            "Asc",
+            "Desc"
           ],
-          "value": "desc",
+          "value": "Desc",
           "tooltip": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored",
           "description": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored"
         },
@@ -4608,10 +4638,10 @@
           "editable": true,
           "type": "select",
           "options": [
-            "created",
-            "updated"
+            "Created",
+            "Updated"
           ],
-          "value": "created",
+          "value": "Created",
           "description": "Select the property to sort the results returned by this operation. You can choose between created (default) or updated. Created refers to when the repository was marked with a star and Updated means when changes were last pushed to the repository",
           "tooltip": "Select the property to sort the results returned by this operation. You can choose between created (default) or updated. Created refers to when the repository was marked with a star and Updated means when changes were last pushed to the repository"
         },
@@ -4623,8 +4653,8 @@
           "editable": true,
           "type": "select",
           "options": [
-            "asc",
-            "desc"
+            "Asc",
+            "Desc"
           ],
           "tooltip": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored",
           "description": "Select the direction to sort the results returned by this operation. You can choose either asc or desc. If you do not specify the 'Sort' parameter then this parameter is ignored"
@@ -4897,9 +4927,9 @@
           "editable": true,
           "type": "select",
           "options": [
-            "APPROVE",
-            "REQUEST_CHANGES",
-            "COMMENT"
+            "Approve",
+            "Request Changes",
+            "Comment"
           ],
           "tooltip": "Specify the review action of the pull request whose review you want to submit to GitHub",
           "description": "Specify the review action of the pull request whose review you want to submit to GitHub"
@@ -5017,11 +5047,11 @@
           "editable": true,
           "type": "select",
           "options": [
-            "merge",
-            "squash",
-            "rebase"
+            "Merge",
+            "Squash",
+            "Rebase"
           ],
-          "value": "merge",
+          "value": "Merge",
           "tooltip": "Select the method for merging the specified pull request with the specified repository. You can choose from merge, squash, or rebase",
           "description": "Select the method for merging the specified pull request with the specified repository. You can choose from merge, squash, or rebase"
         }
@@ -5223,7 +5253,6 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "placeholder": "[\"user1\",\"user2\"]",
           "tooltip": "Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise",
           "description": "Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise"
         },
@@ -5438,11 +5467,11 @@
           "editable": true,
           "type": "select",
           "options": [
-            "open",
-            "closed",
-            "all"
+            "Open",
+            "Closed",
+            "All"
           ],
-          "value": "open",
+          "value": "Open",
           "tooltip": "Select the type of state of issue you want to retrieve from GitHub. You can choose between open, all, or closed",
           "description": "Select the type of state of issue you want to retrieve from GitHub. You can choose between open, all, or closed"
         },
@@ -5495,11 +5524,11 @@
           "editable": true,
           "type": "select",
           "options": [
-            "created",
-            "updated",
-            "comments"
+            "Created",
+            "Updated",
+            "Comments"
           ],
-          "value": "created",
+          "value": "Created",
           "tooltip": "Select the property to sort the results returned by this operation. You can choose between created, updated, or comments",
           "description": "Select the property to sort the results returned by this operation. You can choose between created, updated, or comments"
         },
@@ -5511,10 +5540,10 @@
           "editable": true,
           "type": "select",
           "options": [
-            "asc",
-            "desc"
+            "Asc",
+            "Desc"
           ],
-          "value": "desc",
+          "value": "Desc",
           "tooltip": "Select the property to sort the direction of the results returned by this operation. You can choose between asc or desc",
           "description": "Select the property to sort the direction of the results returned by this operation. You can choose between asc or desc"
         },
@@ -5757,8 +5786,8 @@
           "editable": true,
           "type": "select",
           "options": [
-            "open",
-            "closed"
+            "Open",
+            "Closed"
           ],
           "tooltip": "Select the type of state of issue you want to update in GitHub. You can choose open, or closed",
           "description": "Select the type of state of issue you want to update in GitHub. You can choose open, or closed"
@@ -5771,9 +5800,9 @@
           "editable": true,
           "type": "select",
           "options": [
-            "completed",
-            "not_planned",
-            "reopened"
+            "Completed",
+            "Not Planned",
+            "Reopened"
           ],
           "tooltip": "Select the type of state reason for the current state of issue you want to update in GitHub. You can choose completed, not_planned, or reopened",
           "description": "Select the type of state reason for the current state of issue you want to update in GitHub. You can choose completed, not_planned, or reopened"
@@ -5806,7 +5835,6 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "placeholder": "[\"assignee1\", \"assignee2\"]",
           "tooltip": "Logins for Users to assign to this issue. Pass one or more user logins to replace the set of assignees on this Issue. Send an empty array ([]) to clear all assignees from the Issue",
           "description": "Logins for Users to assign to this issue. Pass one or more user logins to replace the set of assignees on this Issue. Send an empty array ([]) to clear all assignees from the Issue"
         }
