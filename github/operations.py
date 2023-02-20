@@ -97,7 +97,7 @@ def create_repository_using_template(config, params, *args, **kwargs):
 def list_organization_repositories(config, params, *args, **kwargs):
     github = GitHub(config)
     params['type'] = params.get('type', '').lower()
-    params['sort'] = (params.get('sort', '').upper()).replace(' ', '_')
+    params['sort'] = (params.get('sort', '').lower()).replace(' ', '_')
     params['direction'] = params.get('direction', '').lower()
     query_params = {k: v for k, v in params.items() if
                     v is not None and v != '' and v != {} and v != [] and k != 'name'}
@@ -107,7 +107,7 @@ def list_organization_repositories(config, params, *args, **kwargs):
 def list_user_repositories(config, params, *args, **kwargs):
     github = GitHub(config)
     params['type'] = params.get('type', '').lower()
-    params['sort'] = (params.get('sort', '').upper()).replace(' ', '_')
+    params['sort'] = (params.get('sort', '').lower()).replace(' ', '_')
     params['direction'] = params.get('direction', '').lower()
     query_params = {k: v for k, v in params.items() if
                     v is not None and v != '' and v != {} and v != [] and k != 'username'}
@@ -118,7 +118,7 @@ def list_authenticated_user_repositories(config, params, *args, **kwargs):
     github = GitHub(config)
     params['visibility'] = params.get('visibility', '').lower()
     params['type'] = params.get('type', '').lower()
-    params['sort'] = (params.get('sort', '').upper()).replace(' ', '_')
+    params['sort'] = (params.get('sort', '').lower()).replace(' ', '_')
     params['direction'] = params.get('direction', '').lower()
     query_params = {k: v for k, v in params.items() if v is not None and v != '' and v != {} and v != []}
     return github.make_request(params=query_params, endpoint='users/repos')
@@ -384,7 +384,7 @@ def create_pull_request(config, params, *args, **kwargs):
 def list_pull_request(config, params, *args, **kwargs):
     github = GitHub(config)
     params['state'] = params.get('state', '').lower()
-    params['sort'] = (params.get('sort', '').upper()).replace(' ', '-')
+    params['sort'] = (params.get('sort', '').lower()).replace(' ', '-')
     params['direction'] = params.get('direction', '').lower()
     query_params = {k: v for k, v in params.items() if
                     v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo',
@@ -482,7 +482,7 @@ def list_repository_issue(config, params, *args, **kwargs):
 def update_issue(config, params, *args, **kwargs):
     github = GitHub(config)
     params['state'] = params.get('state', '').lower()
-    params['state_reason'] = (params.get('state_reason', '').upper()).replace(' ', '_')
+    params['state_reason'] = (params.get('state_reason', '').lower()).replace(' ', '_')
     payload = {k: v for k, v in params.items() if
                v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'org', 'repo', 'issue_number']}
     endpoint = '{0}/issues/{1}'.format(params.get('repo'), params.get('issue_number'))
