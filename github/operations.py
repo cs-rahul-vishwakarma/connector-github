@@ -75,7 +75,7 @@ def create_repository(config, params, *args, **kwargs):
     if params.get('other_fields'):
         params.update(params.get('other_fields'))
         del params['other_fields']
-        payload = {k: v for k, v in params.items() if
+    payload = {k: v for k, v in params.items() if
                    v is not None and v != '' and v != {} and v != [] and k not in ['branch', 'org']}
     if params.get('repo_type') == 'Organization':
         endpoint = 'orgs/{0}/repos'.format(params.get('org'))
