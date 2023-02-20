@@ -1627,8 +1627,29 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the name of the organization whose repository you want to fork in GitHub",
-          "description": "Specify the name of the organization whose repository you want to fork in GitHub"
+          "tooltip": "Specify the name of the organization if forking into an organization GitHUb",
+          "description": "Specify the name of the organization if forking into an organization GitHub"
+        },
+        {
+          "title": "New Fork Name",
+          "name": "name",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the new name for the fork, when forking from an existing repository",
+          "description": "Specify the new name for the fork, when forking from an existing repository"
+        },
+        {
+          "title": "Default Branch",
+          "name": "default_branch_only",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "checkbox",
+          "value": true,
+          "tooltip": "Select this option to fork an existing repository from default branch only from GitHub",
+          "description": "Select this option to fork an existing repository from default branch only from GitHub"
         }
       ]
     },
@@ -2738,7 +2759,7 @@
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "Text",
+          "type": "text",
           "tooltip": "Specify the name of the branch that should be updated to match the specified upstream repository",
           "description": "Specify the name of the branch that should be updated to match the specified upstream repository"
         }
