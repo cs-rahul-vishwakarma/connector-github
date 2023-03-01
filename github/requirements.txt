@@ -1,4 +1,3 @@
 PyGitHub
-GitPython
 Pillow
 pytest-shutil

@@ -1,21 +1,14 @@
 import zipfile
+from zipfile import ZipFile
 import requests
 import base64
 import json
 import os
-import calendar
-import time
-import glob
-os.environ["GIT_PYTHON_REFRESH"] = "quiet"
-import git
 from django.conf import settings
 from collections import namedtuple
 from github import Github
 from github import InputGitTreeElement
-from PIL import Image
-from io import BytesIO
 import shutil
-from datetime import date
 from base64 import b64encode
 from datetime import datetime
 from connectors.core.connector import get_logger, ConnectorError
