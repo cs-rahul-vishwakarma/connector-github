@@ -1,4 +1,4 @@
-from zipfile import ZipFile
+import zipfile
 import requests
 import base64
 import json
@@ -6,6 +6,8 @@ import os
 import calendar
 import time
 import glob
+os.environ["GIT_PYTHON_REFRESH"] = "quiet"
+import git
 from django.conf import settings
 from collections import namedtuple
 from github import Github
@@ -235,44 +237,41 @@ def fetch_upstream(config, params, *args, **kwargs):
 
 def clone_repository(config, params, *args, **kwargs):
     try:
-        token = config.get('password')
-        g = Github(token)
-        if params.get('repo_type') == 'Organization':
-            repo = g.get_organization(params.get('org')).get_repo(params.get('name'))
+        if params.get('repo_type') == "Organization":
+            url = "https://{0}:{1}@codeload.github.com/{2}/{3}/zip/refs/heads/{4}".format(config.get('username'),
+                                                                                          config.get('password'),
+                                                                                          params.get('org'),
+                                                                                          params.get('name'),
+                                                                                          params.get('branch'))
         else:
-            repo = g.get_user().get_repo(params.get('name'))
-        contents = repo.get_contents("")
-        while contents:
-            file_content = contents.pop(0)
-            if file_content.type == "dir":
-                contents.extend(repo.get_contents(file_content.path))
-            else:
-                completeName = os.path.join('/tmp/{0}/{1}'.format(params.get('name'), file_content.path))
-                wkspFldr = os.path.dirname(completeName)
-                if not os.path.exists(wkspFldr):
-                    os.makedirs(wkspFldr)
-                data = file_content.content
-                if '.png' not in file_content.path:
-                    data = base64.b64decode(data)
-                    with open(completeName, "wb") as file1:
-                        file1.write(data)
-                else:
-                    with Image.open(BytesIO(base64.b64decode(data))) as im:
-                        im.save('/tmp/{0}/{1}'.format(params.get('name'), file_content.path), 'PNG')
+            url = "https://{0}:{1}@codeload.github.com/{2}/{3}/zip/refs/heads/{4}".format(config.get('username'),
+                                                                                          config.get('password'),
+                                                                                          params.get('owner'),
+                                                                                          params.get('name'),
+                                                                                          params.get('branch'))
+        headers = {
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'}
+        zip_file = '/tmp/github-{0}.zip'.format(params.get('name'))
+        if os.path.isfile(zip_file):
+            os.remove(zip_file)
+        response = requests.request("GET", url, headers=headers, data={})
+        with open(zip_file, "wb") as zipFile:
+            zipFile.write(response.content)
         if params.get('clone_zip') is True:
-            current_GMT = time.gmtime()
-            time_stamp = calendar.timegm(current_GMT)
-            root_path = '/tmp/{0}'.format(params.get('name'))
-            dst_path = '/tmp/github-{0}/{1}'.format(time_stamp, params.get('name'))
-            dest_folder = '/tmp/github-{0}'.format(time_stamp)
-            shutil.move(root_path, dst_path)
-            shutil.make_archive(dst_path, "zip", root_dir=dest_folder, base_dir=params.get('name'))
-            shutil.rmtree('/tmp/github-{0}/{1}'.format(time_stamp, params.get('name')))
-            return {"path": "/tmp/github-{0}/{1}.zip".format(time_stamp, params.get('name'))}
+            return {"path": zip_file}
         else:
-            return {"path": "/tmp/{0}".format(params.get('name'))}
-    except Exception as err:
-        raise ConnectorError(err)
+            branch_name = params.get('branch').replace("/", "-")
+            unzip_file_path = settings.TMP_FILE_ROOT + params.get('name') + "-" + branch_name
+            if os.path.exists(unzip_file_path):
+                shutil.rmtree(unzip_file_path)
+            with zipfile.ZipFile(zip_file, "r") as zip_ref:
+                zip_ref.extractall(settings.TMP_FILE_ROOT)
+            os.remove(zip_file)
+            return {"path": unzip_file_path}
+    except ConnectorError as e:
+        raise ConnectorError(e)
+    except Exception as e:
+        raise ConnectorError(e)
 
 
 def unzip_protected_file(file_iri=None, *args, **kwargs):
