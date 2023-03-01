@@ -50,6 +50,16 @@
         "editable": true,
         "visible": true,
         "value": true
+      },
+      {
+        "title": "Clone URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "clone_url",
+        "value": "https://codeload.github.com",
+        "description": "Specify the clone URL of the GitHub server to connect and perform cloned operation"
       }
     ]
   },
@@ -2830,7 +2840,7 @@
           "title": "Branch Name",
           "name": "branch",
           "visible": true,
-          "required": true,
+          "required": false,
           "editable": true,
           "type": "text",
           "tooltip": "Specify the name of the branch to be cloned from GitHub",
