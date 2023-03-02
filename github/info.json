@@ -53,7 +53,7 @@
       },
       {
         "title": "Clone URL",
-        "required": true,
+        "required": false,
         "editable": true,
         "visible": true,
         "type": "text",
