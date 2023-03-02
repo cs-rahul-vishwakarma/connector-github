@@ -5,7 +5,7 @@
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "version": "1.0.1",
+  "version": "1.0.0",
   "category": "Source Code Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
@@ -2842,6 +2842,7 @@
           "visible": true,
           "required": false,
           "editable": true,
+          "value": "main",
           "type": "text",
           "tooltip": "Specify the name of the branch to be cloned from GitHub",
           "description": "Specify the name of the branch to be cloned from GitHub"
