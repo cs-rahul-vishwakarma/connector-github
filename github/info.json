@@ -5,11 +5,11 @@
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "category": "Source Code Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/github/344/github-v1-0-0",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
@@ -50,6 +50,16 @@
         "editable": true,
         "visible": true,
         "value": true
+      },
+      {
+        "title": "Clone URL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "clone_url",
+        "value": "https://codeload.github.com",
+        "description": "Specify the clone URL of the GitHub server to connect and perform cloned operation"
       }
     ]
   },
@@ -2825,6 +2835,17 @@
           "type": "text",
           "tooltip": "Specify the name of the repository to be cloned on GitHub",
           "description": "Specify the name of the repository to be cloned on GitHub"
+        },
+        {
+          "title": "Branch Name",
+          "name": "branch",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "value": "main",
+          "type": "text",
+          "tooltip": "Specify the name of the branch to be cloned from GitHub",
+          "description": "Specify the name of the branch to be cloned from GitHub"
         },
         {
           "title": "Clone As ZIP",
