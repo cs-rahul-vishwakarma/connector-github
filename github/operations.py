@@ -258,6 +258,7 @@ def clone_repository(config, params, *args, **kwargs):
             with zipfile.ZipFile(zip_file, "r") as zip_ref:
                 zip_ref.extractall(settings.TMP_FILE_ROOT)
             save_file_in_env(env, unzip_file_path)
+            save_file_in_env(env, zip_file)
             return {"path": unzip_file_path}
     except ConnectorError as e:
         raise ConnectorError(e)
@@ -360,7 +361,7 @@ def push_repository(config, params, *args, **kwargs):
             en = entry.replace(params.get('clone_path') + '/', '')
             old_file = repo.get_contents(en)
             commit = repo.update_file(en, 'Update PNG content', data, old_file.sha)
-    save_file_in_env(env, root)
+    save_file_in_env(env, params.get('clone_path'))
     return {"status": "finish"}
 
 
