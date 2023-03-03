@@ -318,7 +318,6 @@ def update_clone_repository(config, params, *args, **kwargs):
 
 
 def push_repository(config, params, *args, **kwargs):
-    env = kwargs.get('env', {})
     token = config.get('password')
     g = Github(token)
     if params.get('repo_type') == 'Organization':
@@ -361,7 +360,6 @@ def push_repository(config, params, *args, **kwargs):
             en = entry.replace(params.get('clone_path') + '/', '')
             old_file = repo.get_contents(en)
             commit = repo.update_file(en, 'Update PNG content', data, old_file.sha)
-    save_file_in_env(env, params.get('clone_path'))
     return {"status": "finish"}
 
 
