@@ -9,7 +9,7 @@ from collections import namedtuple
 from github import Github
 from github import InputGitTreeElement
 import shutil
-from constants import CLONE_ACCEPT_HEADER
+from .constants import CLONE_ACCEPT_HEADER
 from base64 import b64encode
 from datetime import datetime
 from connectors.core.connector import get_logger, ConnectorError
@@ -235,10 +235,10 @@ def clone_repository(config, params, *args, **kwargs):
         env = kwargs.get('env', {})
         url = "https://{0}:{1}@{2}/{3}/{4}/zip/refs/heads/{5}".format(config.get('username'),
                                                                       config.get('password'),
+                                                                      config.get('clone_url').split('//')[-1],
                                                                       params.get('org') if params.get(
                                                                           'repo_type') == "Organization" else params.get(
                                                                           'owner'),
-                                                                      config.get('clone_url').split('//')[-1],
                                                                       params.get('name'),
                                                                       params.get(
                                                                           'branch') if params.get(
@@ -252,8 +252,7 @@ def clone_repository(config, params, *args, **kwargs):
             save_file_in_env(env, zip_file)
             return {"path": zip_file}
         else:
-            branch_name = params.get('branch').replace("/", "-")
-            unzip_file_path = settings.TMP_FILE_ROOT + params.get('name') + "-" + branch_name
+            unzip_file_path = settings.TMP_FILE_ROOT + params.get('name')
             if os.path.exists(unzip_file_path):
                 shutil.rmtree(unzip_file_path)
             with zipfile.ZipFile(zip_file, "r") as zip_ref:
