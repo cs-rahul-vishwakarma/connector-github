@@ -361,7 +361,7 @@ def push_repository(config, params, *args, **kwargs):
             old_file = repo.get_contents(en)
             commit = repo.update_file(en, 'Update PNG content', data, old_file.sha)
     save_file_in_env(env, root)
-    save_file_in_env(en, master_ref)
+    save_file_in_env(env, master_ref)
     return {"status": "finish"}
 
 
