@@ -252,7 +252,7 @@ def clone_repository(config, params, *args, **kwargs):
             save_file_in_env(env, zip_file)
             return {"path": zip_file}
         else:
-            unzip_file_path = settings.TMP_FILE_ROOT + params.get('name')
+            unzip_file_path = '/tmp/{0}-{1}'.format(params.get('name'), datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
             if os.path.exists(unzip_file_path):
                 shutil.rmtree(unzip_file_path)
             with zipfile.ZipFile(zip_file, "r") as zip_ref:
@@ -317,6 +317,7 @@ def update_clone_repository(config, params, *args, **kwargs):
 
 
 def push_repository(config, params, *args, **kwargs):
+    env = kwargs.get('env', {})
     token = config.get('password')
     g = Github(token)
     if params.get('repo_type') == 'Organization':
@@ -359,7 +360,8 @@ def push_repository(config, params, *args, **kwargs):
             en = entry.replace(params.get('clone_path') + '/', '')
             old_file = repo.get_contents(en)
             commit = repo.update_file(en, 'Update PNG content', data, old_file.sha)
-    shutil.rmtree('/tmp/{0}/'.format(params.get('name')))
+    save_file_in_env(env, root)
+    save_file_in_env(en, master_ref)
     return {"status": "finish"}
 
 
