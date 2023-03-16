@@ -173,11 +173,9 @@ def add_repository_collaborator(config, params, *args, **kwargs):
     github = GitHub(config)
     params['permission'] = params.get('permission', '').lower()
     payload = {k: v for k, v in params.items() if
-               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo', 'username']}
-    return github.make_request(
-        endpoint='repos/{0}/{1}/collaborators/{2}'.format(params.get('owner'), params.get('repo'),
-                                                          params.get('username')),
-        method='PUT', data=json.dumps(payload))
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo', 'username', 'org']}
+    return github.make_request(method='PUT', data=json.dumps(payload), org=params.get('org'), owner=params.get('owner'),
+                               endpoint='{0}/collaborators/{1}'.format(params.get('repo'), params.get('username')))
 
 
 def get_branch_revision(config, params, *args, **kwargs):
@@ -218,9 +216,8 @@ def list_branches(config, params, *args, **kwargs):
 
 def delete_branch(config, params, *args, **kwargs):
     github = GitHub(config)
-    return github.make_request(method='DELETE', endpoint='{0}/git/refs/heads/{1}'.format(params.get('repo'),
-                                                                                         params.get('branch_name')),
-                               org=params.get('org'), owner=params.get('owner'))
+    return github.make_request(method='DELETE', org=params.get('org'), owner=params.get('owner'),
+                               endpoint='{0}/git/refs/heads/{1}'.format(params.get('repo'), params.get('branch_name')))
 
 
 def fetch_upstream(config, params, *args, **kwargs):

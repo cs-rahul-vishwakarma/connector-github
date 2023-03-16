@@ -2114,14 +2114,44 @@
       },
       "parameters": [
         {
-          "title": "Repository Owner",
-          "name": "owner",
+          "title": "Repository Type",
+          "name": "repo_type",
           "visible": true,
           "required": true,
           "editable": true,
-          "type": "text",
-          "tooltip": "Specify the account holder of the repository on GitHub in which you want to add the specified collaborator",
-          "description": "Specify the account holder of the repository on GitHub in which you want to add the specified collaborator"
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization repository on GitHub in which you want to add the specified collaborator",
+                "description": "Specify the name of the organization repository on GitHub in which you want to add the specified collaborator"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository on GitHub in which you want to add the specified collaborator",
+                "description": "Specify the account holder of the repository on GitHub in which you want to add the specified collaborator"
+              }
+            ]
+          },
+          "tooltip": "Select the repository type, using which the branch is to be created on GitHub",
+          "description": "Select the repository type, using which the branch is to be created on GitHub"
         },
         {
           "title": "Repository Name",
