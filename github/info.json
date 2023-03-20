@@ -5949,6 +5949,117 @@
       ]
     },
     {
+      "operation": "create_issue_comment",
+      "title": "Create Issue Comment",
+      "description": "Creates an issue comment for the specified repository or user on GitHub based on the repository type, organization, or repository owner's name, repository name, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "create_issue_comment",
+      "enabled": true,
+      "output_schema": {
+        "id": "",
+        "node_id": "",
+        "url": "",
+        "html_url": "",
+        "body": "",
+        "user": {
+          "login": "",
+          "id": "",
+          "node_id": "",
+          "avatar_url": "",
+          "gravatar_id": "",
+          "url": "",
+          "html_url": "",
+          "followers_url": "",
+          "following_url": "",
+          "gists_url": "",
+          "starred_url": "",
+          "subscriptions_url": "",
+          "organizations_url": "",
+          "repos_url": "",
+          "events_url": "",
+          "received_events_url": "",
+          "type": "",
+          "site_admin": ""
+        },
+        "created_at": "",
+        "updated_at": "",
+        "issue_url": "",
+        "author_association": ""
+      },
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization of the repository whose issue comment you want to create in GitHub",
+                "description": "Specify the name of the organization of the repository whose issue comment you want to create in GitHub"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository whose issue comment you want to create in GitHub",
+                "description": "Specify the account holder of the repository whose issue comment you want to create in GitHub"
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to create issue comment in GitHub",
+          "description": "Select the method using which you want to create issue comment in GitHub"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose issue comment you want to create in GitHub",
+          "description": "Specify the name of the repository whose issue comment you want to create in GitHub"
+        },
+        {
+          "title": "Issue Number",
+          "name": "issue_number",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the issue number of the repository whose issue comment you want to create in GitHub",
+          "description": "Specify the issue number of the repository whose issue comment you want to create in GitHub"
+        },
+        {
+          "title": "Comment",
+          "name": "body",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "textarea",
+          "tooltip": "Specify the comment contents of the issue comment which you want to create in GitHub",
+          "description": "Specify the comment contents of the issue comment which you want to create in GitHub"
+        }
+      ]
+    },
+    {
       "operation": "create_release",
       "title": "Create Release",
       "description": "Creates a release for the specified repository on GitHub based on the repository type, organization or repository owner's name, repository name, tag name, and other input parameters you have specified",
