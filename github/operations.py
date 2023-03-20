@@ -477,6 +477,14 @@ def update_issue(config, params, *args, **kwargs):
                                owner=params.get('owner'))
 
 
+def create_issue_comment(config, params, *args, **kwargs):
+    github = GitHub(config)
+    payload = {"body": params.get('body')}
+    endpoint = '{0}/issues/{1}/comments'.format(params.get('repo'), params.get('issue_number'))
+    return github.make_request(method='POST', data=json.dumps(payload), endpoint=endpoint, org=params.get('org'),
+                               owner=params.get('owner'))
+
+
 def create_release(config, params, *args, **kwargs):
     github = GitHub(config)
     payload = {k: v for k, v in params.items() if
@@ -559,6 +567,7 @@ operations = {
     'delete_branch': delete_branch,
     'create_issue': create_issue,
     'update_issue': update_issue,
+    'create_issue_comment': create_issue_comment,
     'list_repository_issue': list_repository_issue,
     'list_branches': list_branches,
     'fetch_upstream': fetch_upstream,
