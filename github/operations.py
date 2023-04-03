@@ -339,7 +339,7 @@ def push_repository(config, params, *args, **kwargs):
                     data = input_file.read()
                     data = b64encode(data).decode() if isinstance(data, bytes) else b64encode(data.encode()).decode()
             else:
-                with open(entry, 'r') as input_file:
+                with open(entry, 'r', encoding='utf-8', errors='ignore') as input_file:
                     data = input_file.read()
             en = entry.replace(params.get('clone_path') + '/', '')
             element = InputGitTreeElement(en, '100644', 'blob', content=data)
