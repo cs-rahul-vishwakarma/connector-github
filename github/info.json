@@ -2150,8 +2150,8 @@
               }
             ]
           },
-          "tooltip": "Select the repository type, using which the branch is to be created on GitHub",
-          "description": "Select the repository type, using which the branch is to be created on GitHub"
+          "tooltip": "Select the repository type, using which you want to add the specified collaborator",
+          "description": "Select the repository type, using which you want to add the specified collaborator"
         },
         {
           "title": "Repository Name",
@@ -2190,6 +2190,149 @@
           "value": "Push",
           "tooltip": "Select the permission that you want to grant to the specified collaborator. Permissions are valid only on organization-owned repositories. You can choose between pull, push, admin, maintain, or triage",
           "description": "Select the permission that you want to grant to the specified collaborator. Permissions are valid only on organization-owned repositories. You can choose between pull, push, admin, maintain, or triage"
+        }
+      ]
+    },
+    {
+      "operation": "list_repository_collaborator",
+      "title": "List Repository Collaborator",
+      "description": "List the collaborator details for specified repository based on the repository owner name, repository name, and other input parameters you have specified",
+      "category": "investigation",
+      "annotation": "list_repository_collaborator",
+      "enabled": true,
+      "output_schema": [
+        {
+          "login": "",
+          "id": "",
+          "node_id": "",
+          "avatar_url": "",
+          "gravatar_id": "",
+          "url": "",
+          "html_url": "",
+          "followers_url": "",
+          "following_url": "",
+          "gists_url": "",
+          "starred_url": "",
+          "subscriptions_url": "",
+          "organizations_url": "",
+          "repos_url": "",
+          "events_url": "",
+          "received_events_url": "",
+          "type": "",
+          "site_admin": "",
+          "permissions": {
+            "admin": "",
+            "maintain": "",
+            "push": "",
+            "triage": "",
+            "pull": ""
+          },
+          "role_name": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization repository on GitHub in which you want to get the collaborators",
+                "description": "Specify the name of the organization repository on GitHub in which you want to get the collaborators"
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the account holder of the repository on GitHub in which you want to get the collaborators",
+                "description": "Specify the account holder of the repository on GitHub in which you want to get the collaborators"
+              }
+            ]
+          },
+          "tooltip": "Select the repository type, using which you want to get the collaborators",
+          "description": "Select the repository type, using which you want to get the collaborators"
+        },
+        {
+          "title": "Repository Name",
+          "name": "repo",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository on GitHub for which you want to get the collaborators",
+          "description": "Specify the name of the repository on GitHub for which you want to get the collaborators"
+        },
+        {
+          "title": "Collaborator Affiliation",
+          "name": "affiliation",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Outside",
+            "Direct",
+            "All"
+          ],
+          "value": "All",
+          "tooltip": "Select the affiliation filter collaborators returned by their affiliation. \"outside\" means all outside collaborators of an organization-owned repository. \"direct\" means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. \"all\" means all collaborators the authenticated user can see",
+          "description": "Select the affiliation filter collaborators returned by their affiliation. \"outside\" means all outside collaborators of an organization-owned repository. \"direct\" means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. \"all\" means all collaborators the authenticated user can see"
+        },
+        {
+          "title": "Permission",
+          "name": "permission",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Pull",
+            "Push",
+            "Admin",
+            "Maintain",
+            "Triage"
+          ],
+          "tooltip": "Select the permission filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned",
+          "description": "Select the permission filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned"
+        },
+        {
+          "title": "Per Page",
+          "name": "per_page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1"
         }
       ]
     },

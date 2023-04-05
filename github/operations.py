@@ -178,6 +178,16 @@ def add_repository_collaborator(config, params, *args, **kwargs):
                                endpoint='{0}/collaborators/{1}'.format(params.get('repo'), params.get('username')))
 
 
+def list_repository_collaborator(config, params, *args, **kwargs):
+    github = GitHub(config)
+    params['affiliation'] = params.get('affiliation', '').lower()
+    params['permission'] = params.get('permission', '').lower()
+    query_params = {k: v for k, v in params.items() if
+               v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo', 'org']}
+    return github.make_request(params=query_params, org=params.get('org'), owner=params.get('owner'),
+                               endpoint='{0}/collaborators'.format(params.get('repo')))
+
+
 def get_branch_revision(config, params, *args, **kwargs):
     github = GitHub(config)
     endpoint = 'repos/{0}/{1}/git/refs/heads/{2}'.format(
@@ -561,6 +571,7 @@ operations = {
     'list_fork_repositories': list_fork_repositories,
     'create_update_file_contents': create_update_file_contents,
     'add_repository_collaborator': add_repository_collaborator,
+    'list_repository_collaborator': list_repository_collaborator,
     'get_branch_revision': get_branch_revision,
     'create_branch': create_branch,
     'merge_branch': merge_branch,
