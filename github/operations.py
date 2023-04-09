@@ -259,9 +259,7 @@ def clone_repository(config, params, *args, **kwargs):
             save_file_in_env(env, zip_file)
             return {"path": zip_file}
         else:
-            unzip_file_path = '/tmp/{0}-{1}'.format(params.get('name'), datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
-            if os.path.exists(unzip_file_path):
-                shutil.rmtree(unzip_file_path)
+            unzip_file_path = '/tmp/{0}-{1}'.format(params.get('name'), params.get('branch'))
             with zipfile.ZipFile(zip_file, "r") as zip_ref:
                 zip_ref.extractall(settings.TMP_FILE_ROOT)
             save_file_in_env(env, unzip_file_path)
