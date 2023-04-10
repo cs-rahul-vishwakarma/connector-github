@@ -9,7 +9,7 @@
   "category": "Source Code Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.1.0/github/554/github-v1-1-0",
   "configuration": {
     "fields": [
       {
