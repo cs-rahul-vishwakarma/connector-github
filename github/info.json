@@ -3732,7 +3732,7 @@
       "enabled": true,
       "conditional_output_schema": [
         {
-          "condition": "pull_number == ''",
+          "condition": "{{pull_number == ''}}",
           "output_schema": [
             {
               "url": "",
@@ -4096,7 +4096,7 @@
           ]
         },
         {
-          "condition": "pull_number != ''",
+          "condition": "{{pull_number != ''}}",
           "output_schema": {
             "url": "",
             "id": "",
