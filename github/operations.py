@@ -1,3 +1,10 @@
+"""
+Copyright start
+MIT License
+Copyright (c) 2024 Fortinet Inc
+Copyright end
+"""
+
 import zipfile
 from zipfile import ZipFile
 import requests
@@ -140,6 +147,7 @@ def delete_repository(config, params, *args, **kwargs):
 
 def fork_organization_repository(config, params, *args, **kwargs):
     github = GitHub(config)
+    params.pop('repo_type', '')
     payload = {k: v for k, v in params.items() if
                v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
     return github.make_request(method='POST', data=json.dumps(payload),
@@ -148,6 +156,7 @@ def fork_organization_repository(config, params, *args, **kwargs):
 
 def list_fork_repositories(config, params, *args, **kwargs):
     github = GitHub(config)
+    params.pop('repo_type', '')
     params['sort'] = params.get('sort', '').lower()
     query_params = {k: v for k, v in params.items() if
                     v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
@@ -208,6 +217,7 @@ def create_branch(config, params, *args, **kwargs):
 
 def merge_branch(config, params, *args, **kwargs):
     github = GitHub(config)
+    params.pop('repo_type', '')
     payload = {k: v for k, v in params.items() if
                v is not None and v != '' and v != {} and v != [] and k not in ['owner', 'repo']}
     return github.make_request(endpoint='repos/{0}/{1}/merges'.format(params.get('owner'), params.get('repo')),
@@ -548,9 +558,11 @@ def set_repo_subscription(config, params, *args, **kwargs):
 def _check_health(config):
     try:
         github = GitHub(config)
-        response = github.make_request(endpoint='users/repos')
+        response = github.make_request(endpoint='user')
         if response:
-            return True
+            if response.get('login') == github.git_username:
+                return True
+            raise ConnectorError("Invalid Username or Personal Access Token provided")
         else:
             raise ConnectorError("{} error: {}".format(response.status_code, response.reason))
     except Exception as err:

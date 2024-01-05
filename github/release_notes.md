@@ -1,8 +1,9 @@
-# What's Improved
-## Added following new actions:
- - Create Issue Comment
- - Add Repository Collaborator
- - List Repository Collaborator
-	
-## Updated following connector actions:
-- Clone Repository: Speedup the specified clone repository using the codeload url https://codeload.github.com. Codeload is the service which provides archives for download 
+### What's Improved
+- Added select parameter `Repository Type` to specify the Organization and User type repository in following actions:
+  - Merge Branch
+  - List Fork Repositories
+  - Fork Organization Repository
+- Updated type `Comment` parameter text to richtext in `Create Issue Comment` action.
+- Updated output schema of `List Pull Request` action.
+### What's Fixed
+- Fixed a connector health check where it should fail for invalid `Username`.
