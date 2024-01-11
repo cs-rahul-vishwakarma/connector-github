@@ -6,7 +6,7 @@
   "cs_approved": true,
   "cs_compatible": true,
   "version": "1.1.1",
-  "category": "Source Code Management",
+  "category": "Source Control",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "help_online": "",
@@ -3239,14 +3239,24 @@
           "description": "Specify the name of the branch to which you want to push the code of the local repository"
         },
         {
-          "title": "Commit Message",
+          "title": "Commit Summary",
           "name": "commit_message",
           "visible": true,
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the commit message to be used for pushing changes to GitHub. If you do not specify any commit message, a default commit message is used",
-          "description": "Specify the commit message to be used for pushing changes to GitHub. If you do not specify any commit message, a default commit message is used"
+          "tooltip": "Specify the commit summary to be used for pushing changes to GitHub.",
+          "description": "Specify the commit summary to be used for pushing changes to GitHub."
+        },
+        {
+          "title": "Commit Description",
+          "name": "commit_description",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the commit description to be used for pushing changes to GitHub.",
+          "description": "Specify the commit description to be used for pushing changes to GitHub."
         }
       ]
     },
