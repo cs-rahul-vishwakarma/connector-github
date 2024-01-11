@@ -6,7 +6,7 @@
   "cs_approved": true,
   "cs_compatible": true,
   "version": "1.1.1",
-  "category": "Source Control",
+  "category": "Source Code Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "help_online": "",
@@ -3254,7 +3254,7 @@
           "visible": true,
           "required": false,
           "editable": true,
-          "type": "text",
+          "type": "textarea",
           "tooltip": "Specify the commit description to be used for pushing changes to GitHub.",
           "description": "Specify the commit description to be used for pushing changes to GitHub."
         }
