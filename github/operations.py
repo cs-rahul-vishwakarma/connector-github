@@ -346,6 +346,9 @@ def push_repository(config, params, *args, **kwargs):
             if not any(x in os.path.join(root, f) for x in ['.DS_Store', '.git']):
                 file_list.append(os.path.join(root, f))
     commit_message = params.get('commit_message')
+    commit_description = params.pop('commit_description', '')
+    if commit_description:
+        commit_message += '\n' + commit_description
     master_ref = repo.get_git_ref('heads/' + params.get('branch'))
     master_sha = master_ref.object.sha
     base_tree = repo.get_git_tree(master_sha)
