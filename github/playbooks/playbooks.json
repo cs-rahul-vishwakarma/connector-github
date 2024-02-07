@@ -4,13 +4,14 @@
     {
       "uuid": "f9aa13a0-6421-4335-be8b-323a3307189e",
       "@type": "WorkflowCollection",
-      "name": "Sample - GitHub - 1.1.1",
-      "description": "GitHub is a code hosting platform for collaboration and version control. This connector facilitates automated interactions with Github, such as to create and manage repositories, branches, issues, pull requests, and many more.",
+      "name": "Sample - GitHub - 1.2.0",
+      "description": "GitHub is a code hosting platform for collaboration and version control. This connector facilitates automated interactions with GitHub, such as to create and manage repositories, branches, issues, pull requests, and many more.",
       "visible": true,
       "image": null,
       "recordTags": [
-        "Github",
-        "github"
+        "github",
+        "GitHub",
+        "CICD"
       ],
       "workflows": [
         {
@@ -22,7 +23,7 @@
           "name": "Create Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -74,7 +75,7 @@
                   "has_wiki": true,
                   "is_template": false
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_repository",
                 "operationTitle": "Create Repository",
@@ -108,7 +109,7 @@
           "name": "Create Repository Using Template",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -157,7 +158,7 @@
                   "include_all_branches": false,
                   "private": false
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_repository_using_template",
                 "operationTitle": "Create Repository Using Template",
@@ -191,7 +192,7 @@
           "name": "List Organization Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -241,7 +242,7 @@
                   "sort": "Created",
                   "direction": "Desc"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_organization_repositories",
                 "operationTitle": "List Organization Repositories",
@@ -275,7 +276,7 @@
           "name": "List User Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -325,7 +326,7 @@
                   "sort": "Full Name",
                   "direction": "Desc"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_user_repositories",
                 "operationTitle": "List User Repositories",
@@ -359,7 +360,7 @@
           "name": "List Authenticated User Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -411,7 +412,7 @@
                   "sort": "Full Name",
                   "direction": "Desc"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_authenticated_user_repositories",
                 "operationTitle": "List Authenticated User Repositories",
@@ -445,7 +446,7 @@
           "name": "Update Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -496,7 +497,7 @@
                   "has_projects": true,
                   "has_wiki": true
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "update_repository",
                 "operationTitle": "Update Repository",
@@ -530,7 +531,7 @@
           "name": "Delete Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -576,7 +577,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "delete_repository",
                 "operationTitle": "Delete Repository",
@@ -610,7 +611,7 @@
           "name": "Fork Organization Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -658,7 +659,7 @@
                 "params": {
                   "default_branch_only": true
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "fork_organization_repository",
                 "operationTitle": "Fork Organization Repository",
@@ -692,7 +693,7 @@
           "name": "List Fork Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -740,7 +741,7 @@
                 "params": {
                   "sort": "Newest"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_fork_repositories",
                 "operationTitle": "List Fork Repositories",
@@ -774,7 +775,7 @@
           "name": "Create or Update File Contents",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -820,7 +821,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_update_file_contents",
                 "operationTitle": "Create or Update File Contents",
@@ -854,7 +855,7 @@
           "name": "Add Repository Collaborator",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -902,7 +903,7 @@
                 "params": {
                   "permission": "Push"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "add_repository_collaborator",
                 "operationTitle": "Add Repository Collaborator",
@@ -936,7 +937,7 @@
           "name": "List Repository Collaborator",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -984,7 +985,7 @@
                 "params": {
                   "affiliation": "All"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_repository_collaborator",
                 "operationTitle": "List Repository Collaborator",
@@ -1018,7 +1019,7 @@
           "name": "Get Branch Revision",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1064,7 +1065,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "get_branch_revision",
                 "operationTitle": "Get Branch Revision",
@@ -1098,7 +1099,7 @@
           "name": "Create Branch",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1144,7 +1145,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_branch",
                 "operationTitle": "Create Branch",
@@ -1178,7 +1179,7 @@
           "name": "Merge Branch",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1224,7 +1225,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "merge_branch",
                 "operationTitle": "Merge Branch",
@@ -1258,7 +1259,7 @@
           "name": "List Branches",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1306,7 +1307,7 @@
                 "params": {
                   "protected": false
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_branches",
                 "operationTitle": "List Branches",
@@ -1340,7 +1341,7 @@
           "name": "Delete Branch",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1386,7 +1387,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "delete_branch",
                 "operationTitle": "Delete Branch",
@@ -1420,7 +1421,7 @@
           "name": "Fetch Upstream",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1466,7 +1467,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "fetch_upstream",
                 "operationTitle": "Fetch Upstream",
@@ -1500,7 +1501,7 @@
           "name": "Clone Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1549,7 +1550,7 @@
                   "branch": "main",
                   "clone_zip": true
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "clone_repository",
                 "operationTitle": "Clone Repository",
@@ -1583,7 +1584,7 @@
           "name": "Update Remote Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1629,7 +1630,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "update_clone_repository",
                 "operationTitle": "Update Remote Repository",
@@ -1663,7 +1664,7 @@
           "name": "Push Changes",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1709,7 +1710,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "push_repository",
                 "operationTitle": "Push Changes",
@@ -1743,7 +1744,7 @@
           "name": "Create Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1792,7 +1793,7 @@
                   "maintainer_can_modify": true,
                   "draft": false
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_pull_request",
                 "operationTitle": "Create Pull Request",
@@ -1826,7 +1827,7 @@
           "name": "List Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1876,7 +1877,7 @@
                   "sort": "Created",
                   "direction": "Desc"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_pull_request",
                 "operationTitle": "List Pull Request",
@@ -1910,7 +1911,7 @@
           "name": "Add Reviewers for a Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -1956,7 +1957,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "add_reviewers",
                 "operationTitle": "Add Reviewers for a Pull Request",
@@ -1990,7 +1991,7 @@
           "name": "List Review Comments on a Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2038,7 +2039,7 @@
                 "params": {
                   "sort": "Created"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_review_comments",
                 "operationTitle": "List Review Comments on a Pull Request",
@@ -2072,7 +2073,7 @@
           "name": "List Pull Request Reviews",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2118,7 +2119,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_pr_reviews",
                 "operationTitle": "List Pull Request Reviews",
@@ -2152,7 +2153,7 @@
           "name": "Add Pull Request Review",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2198,7 +2199,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "add_pr_review",
                 "operationTitle": "Add Pull Request Review",
@@ -2232,7 +2233,7 @@
           "name": "Merge Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2280,7 +2281,7 @@
                 "params": {
                   "merge_method": "Merge"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "merge_pull_request",
                 "operationTitle": "Merge Pull Request",
@@ -2314,7 +2315,7 @@
           "name": "Create Issue",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2360,7 +2361,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_issue",
                 "operationTitle": "Create Issue",
@@ -2394,7 +2395,7 @@
           "name": "List Repository Issue",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2444,7 +2445,7 @@
                   "sort": "Created",
                   "direction": "Desc"
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_repository_issue",
                 "operationTitle": "List Repository Issue",
@@ -2478,7 +2479,7 @@
           "name": "Update Issue",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2524,7 +2525,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "update_issue",
                 "operationTitle": "Update Issue",
@@ -2558,7 +2559,7 @@
           "name": "Create Issue Comment",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2604,7 +2605,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_issue_comment",
                 "operationTitle": "Create Issue Comment",
@@ -2638,7 +2639,7 @@
           "name": "Create Release",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2686,7 +2687,7 @@
                 "params": {
                   "generate_release_notes": true
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "create_release",
                 "operationTitle": "Create Release",
@@ -2720,7 +2721,7 @@
           "name": "List Releases",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2766,7 +2767,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_releases",
                 "operationTitle": "List Releases",
@@ -2800,7 +2801,7 @@
           "name": "List Stargazers",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2846,7 +2847,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_stargazers",
                 "operationTitle": "List Stargazers",
@@ -2880,7 +2881,7 @@
           "name": "Star Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -2926,7 +2927,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "star_repository",
                 "operationTitle": "Star Repository",
@@ -2960,7 +2961,7 @@
           "name": "List Watchers",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -3006,7 +3007,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "list_watchers",
                 "operationTitle": "List Watchers",
@@ -3040,7 +3041,7 @@
           "name": "Set Repository Subscription",
           "tag": "#GitHub",
           "recordTags": [
-            "Github",
+            "GitHub",
             "github"
           ],
           "isActive": false,
@@ -3089,7 +3090,7 @@
                   "subscribed": true,
                   "ignored": true
                 },
-                "version": "1.1.1",
+                "version": "1.2.0",
                 "connector": "github",
                 "operation": "set_repo_subscription",
                 "operationTitle": "Set Repository Subscription",
@@ -3113,8 +3114,2260 @@
               "targetStep": "/api/3/workflow_steps/516628b0-36bf-4865-a097-13429d8ec496"
             }
           ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Create Issue Comment",
+          "aliasName": null,
+          "tag": null,
+          "description": "Creates an issue comment for the specified repository or user on GitHub",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "add_issue_comment_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d9dbc8d2-2598-48a6-b72d-69e8298e435a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add a Comment to an Issue",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['add_issue_comment_params']['org_name']}}",
+                  "body": "{{vars.input.params['add_issue_comment_params']['commit_message']}}",
+                  "repo": "{{vars.input.params['add_issue_comment_params']['repo_name']}}",
+                  "repo_type": "Organization",
+                  "issue_number": "{{vars.input.params['add_issue_comment_params']['cr_number']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "create_issue_comment",
+                "operationTitle": "Create Issue Comment",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "efa0cd3b-74e0-4ba2-826f-ce5838a9f066"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "d9dbc8d2-2598-48a6-b72d-69e8298e435a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add a Comment to an Issue",
+              "targetStep": "/api/3/workflow_steps/efa0cd3b-74e0-4ba2-826f-ce5838a9f066",
+              "sourceStep": "/api/3/workflow_steps/d9dbc8d2-2598-48a6-b72d-69e8298e435a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "da871e5f-9ca8-4f4b-b619-66af7a62cad9"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "0c0cd1b8-28c4-4093-8789-b5efbe11dfa3",
+          "id": 952,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CreateIssueComment"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - List Pull Request Reviews",
+          "aliasName": null,
+          "tag": null,
+          "description": "Lists the reviews associated with the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "list_pr_reviews_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b71a0980-bc2c-46dc-b003-20a45845b2d4",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Pull Request Reviews",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['list_pr_reviews_params']['org_name']}}",
+                  "page": "",
+                  "repo": "{{vars.input.params['list_pr_reviews_params']['repo_name']}}",
+                  "per_page": "",
+                  "repo_type": "Organization",
+                  "pull_number": "{{vars.input.params['list_pr_reviews_params']['pull_number']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "list_pr_reviews",
+                "operationTitle": "List Pull Request Reviews",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "83eb1be1-a7b8-4d49-a21e-6dd924a9ba02"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "b71a0980-bc2c-46dc-b003-20a45845b2d4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> List Pull Request Reviews",
+              "targetStep": "/api/3/workflow_steps/83eb1be1-a7b8-4d49-a21e-6dd924a9ba02",
+              "sourceStep": "/api/3/workflow_steps/b71a0980-bc2c-46dc-b003-20a45845b2d4",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "6ea783e3-6995-4106-a270-82d463911960"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "14e7eb02-beec-49c7-ba1c-6dd8c7eb7ffb",
+          "id": 956,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-ListPullRequestReviews"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Create Issue",
+          "aliasName": null,
+          "tag": null,
+          "description": "Creates an issue for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "create_issue_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/4845d193-4881-46dc-968c-8b448bccafde",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Issue",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['create_issue_params']['org_name']}}",
+                  "body": "{{vars.input.params['create_issue_params']['issue_content']}}",
+                  "repo": "{{vars.input.params['create_issue_params']['repo_name']}}",
+                  "title": "{{vars.input.params['create_issue_params']['issue_title']}}",
+                  "labels": "",
+                  "assignees": "{{vars.input.params['create_issue_params']['issue_assignee']}}",
+                  "milestone": "",
+                  "repo_type": "Organization"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "create_issue",
+                "operationTitle": "Create Issue",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "2d63360b-191b-4be5-a4a2-52dca42523eb"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "4845d193-4881-46dc-968c-8b448bccafde"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Issue",
+              "targetStep": "/api/3/workflow_steps/2d63360b-191b-4be5-a4a2-52dca42523eb",
+              "sourceStep": "/api/3/workflow_steps/4845d193-4881-46dc-968c-8b448bccafde",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "b4790e40-f912-40e3-9d4e-96acb0797b97"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "2a01bd85-7f3c-4f54-9a93-5f5c1b3e7905",
+          "id": 968,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CreateIssue"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - List Pull Request",
+          "aliasName": null,
+          "tag": null,
+          "description": "Lists pull requests for the specified repository on GitHub based on the repository name, repository owner, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "list_pr_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1707227117,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/2a04fa21-c6f1-4512-9cda-067d20deea7f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Pull Request",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['list_pr_params']['org_name']}}",
+                  "base": "",
+                  "head": "",
+                  "page": "",
+                  "repo": "{{vars.input.params['list_pr_params']['repo_name']}}",
+                  "sort": "created",
+                  "state": "{{vars.input.params['list_pr_params']['state']}}",
+                  "per_page": "",
+                  "direction": "desc",
+                  "repo_type": "Organization",
+                  "pull_number": "{{vars.input.params['list_pr_params']['pull_number']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "list_pull_request",
+                "operationTitle": "List Pull Request",
+                "pickFromTenant": false,
+                "step_variables": {
+                  "result": "{{vars.steps.List_Pull_Request.data}}"
+                }
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "16186c6c-10c6-4cbe-ac50-2ee4139db8d0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Set Result",
+              "description": null,
+              "arguments": {
+                "data": "{% if vars.input.params['list_pr_params']['pull_number'] %}\n{% set _ = vars.result.update({\"reviewer_names\": [vars.result.requested_reviewers.login] if vars.result.requested_reviewers else []})%}\n{% else %}{% for pr in vars.result%}{% set _ = pr.update({\"reviewer_names\": pr.requested_reviewers | json_query(\"[].login[]\")})%}{% endfor %}{% endif %}{{vars.result | toDict}}"
+              },
+              "status": null,
+              "top": "300",
+              "left": "120",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "0adb27e5-b969-4487-a612-3311b5c7a64c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "2a04fa21-c6f1-4512-9cda-067d20deea7f"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "List Pull Request -> Set Result",
+              "targetStep": "/api/3/workflow_steps/0adb27e5-b969-4487-a612-3311b5c7a64c",
+              "sourceStep": "/api/3/workflow_steps/16186c6c-10c6-4cbe-ac50-2ee4139db8d0",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "ec72b7f9-4a54-4b8f-bdc5-4ce903afb1e4"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> List Pull Request",
+              "targetStep": "/api/3/workflow_steps/16186c6c-10c6-4cbe-ac50-2ee4139db8d0",
+              "sourceStep": "/api/3/workflow_steps/2a04fa21-c6f1-4512-9cda-067d20deea7f",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "091f0286-5059-4651-8779-8353eceffdf4"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3025e5f2-16ce-46ef-80cf-26bd0fc31ada",
+          "id": 972,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-ListPullRequest"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Fetch Release",
+          "aliasName": null,
+          "tag": null,
+          "description": "Fetches Release from the Repo",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "fetch_release_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706872018,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/820dbecf-c3a3-4277-92f5-a651f8068f5a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Fetch Release",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['fetch_release_params']['org_name']}}",
+                  "page": "",
+                  "repo": "{{vars.input.params['fetch_release_params']['repo_name']}}",
+                  "per_page": "",
+                  "repo_type": "Organization"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "list_releases",
+                "operationTitle": "List Releases",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c48ed95e-67e3-4450-a6e9-209d63783dff"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Save Result",
+              "description": null,
+              "arguments": {
+                "data": "{% if vars.steps.Fetch_Release.data | length > 0 %}\n{{(vars.steps.Fetch_Release.data | json_query(\"[?name=='\"+(vars.input.params[\"fetch_release_params\"][\"release_name\"])+\"']\"))[0]}}\n{% endif %}"
+              },
+              "status": null,
+              "top": "300",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "a504d430-ad65-4719-b936-94542da0e75a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "820dbecf-c3a3-4277-92f5-a651f8068f5a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Fetch Release -> Save Result",
+              "targetStep": "/api/3/workflow_steps/a504d430-ad65-4719-b936-94542da0e75a",
+              "sourceStep": "/api/3/workflow_steps/c48ed95e-67e3-4450-a6e9-209d63783dff",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "07b8bd08-e554-4b20-86a9-eaeb902f6303"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Fetch Release",
+              "targetStep": "/api/3/workflow_steps/c48ed95e-67e3-4450-a6e9-209d63783dff",
+              "sourceStep": "/api/3/workflow_steps/820dbecf-c3a3-4277-92f5-a651f8068f5a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "48a5b04c-4a11-46ea-af10-e0fef3e9d9ee"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3ae53797-2d01-4b92-872b-3d815b2540bd",
+          "id": 967,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-FetchRelease"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - List Repository Collaborator",
+          "aliasName": null,
+          "tag": null,
+          "description": "List repository collaborators",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "list_repo_collaborator_params",
+            "connector_config_id"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706794648,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c9bfd4d6-8315-4b6f-a38d-e868a56f30d4",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Repository Collaborator",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['list_repo_collaborator_params']['org_name']}}",
+                  "page": "",
+                  "repo": "{{vars.input.params['list_repo_collaborator_params']['repo_name']}}",
+                  "per_page": "",
+                  "repo_type": "Organization",
+                  "permission": "Push",
+                  "affiliation": "All"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "list_repository_collaborator",
+                "operationTitle": "List Repository Collaborator",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "1272c020-a142-429f-a8b3-414b574fc278"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "c9bfd4d6-8315-4b6f-a38d-e868a56f30d4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add Repository Collaborator",
+              "targetStep": "/api/3/workflow_steps/1272c020-a142-429f-a8b3-414b574fc278",
+              "sourceStep": "/api/3/workflow_steps/c9bfd4d6-8315-4b6f-a38d-e868a56f30d4",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "fda91942-348e-4d8c-9883-8e228f3f4866"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3b728456-0d7b-4497-8bee-82c77ce164ee",
+          "id": 973,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-ListRepositoryCollaborator"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Create Repository",
+          "aliasName": null,
+          "tag": null,
+          "description": "Creates a new organization or authenticated user repository based on the repository name, organization name, base branch name, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "create_repo_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1707229774,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/31c89e5a-7467-4b8e-8aac-84f14ace8a5a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Repository",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['create_repo_params']['org_name']}}",
+                  "name": "{{vars.input.params['create_repo_params']['repo_name']}}",
+                  "private": true,
+                  "has_wiki": true,
+                  "homepage": "",
+                  "repo_type": "Organization",
+                  "has_issues": true,
+                  "description": "",
+                  "is_template": false,
+                  "has_projects": true,
+                  "other_fields": ""
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "create_repository",
+                "ignore_errors": true,
+                "operationTitle": "Create Repository",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "7ec0da37-536d-4a6e-aa02-882c5852b86e"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "31c89e5a-7467-4b8e-8aac-84f14ace8a5a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Repository",
+              "targetStep": "/api/3/workflow_steps/7ec0da37-536d-4a6e-aa02-882c5852b86e",
+              "sourceStep": "/api/3/workflow_steps/31c89e5a-7467-4b8e-8aac-84f14ace8a5a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "d3d90b41-0da6-401d-9f6b-5eac114eebb9"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "4447f7e4-9358-42ee-a23d-3cfbcd23b1f3",
+          "id": 2690,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CreateRepository"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Create Pull Request",
+          "aliasName": null,
+          "tag": null,
+          "description": "Creates a pull request for the specified repository on GitHub based on the repository name, repository owner, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "create_pr_params",
+            "connector_config_id"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1707228833,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/e4773409-fc57-4227-bc54-8110754cda0d",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Pull Request",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['create_pr_params']['org_name']}}",
+                  "base": "{{vars.input.params['create_pr_params']['base_branch']}}",
+                  "body": "{{vars.input.params['create_pr_params']['pr_comments']}}",
+                  "head": "{{vars.input.params['create_pr_params']['head_repo']}}",
+                  "repo": "{{vars.input.params['create_pr_params']['repo_name']}}",
+                  "draft": false,
+                  "title": "{{vars.input.params['create_pr_params']['pr_title']}}",
+                  "repo_type": "Organization",
+                  "maintainer_can_modify": true
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "create_pull_request",
+                "ignore_errors": true,
+                "operationTitle": "Create Pull Request",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "15365110-d4b4-4fca-a377-8e2b62da8cd0"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Set Result",
+              "description": null,
+              "arguments": {
+                "data": "{% if vars.steps.Create_Pull_Request.status == 'Success'%}{{vars.result.data}}{% else %}{{vars.steps.Create_Pull_Request}}{%endif%}"
+              },
+              "status": null,
+              "top": "300",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "230a27ff-0217-48e3-beed-fee334e69f1a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "e4773409-fc57-4227-bc54-8110754cda0d"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Create Pull Request -> Set Result",
+              "targetStep": "/api/3/workflow_steps/230a27ff-0217-48e3-beed-fee334e69f1a",
+              "sourceStep": "/api/3/workflow_steps/15365110-d4b4-4fca-a377-8e2b62da8cd0",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "0423baf7-4999-4cfc-b134-12729e0e17c1"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Pull Request",
+              "targetStep": "/api/3/workflow_steps/15365110-d4b4-4fca-a377-8e2b62da8cd0",
+              "sourceStep": "/api/3/workflow_steps/e4773409-fc57-4227-bc54-8110754cda0d",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "a741b1ce-0e92-4fc4-8ce6-740c1ed72d47"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "567b2a0c-c223-4019-8c72-ce739ecccc25",
+          "id": 971,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CreatePullRequest"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Create or Update File Content",
+          "aliasName": null,
+          "tag": null,
+          "description": "Creates a new repository using a repository template based on the template repository, repository name, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "create_update_file_content_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706699874,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/4024e985-883b-4326-976f-8128f1462777",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create or Update File Content",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['create_update_file_content_params']['org_name']}}",
+                  "sha": "",
+                  "name": "{{vars.input.params['create_update_file_content_params']['repo_name']}}",
+                  "path": "{{vars.input.params['create_update_file_content_params']['file_name']}}",
+                  "branch": "{{vars.input.params['create_update_file_content_params']['branch_name']}}",
+                  "content": "{{vars.input.params['create_update_file_content_params']['file_content']}}",
+                  "message": "{{vars.input.params['create_update_file_content_params']['commit_message']}}",
+                  "repo_type": "Organization"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "create_update_file_contents",
+                "ignore_errors": true,
+                "operationTitle": "Create or Update File Contents",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "16c00ac1-16db-4b99-b447-86c278963867"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "4024e985-883b-4326-976f-8128f1462777"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create or Update File Content",
+              "targetStep": "/api/3/workflow_steps/16c00ac1-16db-4b99-b447-86c278963867",
+              "sourceStep": "/api/3/workflow_steps/4024e985-883b-4326-976f-8128f1462777",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "25d0694d-7c8a-4e04-915a-3621c33aee47"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "62aa8826-fabc-41d2-9a6b-66192fa6a4d3",
+          "id": 960,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CreateUpdateFileContent"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Update Issue",
+          "aliasName": null,
+          "tag": null,
+          "description": "Update an issues for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "update_issue_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c648ec04-1394-4ef3-ae1a-76c0f7f87748",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "c648ec04-1394-4ef3-ae1a-76c0f7f87748"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Issue",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['update_issue_params']}}",
+                "params": {
+                  "org": "{{vars.input.params['update_issue_params']['org_name']}}",
+                  "body": "{{vars.input.params['update_issue_params']['contents']}}",
+                  "repo": "{{vars.input.params['update_issue_params']['repo_name']}}",
+                  "state": "{{vars.input.params['update_issue_params']['state']}}",
+                  "title": "",
+                  "labels": "",
+                  "assignees": "",
+                  "milestone": "",
+                  "repo_type": "Organization",
+                  "issue_number": "{{vars.input.params['update_issue_params']['issue_no']}}",
+                  "state_reason": "{{vars.input.params['update_issue_params']['state_reason']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "update_issue",
+                "operationTitle": "Update Issue",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "1b69ec05-cb12-4728-9aea-ac400f22666f"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Update Issue",
+              "targetStep": "/api/3/workflow_steps/1b69ec05-cb12-4728-9aea-ac400f22666f",
+              "sourceStep": "/api/3/workflow_steps/c648ec04-1394-4ef3-ae1a-76c0f7f87748",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "2cf88639-4270-4977-b9b8-01736371a7b6"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "786c9407-583b-493c-82ed-ea9ab59249fd",
+          "id": 970,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-UpdateIssue"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Add Repository Collaborator",
+          "aliasName": null,
+          "tag": null,
+          "description": "Updates a personal repository of a specified user to add a collaborator",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "add_repo_collaborator_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a1f4b5e4-b0ba-45b2-a76c-152598bee9db",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add Repository Collaborator",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['add_repo_collaborator_params']['org_name']}}",
+                  "repo": "{{vars.input.params['add_repo_collaborator_params']['repo_name']}}",
+                  "username": "{{vars.input.params['add_repo_collaborator_params']['username']}}",
+                  "repo_type": "Organization",
+                  "permission": "Push"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "add_repository_collaborator",
+                "operationTitle": "Add Repository Collaborator",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "ea2b22ed-f08d-4740-abb8-28bbeb83960e"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "a1f4b5e4-b0ba-45b2-a76c-152598bee9db"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add Repository Collaborator",
+              "targetStep": "/api/3/workflow_steps/ea2b22ed-f08d-4740-abb8-28bbeb83960e",
+              "sourceStep": "/api/3/workflow_steps/a1f4b5e4-b0ba-45b2-a76c-152598bee9db",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "ae7d8329-6624-40c1-bdcb-5e3608a93273"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "7970d889-a23a-49b8-b882-e94d40777e55",
+          "id": 955,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-AddRepositoryCollaborator"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Push Changes",
+          "aliasName": null,
+          "tag": null,
+          "description": "Commits the local repository changes to the specified repository in GitHub based on the repository name, cloned repository path, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "push_changes_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/834598a0-70ca-4881-9c66-e52f88b3846a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Push Changes",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['push_changes_params']['org_name']}}",
+                  "name": "{{vars.input.params['push_changes_params']['repo_name']}}",
+                  "branch": "{{vars.input.params['push_changes_params']['branch_name']}}",
+                  "repo_type": "Organization",
+                  "clone_path": "{{vars.input.params['push_changes_params']['cloned_repo_path']}}",
+                  "commit_message": "{{vars.input.params['push_changes_params']['commit_message']}}",
+                  "commit_description": ""
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "push_repository",
+                "operationTitle": "Push Changes",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "7bb1114c-3f75-4e5d-929e-9f787914d619"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "834598a0-70ca-4881-9c66-e52f88b3846a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Push Changes",
+              "targetStep": "/api/3/workflow_steps/7bb1114c-3f75-4e5d-929e-9f787914d619",
+              "sourceStep": "/api/3/workflow_steps/834598a0-70ca-4881-9c66-e52f88b3846a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "471f6be1-d329-4962-b9f4-579eeba4bf89"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "a7494291-67c3-4356-8e9b-50404ffbecb1",
+          "id": 957,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-PushChanges"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Create Branch",
+          "aliasName": null,
+          "tag": null,
+          "description": "Creates a new branch in GitHub based on the repository name, base branch type, repository owner, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "create_branch_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706710638,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c7015514-fc2a-4cf2-80e6-25c66f020403",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Branch",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['create_branch_params']['org_name']}}",
+                  "base": "{{vars.input.params['create_branch_params']['branch_name']}}",
+                  "repo": "{{vars.input.params['create_branch_params']['repo_name']}}",
+                  "repo_type": "Organization",
+                  "checkout_branch": "Branch Name",
+                  "new_branch_name": "{{vars.input.params['create_branch_params']['new_branch']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "create_branch",
+                "ignore_errors": true,
+                "operationTitle": "Create Branch",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "2814357c-4ad8-4672-81f8-756f0b83d298"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "c7015514-fc2a-4cf2-80e6-25c66f020403"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Branch",
+              "targetStep": "/api/3/workflow_steps/2814357c-4ad8-4672-81f8-756f0b83d298",
+              "sourceStep": "/api/3/workflow_steps/c7015514-fc2a-4cf2-80e6-25c66f020403",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "c6430c26-b883-4af9-8c84-6399e6ebd393"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "aff12619-6d1c-4e01-b7be-5043d384182b",
+          "id": 966,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CreateBranch"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Clone Repository",
+          "aliasName": null,
+          "tag": null,
+          "description": "Clone the github repository",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "clone_repo_params",
+            "connector_config_id"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1707225254,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/4c2d9c21-ddcd-4faf-ae92-44d911834eff",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Clone Repository",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['clone_repo_params']['org_name']}}",
+                  "name": "{{vars.input.params['clone_repo_params']['repo_name']}}",
+                  "branch": "{{vars.input.params['clone_repo_params']['branch_name']}}",
+                  "clone_zip": "{{vars.input.params['clone_repo_params']['clone_as_zip']}}",
+                  "repo_type": "Organization"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "clone_repository",
+                "operationTitle": "Clone Repository",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e6115b28-a85a-48bd-a61e-22e673d8d861"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "4c2d9c21-ddcd-4faf-ae92-44d911834eff"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Clone Repository",
+              "targetStep": "/api/3/workflow_steps/e6115b28-a85a-48bd-a61e-22e673d8d861",
+              "sourceStep": "/api/3/workflow_steps/4c2d9c21-ddcd-4faf-ae92-44d911834eff",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "1721e3ad-a3b5-4783-9b99-9ee09bd0102e"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "b31f0f26-2bab-4dc2-bc7f-4f1a32f052c1",
+          "id": 965,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CloneRepository"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - List Repository Issue",
+          "aliasName": null,
+          "tag": null,
+          "description": "List an issues for the specified repository or user on GitHub based on the repository name, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "list_repo_issues_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1707217643,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a2306483-bc34-464b-9875-0c046ad47e7a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "List Repository Issue",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['list_repo_issues_params']['org_name']}}",
+                  "page": "",
+                  "repo": "{{vars.input.params['list_repo_issues_params']['repo_name']}}",
+                  "sort": "created",
+                  "since": "{% if vars.since %}{{arrow.get(vars.since).to(\"UTC\").format(\"YYYY-MM-DDTHH:mm:ssZ\")}}{%endif%}",
+                  "state": "{{vars.input.params['list_repo_issues_params']['state']}}",
+                  "labels": "",
+                  "creator": "",
+                  "assignee": "",
+                  "per_page": 100,
+                  "direction": "desc",
+                  "mentioned": "",
+                  "milestone": "",
+                  "repo_type": "Organization"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "list_repository_issue",
+                "operationTitle": "List Repository Issue",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "70571698-b51a-487f-85cb-3e44590f1f96"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Set Result",
+              "description": null,
+              "arguments": {
+                "data": "{% set _list = [] %}\n{% for issue in vars.steps.List_Repository_Issue.data %}{% set _temp = _list.append({\"html_url\": issue.html_url,\"number\": (issue.number | string),\"title\": issue.title,\"body\": issue.body,\"reporterUsername\": issue.user.login,\"assigneeUsername\": issue.assignee.login if issue.assignee else \"\",\"state\": issue.state, \"repository_url\": issue.repository_url}) %}{% endfor %}{{_list}}"
+              },
+              "status": null,
+              "top": "300",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
+              "uuid": "b1c03645-d90e-44f2-8ddd-d8716eca10b4"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  },
+                  "since": "{{vars.input.params['list_repo_issues_params']['since']}}"
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "a2306483-bc34-464b-9875-0c046ad47e7a"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "List Repository Issue -> Set Result",
+              "targetStep": "/api/3/workflow_steps/b1c03645-d90e-44f2-8ddd-d8716eca10b4",
+              "sourceStep": "/api/3/workflow_steps/70571698-b51a-487f-85cb-3e44590f1f96",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "e45b88c4-67ce-41dc-937d-b4d2fada3673"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> List Repository Issue",
+              "targetStep": "/api/3/workflow_steps/70571698-b51a-487f-85cb-3e44590f1f96",
+              "sourceStep": "/api/3/workflow_steps/a2306483-bc34-464b-9875-0c046ad47e7a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "755124e2-e5ad-4e15-a22f-8906a7dabd40"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "c012cd06-f436-4c3b-827f-5c9c35ea3fbc",
+          "id": 962,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-ListRepositoryIssue"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Add Pull Request Review",
+          "aliasName": null,
+          "tag": null,
+          "description": "Add a review for a pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "add_pr_review_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/063d3326-e951-4388-8610-d78d646d3bb7",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add Pull Request Review",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['add_pr_review_params']['org_name']}}",
+                  "body": "",
+                  "repo": "{{vars.input.params['add_pr_review_params']['repo_name']}}",
+                  "event": "APPROVE",
+                  "commit_id": "",
+                  "repo_type": "Organization",
+                  "pull_number": "{{vars.input.params['add_pr_review_params']['pull_number']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "add_pr_review",
+                "operationTitle": "Add Pull Request Review",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "21b761d7-9eb0-44c8-8181-27feda64315b"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "063d3326-e951-4388-8610-d78d646d3bb7"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add Pull Request Review",
+              "targetStep": "/api/3/workflow_steps/21b761d7-9eb0-44c8-8181-27feda64315b",
+              "sourceStep": "/api/3/workflow_steps/063d3326-e951-4388-8610-d78d646d3bb7",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "3e56b525-dac5-497f-9130-9a12ed83589a"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "c06a0dd3-705c-4da6-854e-4417c221d550",
+          "id": 959,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-AddPullRequestReview"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Add Reviewers for a Pull Request",
+          "aliasName": null,
+          "tag": null,
+          "description": "Adds reviews for the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "add_reviewers_for_pr_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/76b48476-d005-47a0-8bfa-f4906f961e07",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add Reviewers",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['add_reviewers_for_pr_params']['org_name']}}",
+                  "repo": "{{vars.input.params['add_reviewers_for_pr_params']['repo_name']}}",
+                  "repo_type": "Organization",
+                  "reviewers": "{{vars.input.params['add_reviewers_for_pr_params']['reviewers']}}",
+                  "pull_number": "{{vars.input.params['add_reviewers_for_pr_params']['pull_number']}}",
+                  "team_reviewers": ""
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "add_reviewers",
+                "operationTitle": "Add Reviewers for a Pull Request",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "160",
+              "left": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "1cb9c2fb-2bd8-448b-863a-b8738d55483e"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "76b48476-d005-47a0-8bfa-f4906f961e07"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add Reviewers",
+              "targetStep": "/api/3/workflow_steps/1cb9c2fb-2bd8-448b-863a-b8738d55483e",
+              "sourceStep": "/api/3/workflow_steps/76b48476-d005-47a0-8bfa-f4906f961e07",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "0fe10e10-b0ec-4d4f-9f92-2210751caf64"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "ce661d72-33fd-4351-a048-e913499afd66",
+          "id": 961,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-PullRequestAddReviewers"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Merge Pull Request",
+          "aliasName": null,
+          "tag": null,
+          "description": "Merges the specified pull request on GitHub based on the repository name, repository owner, pull request number, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "merge_pr_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/29d7d19c-2f2c-4f68-83f4-0bf610f08f96",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Merge Pull Request",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['merge_pr_params']['org_name']}}",
+                  "sha": "",
+                  "repo": "{{vars.input.params['merge_pr_params']['repo_name']}}",
+                  "repo_type": "Organization",
+                  "pull_number": "{{vars.input.params['merge_pr_params']['pull_number']}}",
+                  "commit_title": "",
+                  "merge_method": "merge",
+                  "commit_message": ""
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "merge_pull_request",
+                "operationTitle": "Merge Pull Request",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "ee75d5bc-8cb0-40a0-b241-8fe552f716ec"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "29d7d19c-2f2c-4f68-83f4-0bf610f08f96"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Merge Pull Request",
+              "targetStep": "/api/3/workflow_steps/ee75d5bc-8cb0-40a0-b241-8fe552f716ec",
+              "sourceStep": "/api/3/workflow_steps/29d7d19c-2f2c-4f68-83f4-0bf610f08f96",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "c084fd00-e722-41e2-bc03-527c10591716"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "e9916931-e389-4275-aaae-e3117ccc575a",
+          "id": 969,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-MergePullRequest"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Update Remote Repository",
+          "aliasName": null,
+          "tag": null,
+          "description": "Applies changes made in a FortiSOAR file to the specified remote repository that is cloned from GitHub based on the file IRI and cloned repository path you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "update_remote_repo_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706700901,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/dc4d53b0-8303-41be-ab3a-535b34e3f27f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "dc4d53b0-8303-41be-ab3a-535b34e3f27f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Remote Repository",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.steps.Check_GitHub_Connector_Configuration.config_id}}",
+                "params": {
+                  "file_iri": "{{vars.input.params['update_remote_repo_params']['fsr_file_iri']}}",
+                  "clone_path": "{{vars.input.params['update_remote_repo_params']['clone_repo_path']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "update_clone_repository",
+                "operationTitle": "Update Remote Repository",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "ef38a85c-2289-4ab2-ab92-0ef84fa99de2"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Update Remote Repository",
+              "targetStep": "/api/3/workflow_steps/ef38a85c-2289-4ab2-ab92-0ef84fa99de2",
+              "sourceStep": "/api/3/workflow_steps/dc4d53b0-8303-41be-ab3a-535b34e3f27f",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "924348d3-b8df-49ed-9822-4f725ab3b332"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "ecc7f582-7ccb-4c58-8f88-35920cf6b0cc",
+          "id": 964,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-UpdateRemoteRepository"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Create Release",
+          "aliasName": null,
+          "tag": null,
+          "description": "Create a new release",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "create_release_params",
+            "connector_config_id"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706871663,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/32d2661c-a960-4fce-afc3-ec053381f351",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Create Release",
+              "description": "baseBranch",
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['create_release_params']['org_name']}}",
+                  "body": "{{vars.input.params['create_release_params']['release_description']}}",
+                  "name": "{{vars.input.params['create_release_params']['tag_name']}}",
+                  "repo": "{{vars.input.params['create_release_params']['repo_name']}}",
+                  "tag_name": "{{vars.input.params['create_release_params']['tag_name']}}",
+                  "repo_type": "Organization",
+                  "target_commitish": "{{vars.input.params['create_release_params']['base_branch']}}",
+                  "generate_release_notes": true
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "create_release",
+                "operationTitle": "Create Release",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "160",
+              "left": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "741ab359-d61c-4ff9-853a-1782f7834687"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "32d2661c-a960-4fce-afc3-ec053381f351"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Release",
+              "targetStep": "/api/3/workflow_steps/741ab359-d61c-4ff9-853a-1782f7834687",
+              "sourceStep": "/api/3/workflow_steps/32d2661c-a960-4fce-afc3-ec053381f351",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "13120b5c-20f0-4269-b1d5-9c8d2c315372"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "f5cbd7bb-9772-41c5-ab55-c5a84d9d1dcb",
+          "id": 963,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-CreateRelease"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Delete Branch",
+          "aliasName": null,
+          "tag": null,
+          "description": "Delete a new branch in GitHub based on the repository name, branch name, repository owner, and other input parameters you have specified",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id",
+            "delete_branch_params"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1706693216,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ee38c839-adef-4277-abde-bb58fef751d0",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Delete Branch",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": {
+                  "org": "{{vars.input.params['delete_branch_params']['org_name']}}",
+                  "repo": "{{vars.input.params['delete_branch_params']['repo_name']}}",
+                  "repo_type": "Organization",
+                  "branch_name": "{{vars.input.params['delete_branch_params']['branch_name']}}"
+                },
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "delete_branch",
+                "operationTitle": "Delete Branch",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "160",
+              "left": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "4c4b1d93-99b9-4ed1-aa69-f0d73dddb499"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "ee38c839-adef-4277-abde-bb58fef751d0"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Delete Branch",
+              "targetStep": "/api/3/workflow_steps/4c4b1d93-99b9-4ed1-aa69-f0d73dddb499",
+              "sourceStep": "/api/3/workflow_steps/ee38c839-adef-4277-abde-bb58fef751d0",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "4b4830ad-b137-48a4-ad31-64fe2dc8114d"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "f80ab40a-cbe4-46b5-8936-c0ba00774c8f",
+          "id": 954,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [
+            {
+              "apiName": "continuousDelivery",
+              "name": "Continuous Delivery",
+              "version": "2.0.0"
+            }
+          ],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-DeleteBranch"
+          ]
         }
       ]
     }
   ]
 }
+
