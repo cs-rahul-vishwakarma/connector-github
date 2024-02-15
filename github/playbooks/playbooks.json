@@ -4156,7 +4156,7 @@
               "description": null,
               "arguments": {
                 "name": "GitHub",
-                "config": "{{vars.input.params['update_issue_params']}}",
+                "config": "{{vars.input.params['connector_config_id']}}",
                 "params": {
                   "org": "{{vars.input.params['update_issue_params']['org_name']}}",
                   "body": "{{vars.input.params['update_issue_params']['contents']}}",
@@ -5112,7 +5112,7 @@
               "description": null,
               "arguments": {
                 "name": "GitHub",
-                "config": "{{vars.steps.Check_GitHub_Connector_Configuration.config_id}}",
+                "config": "{{vars.input.params['connector_config_id']}}",
                 "params": {
                   "file_iri": "{{vars.input.params['update_remote_repo_params']['fsr_file_iri']}}",
                   "clone_path": "{{vars.input.params['update_remote_repo_params']['clone_repo_path']}}"
