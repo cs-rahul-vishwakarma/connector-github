@@ -3118,6 +3118,92 @@
         {
           "@type": "Workflow",
           "triggerLimit": null,
+          "name": "Get Server URL",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves the server URL (Web URL) of the configured GitLab server.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1710140463,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/2c29ff56-19ed-48a3-9f12-6ea50cdf9580",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Server URL",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "",
+                "params": [],
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "get_web_url",
+                "operationTitle": "Get Server URL",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "fbaa9072-1191-4697-8d06-8fa31099bebc"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "2c29ff56-19ed-48a3-9f12-6ea50cdf9580"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Server URL",
+              "targetStep": "/api/3/workflow_steps/fbaa9072-1191-4697-8d06-8fa31099bebc",
+              "sourceStep": "/api/3/workflow_steps/2c29ff56-19ed-48a3-9f12-6ea50cdf9580",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "cf76ae94-ddeb-4085-bb93-198fd3a48060"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "2f34bf35-1e34-49fd-b5a8-8d8d3897681e",
+          "id": 2127,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Github"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
           "name": "GitHub - Create Issue Comment",
           "aliasName": null,
           "tag": null,
@@ -5364,6 +5450,96 @@
             "CICD",
             "GitHub",
             "GitHub-DeleteBranch"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "GitHub - Get Server URL",
+          "aliasName": null,
+          "tag": null,
+          "description": null,
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [
+            "connector_config_id"
+          ],
+          "synchronous": false,
+          "lastModifyDate": 1710141017,
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/60fa7331-3ffe-4247-9c12-c318cb0554b9",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Server URL",
+              "description": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "{{vars.input.params['connector_config_id']}}",
+                "params": [],
+                "version": "1.2.0",
+                "connector": "github",
+                "operation": "get_web_url",
+                "operationTitle": "Get Server URL",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "ea2a5134-08d2-4ff4-8277-7321c3dddd34"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "__triggerLimit": true,
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                },
+                "triggerOnSource": true,
+                "triggerOnReplicate": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "60fa7331-3ffe-4247-9c12-c318cb0554b9"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Server URL",
+              "targetStep": "/api/3/workflow_steps/ea2a5134-08d2-4ff4-8277-7321c3dddd34",
+              "sourceStep": "/api/3/workflow_steps/60fa7331-3ffe-4247-9c12-c318cb0554b9",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "bb9b06ad-0451-48c5-a4cc-fe5aada46ac9"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "fea831d2-0cd3-4a9c-89c5-972c5056e5d9",
+          "id": 2128,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "CICD",
+            "GitHub",
+            "GitHub-GetServerURL"
           ]
         }
       ]

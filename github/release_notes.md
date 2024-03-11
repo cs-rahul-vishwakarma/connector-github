@@ -1,4 +1,5 @@
 ### What's Improved
+- Added a new action `Get Server URL` 
 - Added select parameter `Repository Type` to specify the Organization and User type repository in following actions:
   - Merge Branch
   - List Fork Repositories
