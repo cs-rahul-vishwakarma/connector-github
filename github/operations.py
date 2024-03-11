@@ -572,6 +572,17 @@ def _check_health(config):
         raise ConnectorError(err)
 
 
+def get_web_url(config, params, *args, **kwargs):
+    github = GitHub(config)
+    response = github.make_request(endpoint='user')
+    username = response.get('login')
+    web_url = response.get('html_url')
+    result = {
+        "server_url": web_url.split(username)[0]
+    }
+    return result
+
+
 operations = {
     'create_repository': create_repository,
     'create_repository_using_template': create_repository_using_template,
@@ -610,5 +621,6 @@ operations = {
     'list_stargazers': list_stargazers,
     'star_repository': star_repository,
     'list_watchers': list_watchers,
-    'set_repo_subscription': set_repo_subscription
+    'set_repo_subscription': set_repo_subscription,
+    'get_web_url': get_web_url
 }

@@ -3,6 +3,7 @@
   - Merge Branch
   - List Fork Repositories
   - Fork Organization Repository
+  - Get HTML URL
 - Updated type `Comment` parameter text to richtext in `Create Issue Comment` action.
 - Renamed `Commit Message` parameter to `Commit Summary` and added `Commit Description` parameter in `Push Changes` action.
 - Updated output schema of `List Pull Request` action.

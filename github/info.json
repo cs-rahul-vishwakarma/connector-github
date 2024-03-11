@@ -13,14 +13,15 @@
   "configuration": {
     "fields": [
       {
-        "title": "Server URL",
+        "title": "Server API URL",
         "required": true,
         "editable": true,
         "visible": true,
         "type": "text",
         "name": "server_url",
         "value": "https://api.github.com",
-        "description": "Specify the URL of the GitHub server to connect and perform automated operations"
+        "description": "Specify the URL of the GitHub server to connect and perform automated operations",
+        "tooltip": "Specify the URL of the GitHub server to connect and perform automated operations"
       },
       {
         "title": "Username",
@@ -29,7 +30,8 @@
         "visible": true,
         "type": "text",
         "name": "username",
-        "description": "Specify the username used to access the GitHub server to connect and perform the automated operations"
+        "description": "Specify the username used to access the GitHub server to connect and perform the automated operations",
+        "tooltip": "Specify the username used to access the GitHub server to connect and perform the automated operations"
       },
       {
         "title": "Personal Access Token",
@@ -38,14 +40,15 @@
         "visible": true,
         "type": "password",
         "name": "password",
-        "description": "Specify the Personal Access Token used to access the GitHub server to connect and perform the automated operations"
+        "description": "Specify the Personal Access Token used to access the GitHub server to connect and perform the automated operations",
+        "tooltip": "Specify the Personal Access Token used to access the GitHub server to connect and perform the automated operations"
       },
       {
         "title": "Verify SSL",
         "name": "verify_ssl",
         "type": "checkbox",
         "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True",
-        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set to True",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not.",
         "required": false,
         "editable": true,
         "visible": true,
@@ -59,7 +62,8 @@
         "type": "text",
         "name": "clone_url",
         "value": "https://codeload.github.com",
-        "description": "Specify the clone URL of the GitHub server to connect and perform cloned operation"
+        "description": "Specify the clone URL of the GitHub server to connect and perform cloned operation",
+        "tooltip": "Specify the clone URL of the GitHub server to connect and perform cloned operation"
       }
     ]
   },
@@ -7365,6 +7369,18 @@
           "description": "Select this option to block notifications from the specified repository"
         }
       ]
+    },
+    {
+      "operation": "get_web_url",
+      "title": "Get Server URL",
+      "description": "Retrieves the server URL (Web URL) of the configured GitLab server.",
+      "category": "investigation",
+      "annotation": "get_web_url",
+      "enabled": true,
+      "output_schema": {
+        "server_url": ""
+      },
+      "parameters": []
     }
   ]
 }
