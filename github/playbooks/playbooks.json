@@ -4773,7 +4773,7 @@
               "name": "Set Result",
               "description": null,
               "arguments": {
-                "data": "{% set _list = [] %}\n{% for issue in vars.steps.List_Repository_Issue.data %}{% set _temp = _list.append({\"html_url\": issue.html_url,\"number\": (issue.number | string),\"title\": issue.title,\"body\": issue.body,\"reporterUsername\": issue.user.login,\"assigneeUsername\": issue.assignee.login if issue.assignee else \"\",\"state\": issue.state, \"repository_url\": issue.repository_url}) %}{% endfor %}{{_list}}"
+                "data": "{% set _list = [] %}\n{% for issue in vars.steps.List_Repository_Issue.data %}{% set _temp = _list.append({\"id\": issue.id, \"html_url\": issue.html_url,\"number\": (issue.number | string),\"title\": issue.title,\"body\": issue.body,\"reporterUsername\": issue.user.login,\"assigneeUsername\": issue.assignee.login if issue.assignee else \"\",\"state\": issue.state, \"repository_url\": issue.repository_url}) %}{% endfor %}{{_list}}"
               },
               "status": null,
               "top": "300",
@@ -5458,7 +5458,7 @@
           "name": "GitHub - Get Server URL",
           "aliasName": null,
           "tag": null,
-          "description": null,
+          "description": "Retrieves the server URL (Web URL) of the configured GitLab server.",
           "isActive": true,
           "debug": false,
           "singleRecordExecution": false,
