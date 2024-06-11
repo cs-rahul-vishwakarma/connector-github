@@ -263,6 +263,9 @@ def clone_repository(config, params, *args, **kwargs):
         headers = CLONE_ACCEPT_HEADER
         zip_file = '/tmp/github-{0}-{1}.zip'.format(params.get('name'), datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
         response = requests.request("GET", url, headers=headers, data={})
+        if not response.ok:
+            logger.error("Error occurred: {\"status_code\": {0}, Error: {1}}".format(response.status_code, response.text if response.text else response.content))
+            raise ConnectorError("Error occurred: {\"status_code\": {0}, Error: {1}}".format(response.status_code, response.text if response.text else response.content))
         with open(zip_file, "wb") as zipFile:
             zipFile.write(response.content)
         if params.get('clone_zip') is True:
@@ -314,6 +317,7 @@ def update_clone_repository(config, params, *args, **kwargs):
         path = response['filenames'][0].split('/')
         root_src_dir = '/tmp/{0}/{1}/'.format(path[2], path[3])
         root_dst_dir = params.get('clone_path') + '/'
+        files_from_zip = set()
         for src_dir, dirs, files in os.walk(root_src_dir):
             dst_dir = src_dir.replace(root_src_dir, root_dst_dir, 1)
             if not os.path.exists(dst_dir):
@@ -321,12 +325,20 @@ def update_clone_repository(config, params, *args, **kwargs):
             for file_ in files:
                 src_file = os.path.join(src_dir, file_)
                 dst_file = os.path.join(dst_dir, file_)
+                files_from_zip.add(dst_file)
                 if os.path.exists(dst_file):
                     # in case of the src and dst are the same file
                     if os.path.samefile(src_file, dst_file):
                         continue
                     os.remove(dst_file)
                 shutil.move(src_file, dst_dir)
+
+        # Delete files in the cloned folder that are not present in the zip
+        for root, _, files in os.walk(root_dst_dir):
+            for file_ in files:
+                file_path = os.path.join(root, file_)
+                if file_path not in files_from_zip:
+                    os.remove(file_path)
         return {'status': 'finish'}
     except Exception as err:
         raise ConnectorError(err)
@@ -341,6 +353,7 @@ def push_repository(config, params, *args, **kwargs):
         repo = g.get_user().get_repo(params.get('name'))
     root = params.get('clone_path')
     file_list = []
+    local_paths = set()
     for root, dirs, files in os.walk(root):
         for f in files:
             if not any(x in os.path.join(root, f) for x in ['.DS_Store', '.git']):
@@ -349,7 +362,8 @@ def push_repository(config, params, *args, **kwargs):
     commit_description = params.pop('commit_description', '')
     if commit_description:
         commit_message += '\n' + commit_description
-    master_ref = repo.get_git_ref('heads/' + params.get('branch'))
+    branch = params.get('branch', 'main')
+    master_ref = repo.get_git_ref('heads/' + branch)
     master_sha = master_ref.object.sha
     base_tree = repo.get_git_tree(master_sha)
     element_list = list()
@@ -365,19 +379,44 @@ def push_repository(config, params, *args, **kwargs):
             en = entry.replace(params.get('clone_path') + '/', '')
             element = InputGitTreeElement(en, '100644', 'blob', content=data)
             element_list.append(element)
+            local_paths.add(en)
     except AssertionError as err:
         raise ConnectorError(err)
+
+    # Get all remote files in the current tree
+    def get_all_files_from_tree(tree, path=''):
+        file_paths = {}
+        if path:
+            path += '/'
+        for element in tree.tree:
+            if element.type == 'blob':
+                file_paths[path + element.path] = element.sha
+            elif element.type == 'tree':
+                sub_tree = repo.get_git_tree(element.sha)
+                file_paths.update(get_all_files_from_tree(sub_tree, path + element.path))
+        return file_paths
+
+    remote_files = get_all_files_from_tree(base_tree)
+    remote_paths = set(remote_files.keys())
+
+    # Identify files that need to be deleted
+    files_to_delete = remote_paths - local_paths
+
     tree = repo.create_git_tree(element_list, base_tree)
     parent = repo.get_git_commit(master_sha)
     commit = repo.create_git_commit(commit_message, tree, [parent])
     master_ref.edit(commit.sha)
     for entry in file_list:
-        with open(entry, 'rb') as input_file:
-            data = input_file.read()
         if entry.endswith('.png'):
+            with open(entry, 'rb') as input_file:
+                data = input_file.read()
             en = entry.replace(params.get('clone_path') + '/', '')
             old_file = repo.get_contents(en)
             commit = repo.update_file(en, 'Update PNG content', data, old_file.sha)
+
+    # Delete files that are no longer present in the local directory
+    for file_to_delete in files_to_delete:
+        repo.delete_file(file_to_delete, commit_message, remote_files[file_to_delete], branch=branch)
     return {"status": "finish"}
 
 
@@ -583,6 +622,44 @@ def get_web_url(config, params, *args, **kwargs):
     return result
 
 
+def get_file_from_repository(config, params, *args, **kwargs):
+    github = GitHub(config)
+    payload = {'ref': params.get('branch') if params.get('branch') else 'main'}
+    endpoint = '{0}/contents/{1}'.format(params.get('name'), params.get('path'))
+    response = github.make_request(endpoint=endpoint, org=params.get('org'), owner=params.get('owner'), params=payload)
+    if params.get('decode_content') and response.get('content'):
+        try:
+            decoded_bytes = base64.b64decode(response.get('content'))
+            response['content'] = decoded_bytes.decode('utf-8')
+        except Exception as err:
+            logger.error(err)
+    return response
+
+
+def delete_file_from_repository(config, params, *args, **kwargs):
+    github = GitHub(config)
+    payload = {
+        "message": params.get('message'),
+        "sha": params.get('sha'),
+        "branch": params.get('branch') if params.get('branch') else 'main'
+    }
+    endpoint = '{0}/contents/{1}'.format(params.get('name'), params.get('path'))
+    response = github.make_request(method='DELETE', endpoint=endpoint, org=params.get('org'), owner=params.get('owner'), data=json.dumps(payload))
+    return response
+
+
+def search_code(config, params, *args, **kwargs):
+    github = GitHub(config)
+    params['order'] = params.get('order', '').lower()
+    payload = {k: v for k, v in params.items() if
+               v is not None and v != '' and v != {} and v != []}
+    # payload.update({"sort": "created", "order": "desc", "q": params.get('q')})
+    # f"q={params.get('q')}&type={params.get('type', 'Code')}&order=desc&sort=interactions&per_page={params.get('per_page', 5)}&page={params.get('page', 1)}"
+    endpoint = f"search/code"
+    logger.error("Params: {}".format(payload))
+    return github.make_request(method='GET', endpoint=endpoint, params=payload)
+
+
 operations = {
     'create_repository': create_repository,
     'create_repository_using_template': create_repository_using_template,
@@ -622,5 +699,8 @@ operations = {
     'star_repository': star_repository,
     'list_watchers': list_watchers,
     'set_repo_subscription': set_repo_subscription,
-    'get_web_url': get_web_url
+    'get_web_url': get_web_url,
+    'get_file_from_repository': get_file_from_repository,
+    'delete_file_from_repository': delete_file_from_repository,
+    'search_code': search_code
 }
