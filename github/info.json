@@ -5,11 +5,11 @@
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "version": "1.2.0",
+  "version": "1.3.0",
   "category": "Source Code Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.2.0/github/812/github-v1-2-0",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
@@ -1221,7 +1221,7 @@
         "subscribers_url": "",
         "subscription_url": "",
         "commits_url": "",
-        "git_commits_url": "}",
+        "git_commits_url": "",
         "comments_url": "",
         "issue_comment_url": "",
         "contents_url": "",
@@ -2044,6 +2044,253 @@
           "type": "text",
           "tooltip": "Specify the blob SHA of the file being replaced. Required if you are updating a file",
           "description": "(Optional) Specify the blob SHA of the file being replaced. Required if you are updating a file."
+        }
+      ]
+    },
+    {
+      "operation": "get_file_from_repository",
+      "title": "Get File",
+      "description": "Retrieves information such as name, size, content, etc. about a file from the GitHub repository based on the repository type, repository name, branch name, file name, and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "get_file_from_repository",
+      "enabled": true,
+      "output_schema": {
+        "sha": "",
+        "url": "",
+        "name": "",
+        "path": "",
+        "size": "",
+        "type": "",
+        "_links": {
+          "git": "",
+          "html": "",
+          "self": ""
+        },
+        "content": "",
+        "git_url": "",
+        "encoding": "",
+        "html_url": "",
+        "download_url": ""
+      },
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization on GitHub, whose repository's file contents are to be retrieved, in the Organization Name field.",
+                "description": "Specify the name of the organization on GitHub, whose repository's file contents are to be retrieved, in the Organization Name field."
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the repository owner on GitHub, whose repository's file contents are to be retrieved, in the Repository Owner field.",
+                "description": "Specify the name of the repository owner on GitHub, whose repository's file contents are to be retrieved, in the Repository Owner field."
+              }
+            ]
+          },
+          "tooltip": "Select the method using which you want to retrieve the content file from GitHub",
+          "description": "Select the type of the repository whose file contents are to be retrieved from GitHub. You can choose from Organization or User."
+        },
+        {
+          "title": "Repository Name",
+          "name": "name",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose file contents are to be retrieved, from GitHub",
+          "description": "Specify the name of the repository whose file contents are to be retrieved, from GitHub."
+        },
+        {
+          "title": "File Name",
+          "name": "path",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the file whose file contents are to be retrieved, from GitHub",
+          "description": "Specify the name of the file whose file contents are to be retrieved, from GitHub."
+        },
+        {
+          "title": "Branch Name",
+          "name": "branch",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the branch name from where you want to retrieve the file content from GitHub.",
+          "description": "(Optional) Specify the branch name from where you want to retrieve the file content from GitHub."
+        },
+        {
+          "title": "Decode Content",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": false,
+          "type": "checkbox",
+          "name": "decode_content",
+          "description": "(Optional) Select to decode the file contents. The files are Base64 encoded.",
+          "tooltip": "Select to decode the file contents. The files are Base64 encoded."
+        }
+      ]
+    },
+    {
+      "operation": "delete_file_from_repository",
+      "title": "Delete File",
+      "description": "Deletes a file from the GitHub repository based on the repository type, repository name, branch name, file name, and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "delete_file_from_repository",
+      "enabled": true,
+      "output_schema": {
+        "commit": {
+          "sha": "",
+          "url": "",
+          "tree": {
+            "sha": "",
+            "url": ""
+          },
+          "author": {
+            "date": "",
+            "name": "",
+            "email": ""
+          },
+          "message": "",
+          "node_id": "",
+          "parents": [
+            {
+              "sha": "",
+              "url": "",
+              "html_url": ""
+            }
+          ],
+          "html_url": "",
+          "committer": {
+            "date": "",
+            "name": "",
+            "email": ""
+          },
+          "verification": {
+            "reason": "",
+            "payload": "",
+            "verified": "",
+            "signature": ""
+          }
+        },
+        "content": ""
+      },
+      "parameters": [
+        {
+          "title": "Repository Type",
+          "name": "repo_type",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Organization",
+            "User"
+          ],
+          "onchange": {
+            "Organization": [
+              {
+                "title": "Organization Name",
+                "name": "org",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the organization on GitHub, whose repository's file is to be deleted, in the Organization Name field.",
+                "description": "Specify the name of the organization on GitHub, whose repository's file is to be deleted, in the Organization Name field."
+              }
+            ],
+            "User": [
+              {
+                "title": "Repository Owner",
+                "name": "owner",
+                "visible": true,
+                "required": true,
+                "editable": true,
+                "type": "text",
+                "tooltip": "Specify the name of the repository owner on GitHub, whose repository's file is to be deleted, in the Repository Owner field.",
+                "description": "Specify the name of the repository owner on GitHub, whose repository's file is to be deleted, in the Repository Owner field."
+              }
+            ]
+          },
+          "tooltip": "Select the type of the repository whose file is to be deleted from GitHub.",
+          "description": "Select the type of the repository whose file is to be deleted from GitHub. You can choose from Organization or User."
+        },
+        {
+          "title": "Repository Name",
+          "name": "name",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the repository whose file is to be deleted, on GitHub",
+          "description": "Specify the name of the repository whose file is to be deleted, on GitHub."
+        },
+        {
+          "title": "File Name",
+          "name": "path",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the name of the file which is to be deleted, on GitHub",
+          "description": "Specify the name of the file which is to be deleted, on GitHub."
+        },
+        {
+          "title": "Commit Message",
+          "name": "message",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the commit message that you want to add while deleting the file from GitHub",
+          "description": "Specify the commit message that you want to add while deleting the file from GitHub."
+        },
+        {
+          "title": "SHA",
+          "name": "sha",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the blob SHA of the file being deleted.",
+          "description": "Specify the blob SHA of the file being deleted."
+        },
+        {
+          "title": "Branch Name",
+          "name": "branch",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "value": "main",
+          "tooltip": "Specify the branch name from which you want to delete the file on GitHub.",
+          "description": "(Optional) Specify the branch name from which you want to delete the file on GitHub. By default, it deletes from main branch."
         }
       ]
     },
@@ -3160,9 +3407,7 @@
       "annotation": "push_repository",
       "enabled": true,
       "output_schema": {
-        "add": "",
-        "commit": "",
-        "push": ""
+        "status": ""
       },
       "parameters": [
         {
@@ -4756,26 +5001,6 @@
             "received_events_url": "",
             "type": "",
             "site_admin": ""
-          },
-          {
-            "login": "",
-            "id": "",
-            "node_id": "",
-            "avatar_url": "",
-            "gravatar_id": "",
-            "url": "",
-            "html_url": "",
-            "followers_url": "",
-            "following_url": "",
-            "gists_url": "",
-            "starred_url": "",
-            "subscriptions_url": "",
-            "organizations_url": "",
-            "repos_url": "",
-            "events_url": "",
-            "received_events_url": "",
-            "type": "",
-            "site_admin": ""
           }
         ],
         "requested_reviewers": [
@@ -5533,7 +5758,7 @@
           "events_url": "",
           "received_events_url": "",
           "type": "",
-          "site_admin": false
+          "site_admin": ""
         },
         "body": "",
         "state": "",
@@ -7372,6 +7597,156 @@
         "server_url": ""
       },
       "parameters": []
+    },
+    {
+      "operation": "search_code",
+      "title": "Search Code",
+      "description": "Searches for specified query.",
+      "category": "investigation",
+      "annotation": "search_code",
+      "enabled": true,
+      "output_schema": {
+        "items": [
+          {
+            "sha": "",
+            "url": "",
+            "name": "",
+            "path": "",
+            "score": "",
+            "git_url": "",
+            "html_url": "",
+            "repository": {
+              "id": "",
+              "url": "",
+              "fork": "",
+              "name": "",
+              "owner": {
+                "id": "",
+                "url": "",
+                "type": "",
+                "login": "",
+                "node_id": "",
+                "html_url": "",
+                "gists_url": "",
+                "repos_url": "",
+                "avatar_url": "",
+                "events_url": "",
+                "site_admin": "",
+                "gravatar_id": "",
+                "starred_url": "",
+                "followers_url": "",
+                "following_url": "",
+                "organizations_url": "",
+                "subscriptions_url": "",
+                "received_events_url": ""
+              },
+              "node_id": "",
+              "private": "",
+              "html_url": "",
+              "keys_url": "",
+              "tags_url": "",
+              "blobs_url": "",
+              "forks_url": "",
+              "full_name": "",
+              "hooks_url": "",
+              "pulls_url": "",
+              "teams_url": "",
+              "trees_url": "",
+              "events_url": "",
+              "issues_url": "",
+              "labels_url": "",
+              "merges_url": "",
+              "archive_url": "",
+              "commits_url": "",
+              "compare_url": "",
+              "description": "",
+              "branches_url": "",
+              "comments_url": "",
+              "contents_url": "",
+              "git_refs_url": "",
+              "git_tags_url": "",
+              "releases_url": "",
+              "statuses_url": "",
+              "assignees_url": "",
+              "downloads_url": "",
+              "languages_url": "",
+              "milestones_url": "",
+              "stargazers_url": "",
+              "deployments_url": "",
+              "git_commits_url": "",
+              "subscribers_url": "",
+              "contributors_url": "",
+              "issue_events_url": "",
+              "subscription_url": "",
+              "collaborators_url": "",
+              "issue_comment_url": "",
+              "notifications_url": ""
+            }
+          }
+        ],
+        "total_count": "",
+        "incomplete_results": ""
+      },
+      "parameters": [
+        {
+          "title": "Search Query",
+          "name": "query",
+          "visible": true,
+          "required": true,
+          "editable": true,
+          "placeholder": "For example, addClass+in:file+language:js+repo:jquery/jquery",
+          "type": "text",
+          "tooltip": "Specify the search query through which you want to filter the results",
+          "description": "Specify the search query through which you want to filter the results. To find the definition of the 'addClass' function inside 'jQuery' repository, use addClass+in:file+language:js+repo:jquery/jquery"
+        },
+        {
+          "title": "Sort",
+          "name": "sort",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "text",
+          "tooltip": "Specify the property to sort the results returned by this operation.",
+          "description": "Specify the property to sort the results returned by this operation."
+        },
+        {
+          "title": "Direction",
+          "name": "order",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "select",
+          "options": [
+            "Asc",
+            "Desc"
+          ],
+          "value": "Desc",
+          "tooltip": "Select the property to sort the direction of the results returned by this operation.",
+          "description": "Select the property to sort the direction of the results returned by this operation. You can choose from the following options: Asc: Sort in ascending order Desc: Sort in descending order"
+        },
+        {
+          "title": "Per Page",
+          "name": "per_page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "value": 30,
+          "type": "integer",
+          "tooltip": "Specify the number of results, per page, that this operation should return. By default, this value is set as 30; and the maximum value you can specify for this parameter is 100",
+          "description": "(Optional) Specify the number of results, per page, that this operation should return. By default, this value is set to 30; and the maximum value you can specify for this parameter is 100."
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "visible": true,
+          "required": false,
+          "editable": true,
+          "type": "integer",
+          "value": 1,
+          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
+          "description": "(Optional) Specify the page number from which you want the operation to return the results of the operation. By default, this value is set to 1."
+        }
+      ]
     }
   ]
 }

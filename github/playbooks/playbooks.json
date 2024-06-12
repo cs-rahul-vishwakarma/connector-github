@@ -4,7 +4,7 @@
     {
       "uuid": "f9aa13a0-6421-4335-be8b-323a3307189e",
       "@type": "WorkflowCollection",
-      "name": "Sample - GitHub - 1.2.0",
+      "name": "Sample - GitHub - 1.3.0",
       "description": "GitHub is a code hosting platform for collaboration and version control. This connector facilitates automated interactions with GitHub, such as to create and manage repositories, branches, issues, pull requests, and many more.",
       "visible": true,
       "image": null,
@@ -23,8 +23,7 @@
           "name": "Create Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -75,7 +74,7 @@
                   "has_wiki": true,
                   "is_template": false
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_repository",
                 "operationTitle": "Create Repository",
@@ -109,8 +108,7 @@
           "name": "Create Repository Using Template",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -158,7 +156,7 @@
                   "include_all_branches": false,
                   "private": false
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_repository_using_template",
                 "operationTitle": "Create Repository Using Template",
@@ -192,8 +190,7 @@
           "name": "List Organization Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -242,7 +239,7 @@
                   "sort": "Created",
                   "direction": "Desc"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_organization_repositories",
                 "operationTitle": "List Organization Repositories",
@@ -276,8 +273,7 @@
           "name": "List User Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -326,7 +322,7 @@
                   "sort": "Full Name",
                   "direction": "Desc"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_user_repositories",
                 "operationTitle": "List User Repositories",
@@ -360,8 +356,7 @@
           "name": "List Authenticated User Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -412,7 +407,7 @@
                   "sort": "Full Name",
                   "direction": "Desc"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_authenticated_user_repositories",
                 "operationTitle": "List Authenticated User Repositories",
@@ -446,8 +441,7 @@
           "name": "Update Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -497,7 +491,7 @@
                   "has_projects": true,
                   "has_wiki": true
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "update_repository",
                 "operationTitle": "Update Repository",
@@ -531,8 +525,7 @@
           "name": "Delete Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -577,7 +570,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "delete_repository",
                 "operationTitle": "Delete Repository",
@@ -611,8 +604,7 @@
           "name": "Fork Organization Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -659,7 +651,7 @@
                 "params": {
                   "default_branch_only": true
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "fork_organization_repository",
                 "operationTitle": "Fork Organization Repository",
@@ -693,8 +685,7 @@
           "name": "List Fork Repositories",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -741,7 +732,7 @@
                 "params": {
                   "sort": "Newest"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_fork_repositories",
                 "operationTitle": "List Fork Repositories",
@@ -775,8 +766,7 @@
           "name": "Create or Update File Contents",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -821,7 +811,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_update_file_contents",
                 "operationTitle": "Create or Update File Contents",
@@ -848,6 +838,153 @@
         },
         {
           "@type": "Workflow",
+          "uuid": "3ef0feb9-4a89-44af-af5e-fea199182084",
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "steps": [
+            {
+              "uuid": "2a115d19-f5f4-4366-b832-c96834be87ad",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "80ec15d6-11ce-4f64-af1b-b740ce95c74e",
+              "@type": "WorkflowStep",
+              "name": "Get File",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "''",
+                "params": {
+                  "repo_type": "",
+                  "name": "",
+                  "path": "",
+                  "branch": "",
+                  "decode_content": ""
+                },
+                "version": "1.3.0",
+                "connector": "github",
+                "operation": "get_file_from_repository",
+                "operationTitle": "Get File"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves information such as name, size, content, etc. about a file from the GitHub repository based on the repository name, repository type, branch name, file name, and other input parameters that you have specified.",
+          "name": "Get File",
+          "tag": "#GitHub",
+          "recordTags": [
+            "GitHub"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2a115d19-f5f4-4366-b832-c96834be87ad",
+          "routes": [
+            {
+              "uuid": "6015fb83-45ed-432f-8994-1b39c8f704bb",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get File",
+              "sourceStep": "/api/3/workflow_steps/2a115d19-f5f4-4366-b832-c96834be87ad",
+              "targetStep": "/api/3/workflow_steps/80ec15d6-11ce-4f64-af1b-b740ce95c74e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "64eca380-0d7f-46ab-ac47-53bd15b11f02",
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "steps": [
+            {
+              "uuid": "7aefc7d9-5de5-4a28-99f7-3a68b427db52",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "461d71d7-78f1-44d5-9b2e-76fe47bfd030",
+              "@type": "WorkflowStep",
+              "name": "Delete File",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "''",
+                "params": {
+                  "repo_type": "",
+                  "name": "",
+                  "path": "",
+                  "message": "",
+                  "sha": "",
+                  "branch": "main"
+                },
+                "version": "1.3.0",
+                "connector": "github",
+                "operation": "delete_file_from_repository",
+                "operationTitle": "Delete File"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Deletes a file from the GitHub repository based on the repository name, repository type, branch name, file name, and other input parameters that you have specified.",
+          "name": "Delete File",
+          "tag": "#GitHub",
+          "recordTags": [
+            "GitHub"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7aefc7d9-5de5-4a28-99f7-3a68b427db52",
+          "routes": [
+            {
+              "uuid": "3213ca38-a724-4a08-af69-3165a93c2b15",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete File",
+              "sourceStep": "/api/3/workflow_steps/7aefc7d9-5de5-4a28-99f7-3a68b427db52",
+              "targetStep": "/api/3/workflow_steps/461d71d7-78f1-44d5-9b2e-76fe47bfd030"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
           "uuid": "32e833ac-6bb5-4833-a31f-c9393a82f80b",
           "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
           "triggerLimit": null,
@@ -855,8 +992,7 @@
           "name": "Add Repository Collaborator",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -903,7 +1039,7 @@
                 "params": {
                   "permission": "Push"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "add_repository_collaborator",
                 "operationTitle": "Add Repository Collaborator",
@@ -937,8 +1073,7 @@
           "name": "List Repository Collaborator",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -985,7 +1120,7 @@
                 "params": {
                   "affiliation": "All"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_repository_collaborator",
                 "operationTitle": "List Repository Collaborator",
@@ -1019,8 +1154,7 @@
           "name": "Get Branch Revision",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1065,7 +1199,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "get_branch_revision",
                 "operationTitle": "Get Branch Revision",
@@ -1099,8 +1233,7 @@
           "name": "Create Branch",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1145,7 +1278,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_branch",
                 "operationTitle": "Create Branch",
@@ -1179,8 +1312,7 @@
           "name": "Merge Branch",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1225,7 +1357,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "merge_branch",
                 "operationTitle": "Merge Branch",
@@ -1259,8 +1391,7 @@
           "name": "List Branches",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1307,7 +1438,7 @@
                 "params": {
                   "protected": false
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_branches",
                 "operationTitle": "List Branches",
@@ -1341,8 +1472,7 @@
           "name": "Delete Branch",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1387,7 +1517,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "delete_branch",
                 "operationTitle": "Delete Branch",
@@ -1421,8 +1551,7 @@
           "name": "Fetch Upstream",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1467,7 +1596,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "fetch_upstream",
                 "operationTitle": "Fetch Upstream",
@@ -1501,8 +1630,7 @@
           "name": "Clone Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1550,7 +1678,7 @@
                   "branch": "main",
                   "clone_zip": true
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "clone_repository",
                 "operationTitle": "Clone Repository",
@@ -1584,8 +1712,7 @@
           "name": "Update Remote Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1630,7 +1757,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "update_clone_repository",
                 "operationTitle": "Update Remote Repository",
@@ -1664,8 +1791,7 @@
           "name": "Push Changes",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1710,7 +1836,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "push_repository",
                 "operationTitle": "Push Changes",
@@ -1744,8 +1870,7 @@
           "name": "Create Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1793,7 +1918,7 @@
                   "maintainer_can_modify": true,
                   "draft": false
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_pull_request",
                 "operationTitle": "Create Pull Request",
@@ -1827,8 +1952,7 @@
           "name": "List Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1877,7 +2001,7 @@
                   "sort": "Created",
                   "direction": "Desc"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_pull_request",
                 "operationTitle": "List Pull Request",
@@ -1911,8 +2035,7 @@
           "name": "Add Reviewers for a Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -1957,7 +2080,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "add_reviewers",
                 "operationTitle": "Add Reviewers for a Pull Request",
@@ -1991,8 +2114,7 @@
           "name": "List Review Comments on a Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2039,7 +2161,7 @@
                 "params": {
                   "sort": "Created"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_review_comments",
                 "operationTitle": "List Review Comments on a Pull Request",
@@ -2073,8 +2195,7 @@
           "name": "List Pull Request Reviews",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2119,7 +2240,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_pr_reviews",
                 "operationTitle": "List Pull Request Reviews",
@@ -2153,8 +2274,7 @@
           "name": "Add Pull Request Review",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2199,7 +2319,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "add_pr_review",
                 "operationTitle": "Add Pull Request Review",
@@ -2233,8 +2353,7 @@
           "name": "Merge Pull Request",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2281,7 +2400,7 @@
                 "params": {
                   "merge_method": "Merge"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "merge_pull_request",
                 "operationTitle": "Merge Pull Request",
@@ -2315,8 +2434,7 @@
           "name": "Create Issue",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2361,7 +2479,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_issue",
                 "operationTitle": "Create Issue",
@@ -2395,8 +2513,7 @@
           "name": "List Repository Issue",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2445,7 +2562,7 @@
                   "sort": "Created",
                   "direction": "Desc"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_repository_issue",
                 "operationTitle": "List Repository Issue",
@@ -2479,8 +2596,7 @@
           "name": "Update Issue",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2525,7 +2641,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "update_issue",
                 "operationTitle": "Update Issue",
@@ -2559,8 +2675,7 @@
           "name": "Create Issue Comment",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2605,7 +2720,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_issue_comment",
                 "operationTitle": "Create Issue Comment",
@@ -2639,8 +2754,7 @@
           "name": "Create Release",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2687,7 +2801,7 @@
                 "params": {
                   "generate_release_notes": true
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_release",
                 "operationTitle": "Create Release",
@@ -2721,8 +2835,7 @@
           "name": "List Releases",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2767,7 +2880,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_releases",
                 "operationTitle": "List Releases",
@@ -2801,8 +2914,7 @@
           "name": "List Stargazers",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2847,7 +2959,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_stargazers",
                 "operationTitle": "List Stargazers",
@@ -2881,8 +2993,7 @@
           "name": "Star Repository",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -2927,7 +3038,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "star_repository",
                 "operationTitle": "Star Repository",
@@ -2961,8 +3072,7 @@
           "name": "List Watchers",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -3007,7 +3117,7 @@
                 "name": "GitHub",
                 "config": "''",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_watchers",
                 "operationTitle": "List Watchers",
@@ -3041,8 +3151,7 @@
           "name": "Set Repository Subscription",
           "tag": "#GitHub",
           "recordTags": [
-            "GitHub",
-            "github"
+            "GitHub"
           ],
           "isActive": false,
           "debug": false,
@@ -3090,7 +3199,7 @@
                   "subscribed": true,
                   "ignored": true
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "set_repo_subscription",
                 "operationTitle": "Set Repository Subscription",
@@ -3141,7 +3250,7 @@
                 "name": "GitHub",
                 "config": "",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "get_web_url",
                 "operationTitle": "Get Server URL",
@@ -3203,6 +3312,79 @@
         },
         {
           "@type": "Workflow",
+          "uuid": "556f2953-6bfc-4965-81ef-19307c8ec1e1",
+          "collection": "/api/3/workflow_collections/f9aa13a0-6421-4335-be8b-323a3307189e",
+          "steps": [
+            {
+              "uuid": "e2adaa2a-51a8-46a2-8f3f-33fe6f704390",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "953e2633-57c2-48bd-90ba-c465a017aba3",
+              "@type": "WorkflowStep",
+              "name": "Search Code",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "GitHub",
+                "config": "''",
+                "params": {
+                  "q": "",
+                  "sort": "",
+                  "order": "Desc",
+                  "per_page": 30,
+                  "page": 1
+                },
+                "version": "1.3.0",
+                "connector": "github",
+                "operation": "search_code",
+                "operationTitle": "Search Code"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Searches for specified query.",
+          "name": "Search Code",
+          "tag": "#GitHub",
+          "recordTags": [
+            "GitHub"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e2adaa2a-51a8-46a2-8f3f-33fe6f704390",
+          "routes": [
+            {
+              "uuid": "a8f9deb4-e08e-434d-80a8-4ee001151123",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Search Code",
+              "sourceStep": "/api/3/workflow_steps/e2adaa2a-51a8-46a2-8f3f-33fe6f704390",
+              "targetStep": "/api/3/workflow_steps/953e2633-57c2-48bd-90ba-c465a017aba3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
           "triggerLimit": null,
           "name": "GitHub - Create Issue Comment",
           "aliasName": null,
@@ -3236,7 +3418,7 @@
                   "repo_type": "Organization",
                   "issue_number": "{{vars.input.params['add_issue_comment_params']['cr_number']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_issue_comment",
                 "operationTitle": "Create Issue Comment",
@@ -3337,7 +3519,7 @@
                   "repo_type": "Organization",
                   "pull_number": "{{vars.input.params['list_pr_reviews_params']['pull_number']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_pr_reviews",
                 "operationTitle": "List Pull Request Reviews",
@@ -3440,7 +3622,7 @@
                   "milestone": "",
                   "repo_type": "Organization"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_issue",
                 "operationTitle": "Create Issue",
@@ -3546,7 +3728,7 @@
                   "repo_type": "Organization",
                   "pull_number": "{{vars.input.params['list_pr_params']['pull_number']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_pull_request",
                 "operationTitle": "List Pull Request",
@@ -3672,7 +3854,7 @@
                   "per_page": "",
                   "repo_type": "Organization"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_releases",
                 "operationTitle": "List Releases",
@@ -3798,7 +3980,7 @@
                   "permission": "Push",
                   "affiliation": "All"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_repository_collaborator",
                 "operationTitle": "List Repository Collaborator",
@@ -3904,7 +4086,7 @@
                   "has_projects": true,
                   "other_fields": ""
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_repository",
                 "ignore_errors": true,
@@ -4003,7 +4185,7 @@
                   "repo_type": "Organization",
                   "maintainer_can_modify": true
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_pull_request",
                 "ignore_errors": true,
@@ -4131,7 +4313,7 @@
                   "message": "{{vars.input.params['create_update_file_content_params']['commit_message']}}",
                   "repo_type": "Organization"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_update_file_contents",
                 "ignore_errors": true,
@@ -4256,7 +4438,7 @@
                   "issue_number": "{{vars.input.params['update_issue_params']['issue_no']}}",
                   "state_reason": "{{vars.input.params['update_issue_params']['state_reason']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "update_issue",
                 "operationTitle": "Update Issue",
@@ -4338,7 +4520,7 @@
                   "repo_type": "Organization",
                   "permission": "Push"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "add_repository_collaborator",
                 "operationTitle": "Add Repository Collaborator",
@@ -4440,7 +4622,7 @@
                   "commit_message": "{{vars.input.params['push_changes_params']['commit_message']}}",
                   "commit_description": ""
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "push_repository",
                 "operationTitle": "Push Changes",
@@ -4541,7 +4723,7 @@
                   "checkout_branch": "Branch Name",
                   "new_branch_name": "{{vars.input.params['create_branch_params']['new_branch']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_branch",
                 "ignore_errors": true,
@@ -4645,7 +4827,7 @@
                   "clone_zip": "{{vars.input.params['clone_repo_params']['clone_as_zip']}}",
                   "repo_type": "Organization"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "clone_repository",
                 "operationTitle": "Clone Repository",
@@ -4754,7 +4936,7 @@
                   "milestone": "",
                   "repo_type": "Organization"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "list_repository_issue",
                 "operationTitle": "List Repository Issue",
@@ -4884,7 +5066,7 @@
                   "repo_type": "Organization",
                   "pull_number": "{{vars.input.params['add_pr_review_params']['pull_number']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "add_pr_review",
                 "operationTitle": "Add Pull Request Review",
@@ -4985,7 +5167,7 @@
                   "pull_number": "{{vars.input.params['add_reviewers_for_pr_params']['pull_number']}}",
                   "team_reviewers": ""
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "add_reviewers",
                 "operationTitle": "Add Reviewers for a Pull Request",
@@ -5088,7 +5270,7 @@
                   "merge_method": "merge",
                   "commit_message": ""
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "merge_pull_request",
                 "operationTitle": "Merge Pull Request",
@@ -5203,7 +5385,7 @@
                   "file_iri": "{{vars.input.params['update_remote_repo_params']['fsr_file_iri']}}",
                   "clone_path": "{{vars.input.params['update_remote_repo_params']['clone_repo_path']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "update_clone_repository",
                 "operationTitle": "Update Remote Repository",
@@ -5288,7 +5470,7 @@
                   "target_commitish": "{{vars.input.params['create_release_params']['base_branch']}}",
                   "generate_release_notes": true
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "create_release",
                 "operationTitle": "Create Release",
@@ -5387,7 +5569,7 @@
                   "repo_type": "Organization",
                   "branch_name": "{{vars.input.params['delete_branch_params']['branch_name']}}"
                 },
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "delete_branch",
                 "operationTitle": "Delete Branch",
@@ -5480,7 +5662,7 @@
                 "name": "GitHub",
                 "config": "{{vars.input.params['connector_config_id']}}",
                 "params": [],
-                "version": "1.2.0",
+                "version": "1.3.0",
                 "connector": "github",
                 "operation": "get_web_url",
                 "operationTitle": "Get Server URL",
