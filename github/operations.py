@@ -651,10 +651,9 @@ def delete_file_from_repository(config, params, *args, **kwargs):
 def search_code(config, params, *args, **kwargs):
     github = GitHub(config)
     params['order'] = params.get('order', '').lower()
+    params['q'] = params.pop('query', '')
     payload = {k: v for k, v in params.items() if
                v is not None and v != '' and v != {} and v != []}
-    # payload.update({"sort": "created", "order": "desc", "q": params.get('q')})
-    # f"q={params.get('q')}&type={params.get('type', 'Code')}&order=desc&sort=interactions&per_page={params.get('per_page', 5)}&page={params.get('page', 1)}"
     endpoint = f"search/code"
     logger.error("Params: {}".format(payload))
     return github.make_request(method='GET', endpoint=endpoint, params=payload)

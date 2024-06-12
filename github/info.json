@@ -7690,7 +7690,7 @@
       "parameters": [
         {
           "title": "Search Query",
-          "name": "q",
+          "name": "query",
           "visible": true,
           "required": true,
           "editable": true,
