@@ -401,7 +401,10 @@ def push_repository(config, params, *args, **kwargs):
 
     # Identify files that need to be deleted
     files_to_delete = remote_paths - local_paths
-
+    # Delete files that are no longer present in the local directory
+    for file_to_delete in files_to_delete:
+        element = InputGitTreeElement(file_to_delete, '100644', 'blob', sha=None)
+        element_list.append(element)
     tree = repo.create_git_tree(element_list, base_tree)
     parent = repo.get_git_commit(master_sha)
     commit = repo.create_git_commit(commit_message, tree, [parent])
@@ -413,10 +416,6 @@ def push_repository(config, params, *args, **kwargs):
             en = entry.replace(params.get('clone_path') + '/', '')
             old_file = repo.get_contents(en)
             commit = repo.update_file(en, 'Update PNG content', data, old_file.sha)
-
-    # Delete files that are no longer present in the local directory
-    for file_to_delete in files_to_delete:
-        repo.delete_file(file_to_delete, commit_message, remote_files[file_to_delete], branch=branch)
     return {"status": "finish"}
 
 
