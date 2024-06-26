@@ -252,7 +252,7 @@ def clone_repository(config, params, *args, **kwargs):
         env = kwargs.get('env', {})
         url = "https://{0}:{1}@{2}/{3}/{4}/zip/refs/heads/{5}".format(config.get('username'),
                                                                       config.get('password'),
-                                                                      config.get('clone_url').split('//')[-1],
+                                                                      config.get('clone_url', '').split('//')[-1],
                                                                       params.get('org') if params.get(
                                                                           'repo_type') == "Organization" else params.get(
                                                                           'owner'),
@@ -262,10 +262,12 @@ def clone_repository(config, params, *args, **kwargs):
                                                                           'branch') else "main")
         headers = CLONE_ACCEPT_HEADER
         zip_file = '/tmp/github-{0}-{1}.zip'.format(params.get('name'), datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
-        response = requests.request("GET", url, headers=headers, data={})
+        response = requests.request("GET", url, headers=headers, data={}, verify=config.get('verify_ssl'))
         if not response.ok:
-            logger.error("Error occurred: {\"status_code\": {0}, Error: {1}}".format(response.status_code, response.text if response.text else response.content))
-            raise ConnectorError("Error occurred: {\"status_code\": {0}, Error: {1}}".format(response.status_code, response.text if response.text else response.content))
+            if config.get('clone_url') != 'https://codeload.github.com':
+                raise ConnectorError("Invalid clone URL provided in the connector configuration.")
+            logger.error("Error occurred: {{\"status_code\": {0}, Error: {1}}}".format(response.status_code, response.text if response.text else response.content))
+            raise ConnectorError("Error occurred: {{\"status_code\": {0}, Error: {1}}}".format(response.status_code, response.text if response.text else response.content))
         with open(zip_file, "wb") as zipFile:
             zipFile.write(response.content)
         if params.get('clone_zip') is True:
@@ -281,6 +283,9 @@ def clone_repository(config, params, *args, **kwargs):
     except ConnectorError as e:
         raise ConnectorError(e)
     except Exception as e:
+        error = str(e)
+        if config.get('password') in error:
+            e = error.replace(config.get('password'), config.get('password')[:4] + '******************')
         raise ConnectorError(e)
 
 
@@ -649,12 +654,10 @@ def delete_file_from_repository(config, params, *args, **kwargs):
 
 def search_code(config, params, *args, **kwargs):
     github = GitHub(config)
-    params['order'] = params.get('order', '').lower()
     params['q'] = params.pop('query', '')
     payload = {k: v for k, v in params.items() if
                v is not None and v != '' and v != {} and v != []}
     endpoint = f"search/code"
-    logger.error("Params: {}".format(payload))
     return github.make_request(method='GET', endpoint=endpoint, params=payload)
 
 

@@ -63,7 +63,7 @@
         "name": "clone_url",
         "value": "https://codeload.github.com",
         "description": "This field contains the Codeload URL for fast push and pull operations. NOTE: Do not edit the value in this field.",
-        "tooltip": "Specify the clone URL of the GitHub server to connect and perform cloned operation"
+        "tooltip": "Specify the clone URL of the GitHub server to connect and perform cloned operation. NOTE: Do not edit the value in this field."
       }
     ]
   },
@@ -7698,31 +7698,6 @@
           "type": "text",
           "tooltip": "Specify the search query through which you want to filter the results",
           "description": "Specify the search query through which you want to filter the results. To find the definition of the 'addClass' function inside 'jQuery' repository, use addClass+in:file+language:js+repo:jquery/jquery"
-        },
-        {
-          "title": "Sort",
-          "name": "sort",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "text",
-          "tooltip": "Specify the property to sort the results returned by this operation.",
-          "description": "Specify the property to sort the results returned by this operation."
-        },
-        {
-          "title": "Direction",
-          "name": "order",
-          "visible": true,
-          "required": false,
-          "editable": true,
-          "type": "select",
-          "options": [
-            "Asc",
-            "Desc"
-          ],
-          "value": "Desc",
-          "tooltip": "Select the property to sort the direction of the results returned by this operation.",
-          "description": "Select the property to sort the direction of the results returned by this operation. You can choose from the following options: Asc: Sort in ascending order Desc: Sort in descending order"
         },
         {
           "title": "Per Page",
