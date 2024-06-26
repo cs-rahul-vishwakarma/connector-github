@@ -3343,8 +3343,6 @@
                 "config": "''",
                 "params": {
                   "q": "",
-                  "sort": "",
-                  "order": "Desc",
                   "per_page": 30,
                   "page": 1
                 },
