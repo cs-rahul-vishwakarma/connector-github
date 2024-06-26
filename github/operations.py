@@ -262,7 +262,7 @@ def clone_repository(config, params, *args, **kwargs):
                                                                           'branch') else "main")
         headers = CLONE_ACCEPT_HEADER
         zip_file = '/tmp/github-{0}-{1}.zip'.format(params.get('name'), datetime.now().strftime('%Y-%m-%d-%H-%M-%S-%f'))
-        response = requests.request("GET", url, headers=headers, data={})
+        response = requests.request("GET", url, headers=headers, data={}, verify=config.get('verify_ssl'))
         if not response.ok:
             if config.get('clone_url') != 'https://codeload.github.com':
                 raise ConnectorError("Invalid clone URL provided in the connector configuration.")
