@@ -2130,8 +2130,9 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the name of the file whose file contents are to be retrieved, from GitHub",
-          "description": "Specify the name of the file whose file contents are to be retrieved, from GitHub."
+          "placeholder": "For example, directory/file.txt",
+          "tooltip": "Specify the name or path of the file whose file contents are to be retrieved, from GitHub",
+          "description": "Specify the name or path of the file whose file contents are to be retrieved, from GitHub. For example, directory/file.txt"
         },
         {
           "title": "Branch Name",
@@ -2258,8 +2259,9 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the name of the file which is to be deleted, on GitHub",
-          "description": "Specify the name of the file which is to be deleted, on GitHub."
+          "placeholder": "For example, directory/file.txt",
+          "tooltip": "Specify the name or path of the file which is to be deleted, on GitHub",
+          "description": "Specify the name or path of the file which is to be deleted, on GitHub. For example, directory/file.txt"
         },
         {
           "title": "Commit Message",
