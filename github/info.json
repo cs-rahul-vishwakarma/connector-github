@@ -9,7 +9,7 @@
   "category": "Source Code Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.3.0/github/897/github-v1-3-0",
   "configuration": {
     "fields": [
       {
@@ -2050,7 +2050,7 @@
     {
       "operation": "get_file_from_repository",
       "title": "Get File",
-      "description": "Retrieves information such as name, size, content, etc. about a file from the GitHub repository based on the repository type, repository name, branch name, file name, and other input parameters that you have specified.",
+      "description": "Retrieves information such as name, size, and content about a file from the GitHub repository based on the repository type, repository name, and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "get_file_from_repository",
       "enabled": true,
@@ -2110,7 +2110,7 @@
               }
             ]
           },
-          "tooltip": "Select the method using which you want to retrieve the content file from GitHub",
+          "tooltip": "Select the type of the repository whose file contents are to be retrieved from GitHub",
           "description": "Select the type of the repository whose file contents are to be retrieved from GitHub. You can choose from Organization or User."
         },
         {
@@ -2120,8 +2120,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the name of the repository whose file contents are to be retrieved, from GitHub",
-          "description": "Specify the name of the repository whose file contents are to be retrieved, from GitHub."
+          "tooltip": "Specify the name of the repository whose file contents are to be retrieved from GitHub",
+          "description": "Specify the name of the repository whose file contents are to be retrieved from GitHub."
         },
         {
           "title": "File Name",
@@ -2131,8 +2131,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "For example, directory/file.txt",
-          "tooltip": "Specify the name or path of the file whose file contents are to be retrieved, from GitHub",
-          "description": "Specify the name or path of the file whose file contents are to be retrieved, from GitHub. For example, directory/file.txt"
+          "tooltip": "Specify the name or path of the file whose file contents are to be retrieved from GitHub",
+          "description": "Specify the name or path of the file whose file contents are to be retrieved from GitHub. For example, directory/file.txt"
         },
         {
           "title": "Branch Name",
@@ -2141,8 +2141,8 @@
           "required": false,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the branch name from where you want to retrieve the file content from GitHub.",
-          "description": "(Optional) Specify the branch name from where you want to retrieve the file content from GitHub."
+          "tooltip": "Specify the branch name from where you want to retrieve the file content on GitHub.",
+          "description": "(Optional) Specify the branch name from where you want to retrieve the file content on GitHub."
         },
         {
           "title": "Decode Content",
@@ -2160,7 +2160,7 @@
     {
       "operation": "delete_file_from_repository",
       "title": "Delete File",
-      "description": "Deletes a file from the GitHub repository based on the repository type, repository name, branch name, file name, and other input parameters that you have specified.",
+      "description": "Deletes a file from the GitHub repository based on the repository type, repository name, and other input parameters that you have specified.",
       "category": "investigation",
       "annotation": "delete_file_from_repository",
       "enabled": true,
@@ -2239,8 +2239,8 @@
               }
             ]
           },
-          "tooltip": "Select the type of the repository whose file is to be deleted from GitHub.",
-          "description": "Select the type of the repository whose file is to be deleted from GitHub. You can choose from Organization or User."
+          "tooltip": "Select the type of the repository on GitHub that contains the file to be deleted.",
+          "description": "Select the type of the repository on GitHub that contains the file to be deleted. You can choose from Organization or User."
         },
         {
           "title": "Repository Name",
@@ -2249,8 +2249,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the name of the repository whose file is to be deleted, on GitHub",
-          "description": "Specify the name of the repository whose file is to be deleted, on GitHub."
+          "tooltip": "Specify the name of the repository on GitHub whose file is to be deleted. ",
+          "description": "Specify the name of the repository on GitHub whose file is to be deleted. "
         },
         {
           "title": "File Name",
@@ -2260,8 +2260,8 @@
           "editable": true,
           "type": "text",
           "placeholder": "For example, directory/file.txt",
-          "tooltip": "Specify the name or path of the file which is to be deleted, on GitHub",
-          "description": "Specify the name or path of the file which is to be deleted, on GitHub. For example, directory/file.txt"
+          "tooltip": "Specify the name or path of the file on GitHub that is to be deleted. For example, directory/file.txt ",
+          "description": "Specify the name or path of the file on GitHub that is to be deleted. For example, directory/file.txt "
         },
         {
           "title": "Commit Message",
@@ -2270,8 +2270,8 @@
           "required": true,
           "editable": true,
           "type": "text",
-          "tooltip": "Specify the commit message that you want to add while deleting the file from GitHub",
-          "description": "Specify the commit message that you want to add while deleting the file from GitHub."
+          "tooltip": "Specify the commit message to add for deleting the file from GitHub. ",
+          "description": "Specify the commit message to add for deleting the file from GitHub. "
         },
         {
           "title": "SHA",
@@ -2291,8 +2291,8 @@
           "editable": true,
           "type": "text",
           "value": "main",
-          "tooltip": "Specify the branch name from which you want to delete the file on GitHub.",
-          "description": "(Optional) Specify the branch name from which you want to delete the file on GitHub. By default, it deletes from main branch."
+          "tooltip": " Specify the branch name from which you want to delete the file on GitHub. By default, it deletes from the main branch.",
+          "description": "(Optional) Specify the branch name from which you want to delete the file on GitHub. By default, it deletes from the main branch."
         }
       ]
     },
@@ -7603,7 +7603,7 @@
     {
       "operation": "search_code",
       "title": "Search Code",
-      "description": "Searches for specified query.",
+      "description": "Searches the code based on the query that you have specified.",
       "category": "investigation",
       "annotation": "search_code",
       "enabled": true,
@@ -7698,8 +7698,8 @@
           "editable": true,
           "placeholder": "For example, addClass+in:file+language:js+repo:jquery/jquery",
           "type": "text",
-          "tooltip": "Specify the search query through which you want to filter the results",
-          "description": "Specify the search query through which you want to filter the results. To find the definition of the 'addClass' function inside 'jQuery' repository, use addClass+in:file+language:js+repo:jquery/jquery"
+          "tooltip": "Specify the search query using which to filter results.",
+          "description": "Specify the search query using which to filter results. For example: To find the definition of the addClass function inside a jQuery repository, use addClass+in:file+language:js+repo:jquery/jquery "
         },
         {
           "title": "Per Page",
@@ -7720,8 +7720,8 @@
           "editable": true,
           "type": "integer",
           "value": 1,
-          "tooltip": "Specify the page number from which you want the operation to return the results of the operation. By default, this value is set as 1",
-          "description": "(Optional) Specify the page number from which you want the operation to return the results of the operation. By default, this value is set to 1."
+          "tooltip": "Specify the page number from which to return the results of the operation. By default, this value is set to 1.",
+          "description": "(Optional) Specify the page number from which to return the results of the operation. By default, this value is set to 1."
         }
       ]
     }
